@@ -204,7 +204,10 @@ class _MainScreenState extends State<MainScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => LessonScreen(lessonNumber: number)),
+              builder: (context) => LessonScreen(
+              lessonNumber: 1,
+              videoUrl: 'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/you%20are.mp4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3lvdSBhcmUubXA0IiwiaWF0IjoxNzQyNDY4MjE2LCJleHAiOjE5MDAxNDgyMTZ9.b7Ix98pGOpNmGSbYj8EETddKZAUohdgHPJzp6bz0Fqg',
+              )),
         );
       },
       child: Container(
