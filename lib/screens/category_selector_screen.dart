@@ -104,7 +104,7 @@ class ModuleBox extends StatefulWidget {
   });
 
   @override
-  _ModuleBoxState createState() => _ModuleBoxState();
+  State<ModuleBox> createState() => _ModuleBoxState();
 }
 
 class _ModuleBoxState extends State<ModuleBox>

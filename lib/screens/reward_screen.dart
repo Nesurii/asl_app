@@ -9,7 +9,7 @@ class RewardScreen extends StatefulWidget {
   const RewardScreen({super.key, required this.rewardIndex}); 
 
   @override
-  _RewardScreenState createState() => _RewardScreenState();
+  State<RewardScreen> createState() => _RewardScreenState();
 }
 
 class _RewardScreenState extends State<RewardScreen> {

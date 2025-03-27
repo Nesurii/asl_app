@@ -1,8 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
+class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
-  
+
+  @override
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
+}
+
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final _supabase = Supabase.instance.client;
+
+  // Send Email Verification
+  Future<void> _sendPasswordResetEmail() async {
+    try {
+      await _supabase.auth.resetPasswordForEmail(_emailController.text.trim());
+      if (!mounted) return; // Prevent errors if widget was removed
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Password reset email sent! Check your inbox.")),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error: ${e.toString()}")),
+      );
+    }
+  }
+
+  // Future<void> _updatePassword(String newPassword) async {
+  //   try {
+  //     await Supabase.instance.client.auth.updateUser(
+  //       UserAttributes(password: newPassword),
+  //     );
+  //     if (!mounted) return; // Prevent errors if widget was removed
+      
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       SnackBar(content: Text("Password updated successfully!")),
+  //     );
+  //     Navigator.pop(context); // Go back to login screen
+  //   } catch (e) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       SnackBar(content: Text("Error: ${e.toString()}")),
+  //     );
+  //   }
+  // }
+
+
+
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
@@ -65,9 +110,8 @@ class ForgotPasswordScreen extends StatelessWidget {
               SizedBox(height: 25),
 
               ElevatedButton(
-                onPressed: () {
-                  // TODO: Add password reset logic
-                },
+                onPressed: _sendPasswordResetEmail,
+
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 40),

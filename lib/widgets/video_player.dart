@@ -26,6 +26,8 @@ class _VideoScreenState extends State<VideoScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Video Player')),
       body: WebViewWidget(controller: _controller),
+
+      
     );
   }
 }

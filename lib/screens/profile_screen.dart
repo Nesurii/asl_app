@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mypod_flutter/main.dart';
+import 'package:mypod_flutter/screens/login_screen.dart';
 import 'main_screen.dart';
 import 'asl_alphabet_screen.dart';
 import 'practice_screen.dart';
@@ -11,11 +13,46 @@ class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  _ProfileScreenState createState() => _ProfileScreenState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
   bool isSettingsSelected = false;
+  //final user = supabase.auth.currentUser;
+  Map<String, dynamic>? userData;
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUserData();
+  }
+
+  Future<void> fetchUserData() async {
+    try {
+      final user = supabase.auth.currentUser;
+      if (user == null) {
+        throw Exception("User not logged in");
+      }
+
+      // Fetch user details from the "users" table
+      final response = await supabase
+          .from('user_account')
+          .select()
+          .eq('id', user.id)  // Fetch data using the logged-in user's ID
+          .single();  // Use `.single()` since we expect only one result
+
+      setState(() {
+        userData = response;
+        isLoading = false;
+      });
+    } catch (error) {
+      debugPrint('Error fetching user data: $error');
+      setState(() {
+        isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'JAJA JUNIE',
+                      '${userData!['username']}',
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
@@ -243,6 +280,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  Future<void> signOut() async {
+    await supabase.auth.signOut();
+    if (!mounted) return;
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginScreen()),
+    );
+  }
+
   // "Settings" Section
   Widget _buildSettings() {
     return Column(
@@ -273,10 +319,57 @@ class _ProfileScreenState extends State<ProfileScreen> {
           leading: Icon(Icons.logout, color: Colors.red),
           title: Text('Logout', style: TextStyle(color: Colors.red)),
           onTap: () {
+            signOut();
             debugPrint("User logged out");
           },
         ),
+      //   ListTile(
+      //   leading: Icon(Icons.info_outline),
+      //   title: Text(user?.appMetadata['provider'] == 'google' 
+      //       ? 'Unlink Google Account' 
+      //       : 'Link Google Account'),
+      //   trailing: Icon(Icons.arrow_forward_ios),
+      //   onTap: () async {
+      //     if (user?.appMetadata['provider'] == 'google') {
+      //       await _unlinkGoogleAccount();
+      //     } else {
+      //       await _linkGoogleAccount();
+      //     }
+      //     setState(() {}); // Refresh UI
+      //   },
+      // ),
+
       ],
     );
   }
+  
+//   Future<void> _linkGoogleAccount() async {
+//   try {
+//     final response = await supabase.auth.signInWithOAuth(
+//       Provider.google,
+//       redirectTo: 'YOUR_APP_REDIRECT_URL',  // Change this to your app's redirect URI
+//     );
+
+//     if (response.user != null) {
+//       await supabase.from('users').update({
+//         'google_id': response.user?.id,
+//       }).match({'id': user?.id});
+//     }
+//   } catch (e) {
+//     debugPrint("Google linking failed: $e");
+//   }
+// }
+
+// Future<void> _unlinkGoogleAccount() async {
+//   try {
+//     await supabase.from('users').update({
+//       'google_id': null,
+//     }).match({'id': user?.id});
+
+//     debugPrint("Google account unlinked successfully.");
+//   } catch (e) {
+//     debugPrint("Unlinking failed: $e");
+//   }
+// }
+
 }

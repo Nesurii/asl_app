@@ -33,8 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    _setupAuthListener();
     super.initState();
+    _setupAuthListener();
   }
 
   void _setupAuthListener() {
@@ -86,30 +86,69 @@ class _LoginScreenState extends State<LoginScreen> {
 
   /// Google sign-in
   Future<AuthResponse> _googleSignIn() async {
-    final GoogleSignIn googleSignIn = GoogleSignIn(
-      serverClientId: '913397498781-baldk0vv4aobc3omc0c5v2fa5hidapag.apps.googleusercontent.com',
-      scopes: ['email'],
-    );
+      final GoogleSignIn googleSignIn = GoogleSignIn(
+        serverClientId: '913397498781-baldk0vv4aobc3omc0c5v2fa5hidapag.apps.googleusercontent.com',
+        scopes: ['email'],
+      );
 
-    final googleUser = await googleSignIn.signIn();
-    if (googleUser == null) {
-      throw 'User canceled sign-in';
+      try {
+      final googleUser = await googleSignIn.signIn();
+      if (googleUser == null) {
+        throw 'User canceled sign-in';
+      }
+
+      final googleAuth = await googleUser.authentication;
+      final idToken = googleAuth.idToken;
+      final accessToken = googleAuth.accessToken;
+
+      if (idToken == null || accessToken == null) {
+        throw 'Failed to retrieve authentication tokens';
+      }
+
+      // Authenticate user with Supabase
+      final AuthResponse authResponse = await supabase.auth.signInWithIdToken(
+        provider: OAuthProvider.google,
+        idToken: idToken,
+        accessToken: accessToken,
+      );
+
+      final user = authResponse.user;
+      if (user == null) {
+        throw 'Authentication failed';
+      }
+
+      // Check if user already exists in user_account table
+      final existingUser = await supabase
+          .from('user_account')
+          .select()
+          .eq('id', user.id)
+          .maybeSingle();
+
+      if (existingUser == null) {
+        // Insert new user into the user_account table
+        await supabase.from('user_account').insert({
+          'id': user.id,
+          'email': user.email,
+          'password' : 'google-auth',
+          'username': user.userMetadata?['display_name'] ?? user.email?.split('@')[0],
+          'xp': 0, // Default XP for new users
+        });
+      }
+
+      return authResponse; // Return auth response for further handling
+    } catch (e) {
+      log("Google sign-in error: $e");
+
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Google sign-in failed: $e")),
+        );
+      }
+
+      rethrow; // Preserve the original error
     }
-
-    final googleAuth = await googleUser.authentication;
-    final idToken = googleAuth.idToken;
-    final accessToken = googleAuth.accessToken;
-
-    if (idToken == null || accessToken == null) {
-      throw 'Failed to retrieve authentication tokens';
-    }
-
-    return await supabase.auth.signInWithIdToken(
-      provider: OAuthProvider.google,
-      idToken: idToken,
-      accessToken: accessToken,
-    );
   }
+
 
   @override
   Widget build(BuildContext context) {
