@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mypod_flutter/main.dart';
-import 'package:mypod_flutter/screens/login_screen.dart';
 import 'main_screen.dart';
 import 'asl_alphabet_screen.dart';
 import 'practice_screen.dart';
@@ -18,7 +17,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   bool isSettingsSelected = false;
-  //final user = supabase.auth.currentUser;
+  int _selectedIndex = 4; // Default selected index for Profile
   Map<String, dynamic>? userData;
   bool isLoading = true;
 
@@ -76,7 +75,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MainScreen(category: 'Unit 1'),
+                        builder: (context) =>
+                            MainScreen(category: 'Unit 1: Welcome'),
                       ),
                     );
                   },
@@ -100,10 +100,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
               children: [
-                CircleAvatar(
-                  radius: 40,
-                  backgroundImage:
-                      AssetImage('assets/images/profile_picture.jpg'),
+                Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: AssetImage(
+                          'assets/avatars/default_avatar.jpg'), // Replace with your default avatar path
+                    ),
+                    Positioned(
+                      right: 0,
+                      bottom: 0,
+                      child: GestureDetector(
+                        onTap: () => _showAvatarSelectionDialog(context),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange,
+                          ),
+                          child: Icon(Icons.add, color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(width: 16),
                 Column(
@@ -116,8 +134,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      '@jajajunie',
-                      style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                      '${userData!['email']}',
+                      style: TextStyle(fontSize: 14, color: Colors.grey[700]),
                     ),
                     SizedBox(height: 8),
                     Column(
@@ -165,7 +183,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               borderRadius: BorderRadius.circular(12),
               color: Colors.black,
               selectedColor: Colors.white,
-              fillColor: Colors.orange, // Blue background when active
+              fillColor: Colors.orange,
               borderColor: Colors.grey,
               selectedBorderColor: Colors.orange,
               children: [
@@ -186,54 +204,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Expanded(
             child: isSettingsSelected ? _buildSettings() : _buildMyStats(),
           ),
-          // Bottom Navigation Bar
+          // Bottom Navigation Bar with Labels
           BottomNavigationBar(
             backgroundColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             iconSize: 30,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/home_icon.png',
-                    width: 30, height: 30),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/asl_alphabet_icon.png',
-                    width: 30, height: 30),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/practice_icon.png',
-                    width: 30, height: 30),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/leaderboard_icon.png',
-                    width: 30, height: 30),
-                label: '',
-              ),
-              BottomNavigationBarItem(
-                icon: Container(
-                  padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Image.asset('assets/icons/profile_icon.png',
-                      width: 30, height: 30),
-                ),
-                label: '',
-              ),
-            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.orange,
+            unselectedItemColor: Colors.grey[600],
             onTap: (index) {
+              setState(() {
+                _selectedIndex = index;
+              });
+
               switch (index) {
                 case 0:
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => MainScreen(category: 'Unit 1')),
+                        builder: (context) =>
+                            MainScreen(category: 'Unit 1: Welcome')),
                   );
                   break;
                 case 1:
@@ -264,6 +254,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   break;
               }
             },
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/icons/home_icon.png',
+                    width: 30, height: 30),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/icons/asl_alphabet_icon.png',
+                    width: 30, height: 30),
+                label: 'ASL Alphabet',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/icons/practice_icon.png',
+                    width: 30, height: 30),
+                label: 'Practice',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/icons/leaderboard_icon.png',
+                    width: 30, height: 30),
+                label: 'Leaderboard',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/icons/profile_icon.png',
+                    width: 30, height: 30),
+                label: 'Profile',
+              ),
+            ],
           ),
         ],
       ),
@@ -277,15 +294,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
         'Stats will be shown here!',
         style: TextStyle(fontSize: 16, color: Colors.grey[700]),
       ),
-    );
-  }
-
-  Future<void> signOut() async {
-    await supabase.auth.signOut();
-    if (!mounted) return;
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => LoginScreen()),
     );
   }
 
@@ -319,57 +327,65 @@ class _ProfileScreenState extends State<ProfileScreen> {
           leading: Icon(Icons.logout, color: Colors.red),
           title: Text('Logout', style: TextStyle(color: Colors.red)),
           onTap: () {
-            signOut();
             debugPrint("User logged out");
           },
         ),
-      //   ListTile(
-      //   leading: Icon(Icons.info_outline),
-      //   title: Text(user?.appMetadata['provider'] == 'google' 
-      //       ? 'Unlink Google Account' 
-      //       : 'Link Google Account'),
-      //   trailing: Icon(Icons.arrow_forward_ios),
-      //   onTap: () async {
-      //     if (user?.appMetadata['provider'] == 'google') {
-      //       await _unlinkGoogleAccount();
-      //     } else {
-      //       await _linkGoogleAccount();
-      //     }
-      //     setState(() {}); // Refresh UI
-      //   },
-      // ),
-
       ],
     );
   }
-  
-//   Future<void> _linkGoogleAccount() async {
-//   try {
-//     final response = await supabase.auth.signInWithOAuth(
-//       Provider.google,
-//       redirectTo: 'YOUR_APP_REDIRECT_URL',  // Change this to your app's redirect URI
-//     );
 
-//     if (response.user != null) {
-//       await supabase.from('users').update({
-//         'google_id': response.user?.id,
-//       }).match({'id': user?.id});
-//     }
-//   } catch (e) {
-//     debugPrint("Google linking failed: $e");
-//   }
-// }
-
-// Future<void> _unlinkGoogleAccount() async {
-//   try {
-//     await supabase.from('users').update({
-//       'google_id': null,
-//     }).match({'id': user?.id});
-
-//     debugPrint("Google account unlinked successfully.");
-//   } catch (e) {
-//     debugPrint("Unlinking failed: $e");
-//   }
-// }
-
+  void _showAvatarSelectionDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Select Avatar"),
+          content: SizedBox(
+            height: 190, // Adjust height as needed
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: List.generate(5, (index) {
+                    return GestureDetector(
+                      onTap: () {
+                        // Handle avatar selection
+                      },
+                      child: CircleAvatar(
+                        radius: 30,
+                        backgroundImage:
+                            AssetImage('assets/avatars/avatar${index + 1}.png'),
+                      ),
+                    );
+                  }),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child:
+                          Text('Remove', style: TextStyle(color: Colors.red)),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Save the selected avatar
+                        Navigator.pop(context);
+                      },
+                      child: Text('Save', style: TextStyle(color: Colors.blue)),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }

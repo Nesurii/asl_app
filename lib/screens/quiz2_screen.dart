@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-class QuizScreen extends StatelessWidget {
-  final int quizNumber;
-
-  const QuizScreen({super.key, required this.quizNumber});
+class Quiz2Screen extends StatelessWidget {
+  const Quiz2Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Quiz $quizNumber')),
+      appBar: AppBar(title: Text("Quiz 2")),
       body: Center(
         child: Text(
-          'Questions for Quiz $quizNumber',
+          "This is Quiz 2 Screen",
           style: TextStyle(fontSize: 24),
         ),
       ),

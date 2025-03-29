@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:mypod_flutter/screens/greeting_screen.dart';
-import 'package:mypod_flutter/screens/login_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -62,7 +61,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       'email': _emailController.text,
       'password': _passwordController.text,
       'username': _emailController.text.split('@')[0], // Default username
-      'xp': 0, // Default XP for new users
     });
 
     log("User registered and data saved!");

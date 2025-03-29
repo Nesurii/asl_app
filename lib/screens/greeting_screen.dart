@@ -3,7 +3,7 @@ import 'category_selector_screen.dart';
 
 class GreetingScreen extends StatelessWidget {
   const GreetingScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +67,9 @@ class GreetingScreen extends StatelessWidget {
   }
 }
 
-/*class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,4 +100,3 @@ class GreetingScreen extends StatelessWidget {
     );
   }
 }
-*/

@@ -131,7 +131,6 @@ class _LoginScreenState extends State<LoginScreen> {
           'email': user.email,
           'password' : 'google-auth',
           'username': user.userMetadata?['display_name'] ?? user.email?.split('@')[0],
-          'xp': 0, // Default XP for new users
         });
       }
 
@@ -139,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
     } catch (e) {
       log("Google sign-in error: $e");
 
-      if (context.mounted) {
+      if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Google sign-in failed: $e")),
         );

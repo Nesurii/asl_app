@@ -22,18 +22,18 @@ dependencies:
   confetti: ^0.8.0
   audioplayers: ^6.4.0
   video_player: ^2.8.2
-  webview_flutter: ^4.10.0
 
-  cupertino_icons: ^1.0.5
   supabase_flutter: ^2.8.4
   flutter_facebook_auth: ^7.1.1
-  image_picker: ^1.1.2 
+
 
 dev_dependencies:
   flutter_lints: '>=3.0.0 <6.0.0'
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.14.3  
+  photo_view: ^0.15.0
+  build_runner: ^2.4.15
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -41,76 +41,83 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/alphabet_images/a.png
-    - assets/alphabet_images/b.png
-    - assets/alphabet_images/c.png
-    - assets/alphabet_images/d.png
-    - assets/alphabet_images/e.png
-    - assets/alphabet_images/f.png
-    - assets/alphabet_images/g.png
-    - assets/alphabet_images/h.png
-    - assets/alphabet_images/i.png
-    - assets/alphabet_images/j.png
-    - assets/alphabet_images/k.png
-    - assets/alphabet_images/l.png
-    - assets/alphabet_images/m.png
-    - assets/alphabet_images/n.png
-    - assets/alphabet_images/o.png
-    - assets/alphabet_images/p.png
-    - assets/alphabet_images/q.png
-    - assets/alphabet_images/r.png
-    - assets/alphabet_images/s.png
-    - assets/alphabet_images/t.png
-    - assets/alphabet_images/u.png
-    - assets/alphabet_images/v.png
-    - assets/alphabet_images/w.png
-    - assets/alphabet_images/x.png
-    - assets/alphabet_images/y.png
-    - assets/alphabet_images/z.png
-    - assets/images/practice_background.png
-    - assets/images/close_icon.png
-    - assets/images/scenario_image.png
-    - assets/images/camera_icon.png
-    - assets/images/login_background.png
-    - assets/images/profile_picture.jpg
-    - assets/images/unit1.jpg
-    - assets/images/unit2.jpg
-    - assets/images/unit3.jpg
-    - assets/images/unit4.jpg
-    - assets/images/unit5.jpg
-    - assets/images/unit6.jpg
-    - assets/images/unit7.jpg
-    - assets/images/unit8.jpg
-    - assets/images/unit9.jpg
-    - assets/images/unit10.jpg
-    - assets/images/forgot_password.gif
-    - assets/images/signup_bg.jpg
-    - assets/images/avatar.gif
-    - assets/images/banner.png
-    - assets/images/developer1.jpg
-    - assets/images/developer2.jpg
-    - assets/images/developer3.jpg
-    - assets/images/splash_bg.png
-    - assets/icons/home_icon.png
-    - assets/icons/asl_alphabet_icon.png
-    - assets/icons/practice_icon.png
-    - assets/icons/leaderboard_icon.png
-    - assets/icons/profile_icon.png
-    - assets/icons/chest.png
-    - assets/icons/notification_icon.jpg
-    - assets/icons/google_logo.png
-    - assets/icons/fb_logo.png
-    - assets/rewards/sticker1.jpg
-    - assets/rewards/sticker2.jpg
-    - assets/rewards/sticker3.jpg
-    - assets/rewards/sticker4.jpg
-    - assets/rewards/sticker5.jpg
-    - assets/rewards/sticker6.jpg
-    - assets/rewards/sticker7.jpg
-    - assets/rewards/sticker8.jpg
-    - assets/rewards/sticker9.jpg
-    - assets/rewards/sticker10.jpg
-    - assets/sounds/confetti.mp3
+   - assets/alphabet_images/a.png
+   - assets/alphabet_images/b.png
+   - assets/alphabet_images/c.png
+   - assets/alphabet_images/d.png
+   - assets/alphabet_images/e.png
+   - assets/alphabet_images/f.png
+   - assets/alphabet_images/g.png
+   - assets/alphabet_images/h.png
+   - assets/alphabet_images/i.png
+   - assets/alphabet_images/j.png
+   - assets/alphabet_images/k.png
+   - assets/alphabet_images/l.png
+   - assets/alphabet_images/m.png
+   - assets/alphabet_images/n.png
+   - assets/alphabet_images/o.png
+   - assets/alphabet_images/p.png
+   - assets/alphabet_images/q.png
+   - assets/alphabet_images/r.png
+   - assets/alphabet_images/s.png
+   - assets/alphabet_images/t.png
+   - assets/alphabet_images/u.png
+   - assets/alphabet_images/v.png
+   - assets/alphabet_images/w.png
+   - assets/alphabet_images/x.png
+   - assets/alphabet_images/y.png
+   - assets/alphabet_images/z.png
+   - assets/images/practice_background.png
+   - assets/images/close_icon.png
+   - assets/images/scenario_image.png
+   - assets/images/camera_icon.png
+   - assets/images/login_background.png
+   - assets/images/profile_picture.jpg
+   - assets/images/unit1.jpg
+   - assets/images/unit2.jpg
+   - assets/images/unit3.jpg
+   - assets/images/unit4.jpg
+   - assets/images/unit5.jpg
+   - assets/images/unit6.jpg
+   - assets/images/unit7.jpg
+   - assets/images/unit8.jpg
+   - assets/images/unit9.jpg
+   - assets/images/unit10.jpg
+   - assets/images/forgot_password.gif
+   - assets/images/signup_bg.jpg
+   - assets/images/avatar.gif
+   - assets/images/banner.png
+   - assets/images/developer1.jpg
+   - assets/images/developer2.jpg
+   - assets/images/developer3.jpg
+   - assets/images/splash_bg.png
+   - assets/icons/home_icon.png
+   - assets/icons/asl_alphabet_icon.png
+   - assets/icons/practice_icon.png
+   - assets/icons/leaderboard_icon.png
+   - assets/icons/profile_icon.png
+   - assets/icons/chest.png
+   - assets/icons/notification_icon.jpg
+   - assets/icons/google_logo.png
+   - assets/icons/fb_logo.png
+   - assets/rewards/sticker1.jpg
+   - assets/rewards/sticker2.jpg
+   - assets/rewards/sticker3.jpg
+   - assets/rewards/sticker4.jpg
+   - assets/rewards/sticker5.jpg
+   - assets/rewards/sticker6.jpg
+   - assets/rewards/sticker7.jpg
+   - assets/rewards/sticker8.jpg
+   - assets/rewards/sticker9.jpg
+   - assets/rewards/sticker10.jpg
+   - assets/sounds/confetti.mp3
+   - assets/avatars/default_avatar.jpg
+   - assets/avatars/avatar1.png
+   - assets/avatars/avatar2.png
+   - assets/avatars/avatar3.png
+   - assets/avatars/avatar4.png
+   - assets/avatars/avatar5.png
+
 
 flutter_icons:
   android: true

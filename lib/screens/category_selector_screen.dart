@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'main_screen.dart';
 
 class CategorySelectorScreen extends StatelessWidget {
-  CategorySelectorScreen({super.key});
-
   final List<Map<String, String>> modules = [
     {
       'title': 'Unit 1: Welcome',
@@ -57,154 +55,112 @@ class CategorySelectorScreen extends StatelessWidget {
     },
   ];
 
+  CategorySelectorScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Select a Module',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        backgroundColor: Colors.orange,
+        title: Center(
+          child: Text(
+            'Select Module',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
-        centerTitle: true,
-        backgroundColor: Color(0xffffa02f),
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: false, // Para walang back arrow
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
+            childAspectRatio: 3 / 4,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            childAspectRatio: 0.8,
           ),
           itemCount: modules.length,
           itemBuilder: (context, index) {
-            return ModuleBox(
-              title: modules[index]['title']!,
-              imagePath: modules[index]['image']!,
-              levelRange: modules[index]['levelRange']!,
+            final module = modules[index];
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MainScreen(category: module['title']!),
+                  ),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withAlpha((0.5 * 255).toInt()),
+                      spreadRadius: 2,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15),
+                      ),
+                      child: Image.asset(
+                        module['image']!,
+                        width: double.infinity,
+                        height: 120,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(15),
+                            bottomRight: Radius.circular(15),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              module['title']!,
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              module['levelRange']!,
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             );
           },
         ),
       ),
     );
-  }
-}
-
-class ModuleBox extends StatefulWidget {
-  final String title;
-  final String imagePath;
-  final String levelRange;
-
-  const ModuleBox({super.key, 
-    required this.title,
-    required this.imagePath,
-    required this.levelRange,
-  });
-
-  @override
-  State<ModuleBox> createState() => _ModuleBoxState();
-}
-
-class _ModuleBoxState extends State<ModuleBox>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _scaleAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 200),
-      vsync: this,
-      lowerBound: 0.9,
-      upperBound: 1.0,
-    );
-    _scaleAnimation =
-        CurvedAnimation(parent: _controller, curve: Curves.easeOut);
-  }
-
-  void _navigateToScreen(BuildContext context) {
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-          builder: (context) => MainScreen(category: widget.title)),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) => _controller.reverse(),
-      onTapUp: (_) {
-        _controller.forward();
-        Future.delayed(const Duration(milliseconds: 200),
-            () => _navigateToScreen(context));
-      },
-      onTapCancel: () => _controller.forward(),
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withAlpha((0.2 * 255).toInt()),
-                  blurRadius: 8,
-                  spreadRadius: 1),
-            ],
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15),
-                  topRight: Radius.circular(15),
-                ),
-                child: Image.asset(
-                  widget.imagePath,
-                  height: 100, // Adjusted height
-                  fit: BoxFit.cover,
-                ),
-              ),
-              const SizedBox(height: 15),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(
-                  widget.title,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 14,
-                      color: Colors.black),
-                ),
-              ),
-              const SizedBox(height: 4),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(
-                  widget.levelRange,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.normal,
-                      fontSize: 11,
-                      color: Colors.grey),
-                ),
-              ),
-              const SizedBox(height: 8), // Space para hindi dikit sa baba
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }

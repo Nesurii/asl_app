@@ -7,7 +7,7 @@ import 'profile_screen.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +40,8 @@ class AboutUsScreen extends StatelessWidget {
             ),
             const SizedBox(height: 15),
             const Text(
-              'This app is designed to help users learn and practice american sign language in a fun and interactive way. '
-              'With AI-powered recognition and guided exercises, mastering american sign language has never been easier!',
+              'This app is designed to help users learn and practice American Sign Language in a fun and interactive way. '
+              'With AI-powered recognition and guided exercises, mastering American Sign Language has never been easier!',
               textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 16),
             ),
@@ -77,15 +77,17 @@ class AboutUsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         iconSize: 30,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
         items: [
-          _buildNavItem('assets/icons/home_icon.png'),
-          _buildNavItem('assets/icons/asl_alphabet_icon.png'),
-          _buildNavItem('assets/icons/practice_icon.png'),
-          _buildNavItem('assets/icons/leaderboard_icon.png'),
-          _buildNavItem('assets/icons/profile_icon.png', isProfile: true),
+          _buildNavItem('assets/icons/home_icon.png', 'Home'),
+          _buildNavItem('assets/icons/asl_alphabet_icon.png', 'ASL Alphabet'),
+          _buildNavItem('assets/icons/practice_icon.png', 'Practice'),
+          _buildNavItem('assets/icons/leaderboard_icon.png', 'Leaderboard'),
+          _buildNavItem('assets/icons/profile_icon.png', 'Profile',
+              isProfile: true),
         ],
+        currentIndex: 4, // Profile tab highlighted
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.grey,
         onTap: (index) {
           _handleNavigation(context, index);
         },
@@ -125,19 +127,11 @@ class AboutUsScreen extends StatelessWidget {
     );
   }
 
-  BottomNavigationBarItem _buildNavItem(String assetPath,
+  BottomNavigationBarItem _buildNavItem(String assetPath, String label,
       {bool isProfile = false}) {
     return BottomNavigationBarItem(
-      icon: isProfile
-          ? Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.circular(10)),
-              child: Image.asset(assetPath, width: 30, height: 30),
-            )
-          : Image.asset(assetPath, width: 30, height: 30),
-      label: '',
+      icon: Image.asset(assetPath, width: 30, height: 30),
+      label: label,
     );
   }
 
@@ -147,7 +141,7 @@ class AboutUsScreen extends StatelessWidget {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (context) => MainScreen(category: 'Unit 1')));
+                builder: (context) => MainScreen(category: 'Unit 1: Welcome')));
         break;
       case 1:
         Navigator.pushReplacement(context,

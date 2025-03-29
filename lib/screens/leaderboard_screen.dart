@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'main_screen.dart';
 import 'asl_alphabet_screen.dart';
-import 'practice_screen.dart';
 import 'profile_screen.dart';
+import 'practice_screen.dart';
 
 class LeaderboardScreen extends StatelessWidget {
   const LeaderboardScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class LeaderboardScreen extends StatelessWidget {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => MainScreen(category: 'Unit 1'),
+                builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
               ),
             );
           },
@@ -99,47 +99,47 @@ class LeaderboardScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       iconSize: 30,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      items: <BottomNavigationBarItem>[
+      selectedItemColor: Colors.orange, // Highlight sa label lang
+      unselectedItemColor: Colors.grey, // Normal na kulay sa di-selected tabs
+      currentIndex: 3, // Set to leaderboard tab by default
+      items: [
         BottomNavigationBarItem(
           icon:
               Image.asset('assets/icons/home_icon.png', width: 30, height: 30),
-          label: '',
+          label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Image.asset('assets/icons/asl_alphabet_icon.png',
               width: 30, height: 30),
-          label: '',
+          label: 'ASL Alphabets',
         ),
         BottomNavigationBarItem(
           icon: Image.asset('assets/icons/practice_icon.png',
               width: 30, height: 30),
-          label: '',
+          label: 'Practice',
         ),
         BottomNavigationBarItem(
-          icon: Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-                color: Colors.orange, borderRadius: BorderRadius.circular(10)),
-            child: Image.asset('assets/icons/leaderboard_icon.png',
-                width: 30, height: 30),
-          ),
-          label: '',
+          icon: Image.asset('assets/icons/leaderboard_icon.png',
+              width: 30, height: 30),
+          label: 'Leaderboard',
         ),
         BottomNavigationBarItem(
           icon: Image.asset('assets/icons/profile_icon.png',
               width: 30, height: 30),
-          label: '',
+          label: 'Profile',
         ),
       ],
       onTap: (index) {
         switch (index) {
           case 0:
             Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => MainScreen(category: 'Unit 1')));
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainScreen(
+                    category:
+                        'Unit 1: Welcome'), // Palitan ang 'Unit: 1' ng tamang unit kung kailangan
+              ),
+            );
             break;
           case 1:
             Navigator.pushReplacement(context,
