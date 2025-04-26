@@ -3,13 +3,10 @@ import 'login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    // ignore: unused_local_variable
-    double buttonWidth = screenWidth * 0.6;
 
     return Scaffold(
       body: Stack(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mypod_flutter/widgets/video_player.dart';
 import 'dart:math';
+import '../services/quiz_progress.dart';
+import 'video_player_widget.dart';
 import 'main_screen.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 void main() {
   runApp(MaterialApp(home: Quiz1Screen()));
@@ -16,29 +18,34 @@ class Quiz1Screen extends StatefulWidget {
 
 class _Quiz1ScreenState extends State<Quiz1Screen> {
   int totalScore = 0;
+  final AudioPlayer player = AudioPlayer();
 
   final Map<String, String> correctMatches = {
     "Letter J":
-        "https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/dynamic_signs/J-gif.gif",
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/J-gif%20(1)%20(1).gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0otZ2lmICgxKSAoMSkuZ2lmIiwiaWF0IjoxNzQ0NzEzMjc0LCJleHAiOjE3NzYyNDkyNzR9.3mzzTaL5LE_6_KJ25fBCv109Q-trw_LAYxymYTnwtCg",
     "I’m fine":
-        "https://github.com/Nesurii/try/releases/download/new/i_m.fine.mp4",
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/i_m%20fine.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvaV9tIGZpbmUud2VibSIsImlhdCI6MTc0MzQyNTM1NSwiZXhwIjoxNzc0OTYxMzU1fQ.Umn3XD_69oi9u5wJYqA87ptchXkePGofiQeNgs5PJWs",
     "Good evening":
-        "https://github.com/Nesurii/try/releases/download/new/good.evening.mp4",
-    "Friend": "https://github.com/Nesurii/try/releases/download/new/friend.mp4",
-    "Want": "https://github.com/Nesurii/try/releases/download/new/want.mp4",
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/good%20evening.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvZ29vZCBldmVuaW5nLndlYm0iLCJpYXQiOjE3NDM0MjUxMDcsImV4cCI6MTc3NDk2MTEwN30.mOdu-1--zbs_NAaUbmD8NljeLVHwwd7F1GUiS96uGdA",
+    "Friend":
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/friend.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvZnJpZW5kLndlYm0iLCJpYXQiOjE3NDM0MzI2MjAsImV4cCI6MTc3NDk2ODYyMH0.zXV7n383AKR3BrTRSL8e-k70yng1D4DkRM1vpxWEIIg",
+    "Want":
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/want.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvd2FudC53ZWJtIiwiaWF0IjoxNzQzNDgyMzczLCJleHAiOjE3NzUwMTgzNzN9.BU-KyilvSg-dQ1UnTDctTwcDOLtQNUNhZujqu5eUnEY",
     "Introduce":
-        "https://github.com/Nesurii/try/releases/download/new/to.introduce.mp4",
-    "ASL": "https://github.com/Nesurii/try/releases/download/new/A.S.L.mp4",
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/to%20introduce.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvdG8gaW50cm9kdWNlLndlYm0iLCJpYXQiOjE3NDM0ODIyODIsImV4cCI6MTc3NTAxODI4Mn0.qYQAC0SqVXpdEPXNc2LPHe7dtiE41mc5vQBQsDUt_Zo",
+    "ASL":
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/ASL.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvQVNMLndlYm0iLCJpYXQiOjE3NDM0MzI1NDcsImV4cCI6MTc3NDk2ODU0N30.OVt-xyc1lQBdH3A3YztWNixLBOazlVwUFvzMFtTiuqg",
     "Goodbye":
-        "https://github.com/Nesurii/try/releases/download/new/Goodbye.mp4",
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%203/Goodbye.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDMvR29vZGJ5ZS53ZWJtIiwiaWF0IjoxNzQzNDMxNzMyLCJleHAiOjE3NzQ5Njc3MzJ9.2RfM5qMqulkT474Id3A9IVujErIcpjQg31M6ZiGCuHQ",
     "Letter F":
-        "https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/F.jpg"
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/F.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Yud2VicCIsImlhdCI6MTc0NDcxMzE5MywiZXhwIjoxNzc2MjQ5MTkzfQ.u8JqzRn91b_2Xu6cdKJgHqfz3nFKUJd7n22Zj-Ocuvg"
   };
 
   Map<String, String> userMatches = {};
   Map<String, Color> dropAreaColors = {};
   List<String> shuffledTexts = [];
   List<String> shuffledMediaUrls = [];
+  Set<String> usedTexts = {};
 
   int currentPage = 0;
   final List<List<String>> pages = [
@@ -95,7 +102,7 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
                 SizedBox(
                   width: 300,
                   child: LinearProgressIndicator(
-                    value: totalScore / 1000, // Normalized value (0 to 1)
+                    value: totalScore / 100, // Normalized value (0 to 1)
                     backgroundColor: Colors.grey[300],
                     color: Colors.blue,
                     minHeight: 10,
@@ -138,27 +145,6 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
               ],
             ),
           ),
-          // Floating Previous & Next Buttons remain fixed
-          Positioned(
-            bottom: 30,
-            left: 30,
-            child: currentPage > 0
-                ? CircleAvatar(
-                    backgroundColor: Colors.grey,
-                    radius: 25,
-                    child: IconButton(
-                      icon:
-                          Icon(Icons.arrow_back, size: 20, color: Colors.white),
-                      onPressed: () {
-                        setState(() {
-                          currentPage--;
-                          shuffleCurrentPage();
-                        });
-                      },
-                    ),
-                  )
-                : Container(),
-          ),
           Positioned(
             bottom: 30,
             right: 30,
@@ -192,7 +178,7 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
     );
   }
 
-  Widget buildMatchingSection(String text, String shuffledMedia) {
+Widget buildMatchingSection(String text, String shuffledMedia) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       padding: EdgeInsets.all(15),
@@ -213,59 +199,84 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
             children: [
               Expanded(
                 flex: 1,
-                child: Draggable<String>(
-                  data: text,
-                  feedback: Material(
-                    color: Colors.transparent,
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.black, width: 1),
+                child: usedTexts.contains(text)
+                    ? Container(
+                        padding: EdgeInsets.all(8),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.black, width: 1),
+                        ),
+                        child: Text(
+                          text,
+                          style: TextStyle(fontSize: 15, color: Colors.grey),
+                        ),
+                      )
+                    : Draggable<String>(
+                        data: text,
+                        feedback: Material(
+                          color: Colors.transparent,
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: Colors.black, width: 1),
+                            ),
+                            child: Text(text,
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.black)),
+                          ),
+                        ),
+                        childWhenDragging: Opacity(
+                          opacity: 0.5,
+                          child: Text(text, style: TextStyle(fontSize: 18)),
+                        ),
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: Colors.black, width: 1),
+                          ),
+                          child: Text(
+                            text,
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ),
                       ),
-                      child: Text(text,
-                          style: TextStyle(fontSize: 18, color: Colors.black)),
-                    ),
-                  ),
-                  childWhenDragging: Opacity(
-                    opacity: 0.5,
-                    child: Text(text, style: TextStyle(fontSize: 18)),
-                  ),
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.black, width: 1),
-                    ),
-                    child: Text(
-                      text,
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                  ),
-                ),
               ),
               SizedBox(width: 15),
               Expanded(
                 flex: 1,
                 child: DragTarget<String>(
-                  onWillAcceptWithDetails: (receivedText) =>
-                      correctMatches.containsKey(receivedText.data),
-                  onAcceptWithDetails: (receivedText) {
+                  onWillAcceptWithDetails: (DragTargetDetails<String> details) {
+                    return correctMatches.containsKey(details.data);
+                  },
+                  onAcceptWithDetails: (DragTargetDetails<String> details) async {
+                    final receivedText = details.data;
                     setState(() {
-                      if (correctMatches[receivedText.data] == shuffledMedia) {
+                      usedTexts.add(receivedText); // prevent future drags
+
+                      if (correctMatches[receivedText] == shuffledMedia) {
                         userMatches[text] = shuffledMedia;
-                        dropAreaColors[text] = Colors.green; // Correct match
+                        dropAreaColors[text] = Colors.green;
                         totalScore += 10;
                       } else {
                         dropAreaColors[text] = Colors.red;
                       }
                     });
+
+                    if (correctMatches[receivedText] == shuffledMedia) {
+                      await player.play(AssetSource('sounds/correct.mp3'));
+                    } else {
+                      await player.play(AssetSource('sounds/wrong.mp3'));
+                    }
                   },
                   builder: (context, accepted, rejected) {
                     return Container(
@@ -288,7 +299,7 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
   }
 
   Widget getMediaWidget(String mediaUrl) {
-    if (mediaUrl.endsWith(".mp4")) {
+    if (mediaUrl.contains("webm")) {
       return CustomVideoPlayer(videoUrl: mediaUrl);
     } else {
       return GestureDetector(
@@ -328,27 +339,42 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
   final TextEditingController answerController = TextEditingController();
   bool answered = false;
   bool isCorrect = false;
+  late AudioPlayer player;
 
   @override
   void initState() {
     super.initState();
     totalScore = widget.totalScore;
+    player = AudioPlayer(); // Initialize the audio player
   }
 
-  void checkAnswer() {
-    String correctAnswer = "hi! nice to meet you, my name is judith";
+  Future<void> checkAnswer() async {
+    List<String> correctAnswers = [
+      "hi! nice to meet you, my name is judith",
+      "hi nice to meet you my name is judith",
+    ];
+
     String userAnswer = answerController.text.trim().toLowerCase();
 
     setState(() {
       answered = true;
-      if (userAnswer == correctAnswer) {
-        isCorrect = true;
+      isCorrect = correctAnswers.contains(userAnswer);
+      if (isCorrect) {
         totalScore += 10;
-      } else {
-        isCorrect = false;
       }
     });
 
+    try {
+      if (isCorrect) {
+        await player.play(AssetSource('sounds/correct.mp3'));
+      } else {
+        await player.play(AssetSource('sounds/wrong.mp3'));
+      }
+    } catch (e) {
+      debugPrint("Error playing sound: $e");
+    }
+
+    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(isCorrect ? "Correct!" : "Incorrect! Try again."),
@@ -359,11 +385,30 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
   }
 
   @override
+  void dispose() {
+    player.dispose(); // Dispose of audio player
+    answerController.dispose(); // Dispose of text controller
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Quiz 1',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+            leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
+              ),
+              (Route<dynamic> route) => false,
+            );
+          },
+        ),
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.orange,
       ),
@@ -375,7 +420,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               SizedBox(
                 width: 300,
                 child: LinearProgressIndicator(
-                  value: totalScore / 1000,
+                  value: totalScore / 100,
                   backgroundColor: Colors.grey[300],
                   color: Colors.blue,
                   minHeight: 10,
@@ -389,7 +434,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
                     fontWeight: FontWeight.bold,
                     color: Colors.black),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 45),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
@@ -411,13 +456,13 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 30),
+              SizedBox(height: 60),
               Text('Identify what the sign is in the video below:',
-                  style: TextStyle(fontSize: 15)),
-              SizedBox(height: 20),
+                  style: TextStyle(fontSize: 15), textAlign: TextAlign.center),
+              SizedBox(height: 30),
               CustomVideoPlayer(
                 videoUrl:
-                    "https://github.com/Nesurii/try/releases/download/new/My.name.is.judith.mp4",
+                    "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Hi,%20nice%20to%20meet%20you.%20My%20name%20is%20Judith.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvSGksIG5pY2UgdG8gbWVldCB5b3UuIE15IG5hbWUgaXMgSnVkaXRoLndlYm0iLCJpYXQiOjE3NDQ3OTk5OTksImV4cCI6MTc3NjMzNTk5OX0.5Jmh3RpK1ayAztGmxrICrojBlU20f5_gAcW-dGRNv_g",
               ),
               SizedBox(height: 20),
               SizedBox(
@@ -444,22 +489,6 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
           ),
           Positioned(
             bottom: 30,
-            left: 30,
-            child: Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.grey,
-                shape: BoxShape.circle,
-              ),
-              child: IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.white),
-                onPressed: () => Navigator.pop(context),
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 30,
             right: 30,
             child: Container(
               width: 50,
@@ -470,15 +499,23 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               ),
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, color: Colors.white),
-                onPressed: () {
+                onPressed: () async {
+                  final currentContext = context;
+
                   Navigator.pushReplacement(
-                    context,
+                    currentContext,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          MainScreen(category: 'Unit 1: Welcome'),
+                      builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
                     ),
                   );
+
+                  // update quiz score
+                  await updateQuiz(
+                    quizNumber: 1,
+                    totalScore: totalScore,
+                  );
                 },
+
               ),
             ),
           ),
@@ -486,4 +523,5 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
       ),
     );
   }
+  
 }

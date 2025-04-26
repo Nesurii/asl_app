@@ -3,14 +3,19 @@ import 'main_screen.dart';
 import 'asl_alphabet_screen.dart';
 import 'leaderboard_screen.dart';
 import 'profile_screen.dart';
-import 'lesson1practice_screen.dart';
-import 'lesson2practice_screen.dart';
-import 'lesson3practice_screen.dart';
-import 'lesson4practice_screen.dart';
+import 'unit1practice_screen.dart';
+import 'unit2practice_screen.dart';
+import 'unit3practice_screen.dart';
+import 'unit4practice_screen.dart';
+import 'unit5practice_screen.dart';
+import 'unit6practice_screen.dart';
+import 'unit7practice_screen.dart';
+import 'unit8practice_screen.dart';
+import 'unit9practice_screen.dart';
+import 'unit10practice_screen.dart';
 
 class PracticeScreen extends StatefulWidget {
   const PracticeScreen({super.key});
-  
 
   @override
   State<PracticeScreen> createState() => _PracticeScreenState();
@@ -20,6 +25,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
   int _currentIndex = 2;
 
   void _onTabTapped(int index) {
+    if (index == _currentIndex) return;
     setState(() {
       _currentIndex = index;
     });
@@ -60,94 +66,83 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.orange,
-          title: Text('Practice',
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
-                ),
-              );
-            },
-          ),
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(60),
-            child: TabBar(
-              labelStyle: TextStyle(fontWeight: FontWeight.bold),
-              labelColor: Colors.black,
-              tabs: [
-                Tab(text: "1-10"),
-                Tab(text: "11-20"),
-                Tab(text: "21-30"),
-                Tab(text: "31-40"),
-              ],
-            ),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: Text('Practice',
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
+              ),
+            );
+          },
         ),
-        body: TabBarView(
-          children: List.generate(4, (tabIndex) {
-            int startLesson = tabIndex * 10 + 1;
-            //int endLesson = startLesson + 9;
-            return ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                int lessonNumber = startLesson + index;
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(vertical: 20.0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                    ),
-                    onPressed: () {
-                      // Navigate directly to the corresponding lesson screen
-                      if (lessonNumber == 1) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Lesson1PracticeScreen()),
-                        );
-                      } else if (lessonNumber == 2) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Lesson2PracticeScreen()),
-                        );
-                      } else if (lessonNumber == 3) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Lesson3PracticeScreen()),
-                        );
-                      } else if (lessonNumber == 4) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Lesson4PracticeScreen()),
-                        );
-                      }
-                      // Add additional cases for other lessons
-                    },
-                    child: Text("Lesson $lessonNumber: Practice",
-                        style: TextStyle(fontSize: 18.0, color: Colors.black)),
-                  ),
+      ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          int lessonNumber = index + 1;
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(vertical: 20.0),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+              ),
+              onPressed: () {
+                Widget screen;
+                switch (lessonNumber) {
+                  case 1:
+                    screen = Unit1PracticeScreen();
+                    break;
+                  case 2:
+                    screen = Unit2PracticeScreen();
+                    break;
+                  case 3:
+                    screen = Unit3PracticeScreen();
+                    break;
+                  case 4:
+                    screen = Unit4PracticeScreen();
+                    break;
+                  case 5:
+                    screen = Unit5PracticeScreen();
+                    break;
+                  case 6:
+                    screen = Unit6PracticeScreen();
+                    break;
+                  case 7:
+                    screen = Unit7PracticeScreen();
+                    break;
+                  case 8:
+                    screen = Unit8PracticeScreen();
+                    break;
+                  case 9:
+                    screen = Unit9PracticeScreen();
+                    break;
+                  case 10:
+                    screen = Unit10PracticeScreen();
+                    break;
+                  default:
+                    return;
+                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => screen),
                 );
               },
-            );
-          }),
-        ),
-        bottomNavigationBar: _buildBottomNav(),
+              child: Text("Unit $lessonNumber: Practice",
+                  style: TextStyle(fontSize: 18.0, color: Colors.black)),
+            ),
+          );
+        },
       ),
+      bottomNavigationBar: _buildBottomNav(),
     );
   }
 

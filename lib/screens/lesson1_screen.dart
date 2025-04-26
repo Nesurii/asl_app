@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
+
+import '../services/exp_progress.dart';
+import '../services/lesson_progress';
+
+//import '../services/current_user.dart';
 
 class Lesson1Screen extends StatefulWidget {
   const Lesson1Screen({super.key});
@@ -10,6 +16,9 @@ class Lesson1Screen extends StatefulWidget {
 class _Lesson1ScreenState extends State<Lesson1Screen> {
   int currentIndex = 0;
   int totalScore = 0;
+  //int lessonCompleted = 0;
+  final PageController _pageController = PageController();
+  final AudioPlayer player = AudioPlayer();
 
   final Map<int, bool> _isZoomed = {};
 
@@ -20,7 +29,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
     {
       'title': 'Sign Space',
       'image':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/ASL%20Sign%20Space.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0FTTCBTaWduIFNwYWNlLnBuZyIsImlhdCI6MTc0MjQ1MzUzNSwiZXhwIjoxOTAwMTMzNTM1fQ.aTDiOOmJYA9nYr30nMAgmr7f5fI47Mi_KjTyXbudrEM' // Replace with your Supabase image URL
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/ASL%20Sign%20Space%20(1).webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0FTTCBTaWduIFNwYWNlICgxKS53ZWJwIiwiaWF0IjoxNzQ1MzE2MTMzLCJleHAiOjE3NzY4NTIxMzN9.spK6yoCnJhNu2oYi-YPkyPmhQPhb-VcJ-2-DIBbNzfo' // Replace with your Supabase image URL
     },
     {
       'title': 'Alphabet Overview',
@@ -29,38 +38,38 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
       'title': 'Vowels',
       'content': "These are the 5 Vowels:",
       'images': [
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/A.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/E.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/I.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/O_sideview.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/U.jpg',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/A.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Eud2VicCIsImlhdCI6MTc0NDcxMzA4NiwiZXhwIjoxNzc2MjQ5MDg2fQ.xd___ael5CLmT3P0pCjWR8Xv0joSUUvs_3SSHlNSkn8',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/E.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Uud2VicCIsImlhdCI6MTc0NDcxMzE3NCwiZXhwIjoxNzc2MjQ5MTc0fQ.y75LdA_1qe3p0BWshTue5mzyc9kmg5lgcf5wZhYyqw4',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/I.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0kud2VicCIsImlhdCI6MTc0NDcxMzI1NCwiZXhwIjoxNzc2MjQ5MjU0fQ.fZ8oIPti5Ux8dvvhCVyma0cxrrXLHf9J9RISDihidoA',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/O%20side%20view.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL08gc2lkZSB2aWV3LndlYnAiLCJpYXQiOjE3NDQ3MTMzNzQsImV4cCI6MTc3NjI0OTM3NH0.wJ4RofmQ5ruKNS2RLBzUxJvUBES5-uUfVZNOi4mZ2eM',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/U.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1Uud2VicCIsImlhdCI6MTc0NDcxMzQ3NSwiZXhwIjoxNzc2MjQ5NDc1fQ.jXslrEaH-h5RmQksek92NWYNUF5bFo_jUdqzfkFdAAk',
       ],
     },
     {
       'title': 'Consonants',
       'content': "These are the 21 Consonants:",
       'images': [
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/B.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/C.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/D.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/F.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/G.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/H.jpg',
-        'https://github.com/Nesurii/try/releases/download/alphabet/J-gif.1.gif',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/K.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/L.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/M.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/N.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/P_sideview.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/Q_sideview.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/R.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/S.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/T.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/V.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/W.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/X.jpg',
-        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/Y.jpg',
-        'https://github.com/Nesurii/try/releases/download/alphabet/Z-gif.1.gif',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/B.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Iud2VicCIsImlhdCI6MTc0NDcxMzExMywiZXhwIjoxNzc2MjQ5MTEzfQ.PTObYkVLeX-UnKiYrdT7G0PXmInPg7aYMjwBbb1nXsQ',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/C.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Mud2VicCIsImlhdCI6MTc0NDcxMzEzNCwiZXhwIjoxNzc2MjQ5MTM0fQ.L_DCRULZ3cfS_3cpMNF1mNcZFL7x1W6onPLWFpT2E6c',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/D.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Qud2VicCIsImlhdCI6MTc0NDcxMzE1OSwiZXhwIjoxNzc2MjQ5MTU5fQ.9RFt4sDnPeookS3Igy8mqsoC8VRuCtB_ptwrhtUleaA',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/F.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Yud2VicCIsImlhdCI6MTc0NDcxMzE5MywiZXhwIjoxNzc2MjQ5MTkzfQ.u8JqzRn91b_2Xu6cdKJgHqfz3nFKUJd7n22Zj-Ocuvg',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/G.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0cud2VicCIsImlhdCI6MTc0NDcxMzIwOSwiZXhwIjoxNzc2MjQ5MjA5fQ.oylkoo7uvXMzNfb6BOH8fMXTlMEvJrz0hvUMX8DGaA8',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/H.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0gud2VicCIsImlhdCI6MTc0NDcxMzIyNSwiZXhwIjoxNzc2MjQ5MjI1fQ.5UsZADzXAXVv_0zYyr9VVBoW3VGZaiw3f-yDvGlHqUs',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/J-gif%20(1)%20(1).gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0otZ2lmICgxKSAoMSkuZ2lmIiwiaWF0IjoxNzQ0NzEzMjc0LCJleHAiOjE3NzYyNDkyNzR9.3mzzTaL5LE_6_KJ25fBCv109Q-trw_LAYxymYTnwtCg',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/K.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0sud2VicCIsImlhdCI6MTc0NDcxMzI5MywiZXhwIjoxNzc2MjQ5MjkzfQ.IfTkBmg5HF2_xc_P536Uj4E81lyqGXfdiIli6dmREDc',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/L.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0wud2VicCIsImlhdCI6MTc0NDcxMzMxNywiZXhwIjoxNzc2MjQ5MzE3fQ.uHLfQmydh7lGnHMKQwV8QXtRvmpbJ7PRMXjYOCr7nr8',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/M.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL00ud2VicCIsImlhdCI6MTc0NDcxMzMzMCwiZXhwIjoxNzc2MjQ5MzMwfQ.Y2gqLhKrO6gjeKre2IZqZiubyt4SnoXqRGyCpmLBSLo',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/N.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL04ud2VicCIsImlhdCI6MTc0NDcxMzM1NSwiZXhwIjoxNzc2MjQ5MzU1fQ.6BG4xG4QszFpNBQaSyaaQmaC_CLXg4aQAthRPIjoc3k',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/Pside%20view.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1BzaWRlIHZpZXcud2VicCIsImlhdCI6MTc0NDcxMzM5MSwiZXhwIjoxNzc2MjQ5MzkxfQ.Iv8FzwL9ueu6Zoqhqc3-aUU3WVIbRp53FRaLtPXDNUY',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/Q%20side%20view.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1Egc2lkZSB2aWV3LndlYnAiLCJpYXQiOjE3NDQ3MTM0MTIsImV4cCI6MTc3NjI0OTQxMn0.8CifU32uknYo5F6V42TjRDuTKZxwDIM2_Qsp85nRtxY',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/R.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1Iud2VicCIsImlhdCI6MTc0NDcxMzQzMCwiZXhwIjoxNzc2MjQ5NDMwfQ.v1W1HQkjeyBS_ZqpyhXX3w-megLWMdoMH5ouN1s5U8s',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/S.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1Mud2VicCIsImlhdCI6MTc0NDcxMzQ0NSwiZXhwIjoxNzc2MjQ5NDQ1fQ.VSp37g8YE11KZS5qbhH6OX8Iy5srL63dQecRV3e5cuA',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/T.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1Qud2VicCIsImlhdCI6MTc0NDcxMzQ2MCwiZXhwIjoxNzc2MjQ5NDYwfQ.vGLdKU5Mwq-8fP3qPck7Ej9CxBH1NPIMgGVwbiPp6Y0',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/V.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1Yud2VicCIsImlhdCI6MTc0NDcxMzQ4OCwiZXhwIjoxNzc2MjQ5NDg4fQ.Q4S0aaz8lDvxiqoFtn2RB-1zItUkoGAG7n2zOVCZW8I',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/W.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1cud2VicCIsImlhdCI6MTc0NDcxMzUwNiwiZXhwIjoxNzc2MjQ5NTA2fQ.geG_7HzX1lMcLX-kEXZD6tcwZUTzPfxAuG0fd4iQeKs',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/X.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1gud2VicCIsImlhdCI6MTc0NDcxMzUyMSwiZXhwIjoxNzc2MjQ5NTIxfQ.HRFcF1aZIQZg5X1eV78bqfeRRGuf-zI7sxgk2dpuCYE',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/Y.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1kud2VicCIsImlhdCI6MTc0NDcxMzUzNSwiZXhwIjoxNzc2MjQ5NTM1fQ.jt_qgyVtz419gi9z_tCwALCISbvNLUDXgq-HRvDR--o',
+        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/Z-gif%20(1)%20(1).gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1otZ2lmICgxKSAoMSkuZ2lmIiwiaWF0IjoxNzQ0NzEzNTUwLCJleHAiOjE3NzYyNDk1NTB9.PgMdj12vZhFylwbG_5ry3gAZKL49EPY_DkW8KVr4L70',
       ]
     },
     {
@@ -81,17 +90,21 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
 
   void nextPage() {
     if (currentIndex < lessonSections.length - 1) {
-      setState(() {
-        currentIndex++;
-      });
+      _pageController.animateToPage(
+        currentIndex + 1,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
     }
   }
 
   void previousPage() {
     if (currentIndex > 0) {
-      setState(() {
-        currentIndex--;
-      });
+      _pageController.animateToPage(
+        currentIndex - 1,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
     }
   }
 
@@ -207,7 +220,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color:Colors.black,
+                                          color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
@@ -222,7 +235,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color:Colors.black,
+                                          color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
@@ -423,7 +436,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color:Colors.black,
+                                          color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
@@ -431,7 +444,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold,
-                                          color:Colors.black,
+                                          color: Colors.black,
                                         ),
                                       ),
                                       TextSpan(
@@ -449,6 +462,8 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                               ],
                             );
                           case 'Lesson Completed!':
+                            // lessonCompleted += 1;
+                            // currentUserData.updateProgressField('lessons_completed', lessonCompleted);
                             return Column(
                               children: [
                                 Text(
@@ -461,21 +476,22 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                 ),
                               ],
                             );
+                          
                           case 'Activity 1':
                             int selectedAnswer1 = -1;
                             int selectedAnswer2 = -1;
                             int selectedAnswer3 = -1;
 
-                            int correctAnswer1 = 1; // Static ang tamang sagot
-                            int correctAnswer2 = 3; // Z ang tamang sagot
-                            int correctAnswer3 = 2; // M ang tamang sagot
+                            int correctAnswer1 = 1;
+                            int correctAnswer2 = 3;
+                            int correctAnswer3 = 2;
 
                             bool answeredQuestion1 = false;
                             bool answeredQuestion2 = false;
                             bool answeredQuestion3 = false;
 
                             double progress = 0.0;
-                            int maxPoints = 1000; // Maximum score possible
+                            int maxPoints = 100; // Maximum score possible
 
                             return StatefulBuilder(
                               builder:
@@ -501,34 +517,40 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                   return Colors.white; // Default button color
                                 }
 
-                                void checkAnswer(
-                                    int questionNumber, int selectedAnswer) {
+                                void checkAnswer(int questionNumber,
+                                    int selectedAnswer) async {
+                                  bool isCorrect = false;
+
                                   if (questionNumber == 1 &&
                                       !answeredQuestion1) {
                                     selectedAnswer1 = selectedAnswer;
-                                    if (selectedAnswer1 == correctAnswer1) {
-                                      totalScore += 10;
-                                      progress = totalScore /
-                                          maxPoints; // Update progress bar calculation
-                                    }
+                                    isCorrect =
+                                        selectedAnswer1 == correctAnswer1;
                                     answeredQuestion1 = true;
                                   } else if (questionNumber == 2 &&
                                       !answeredQuestion2) {
                                     selectedAnswer2 = selectedAnswer;
-                                    if (selectedAnswer2 == correctAnswer2) {
-                                      totalScore += 10;
-                                      progress = totalScore / maxPoints;
-                                    }
+                                    isCorrect =
+                                        selectedAnswer2 == correctAnswer2;
                                     answeredQuestion2 = true;
                                   } else if (questionNumber == 3 &&
                                       !answeredQuestion3) {
                                     selectedAnswer3 = selectedAnswer;
-                                    if (selectedAnswer3 == correctAnswer3) {
-                                      totalScore += 10;
-                                      progress = totalScore / maxPoints;
-                                    }
+                                    isCorrect =
+                                        selectedAnswer3 == correctAnswer3;
                                     answeredQuestion3 = true;
                                   }
+
+                                  if (isCorrect) {
+                                    totalScore += 10;
+                                    await player.play(
+                                        AssetSource('sounds/correct.mp3'));
+                                  } else {
+                                    await player
+                                        .play(AssetSource('sounds/wrong.mp3'));
+                                  }
+
+                                  progress = totalScore / maxPoints;
                                   setState(() {});
                                 }
 
@@ -560,6 +582,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                     // Question 1
                                     Text(
                                         '1. Identify if the letter is static or dynamic',
+                                        textAlign: TextAlign.justify,
                                         style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold)),
@@ -573,7 +596,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Image.network(
-                                        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/N.jpg',
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/N.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL04ud2VicCIsImlhdCI6MTc0NDcxMzM1NSwiZXhwIjoxNzc2MjQ5MzU1fQ.6BG4xG4QszFpNBQaSyaaQmaC_CLXg4aQAthRPIjoc3k',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -622,6 +645,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                     // Question 2
                                     Text(
                                         '2. What letter is shown in the image below?',
+                                        textAlign: TextAlign.justify,
                                         style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold)),
@@ -635,7 +659,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Image.network(
-                                        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/dynamic_signs/Z-gif.gif',
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/Z-gif%20(1)%20(1).gif?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1otZ2lmICgxKSAoMSkuZ2lmIiwiaWF0IjoxNzQ0NzEzNTUwLCJleHAiOjE3NzYyNDk1NTB9.PgMdj12vZhFylwbG_5ry3gAZKL49EPY_DkW8KVr4L70',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -701,6 +725,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                     // Question 3
                                     Text(
                                         '3. What letter is shown in the image below?',
+                                        textAlign: TextAlign.justify,
                                         style: TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold)),
@@ -714,7 +739,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Image.network(
-                                        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/M.jpg',
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/M.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL00ud2VicCIsImlhdCI6MTc0NDcxMzMzMCwiZXhwIjoxNzc2MjQ5MzMwfQ.Y2gqLhKrO6gjeKre2IZqZiubyt4SnoXqRGyCpmLBSLo',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -782,7 +807,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                             );
                           case 'Activity 2':
                             double progress =
-                                totalScore / 1000; // Update progress
+                                totalScore / 100; // Update progress
 
                             bool answered1 = false;
                             bool answered2 = false;
@@ -794,7 +819,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                             TextEditingController answerController2 =
                                 TextEditingController();
 
-                            void checkAnswer1(StateSetter setState) {
+                            void checkAnswer1(StateSetter setState) async {
                               if (!answered1) {
                                 isCorrect1 = answerController1.text
                                         .trim()
@@ -802,18 +827,21 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                     'y';
 
                                 if (isCorrect1) {
-                                  totalScore +=
-                                      10; // Add 10 points if the answer is correct
-                                  progress =
-                                      totalScore / 1000; // Update progress bar
+                                  totalScore += 10;
+                                  progress = totalScore / 100;
+                                  await player
+                                      .play(AssetSource('sounds/correct.mp3'));
+                                } else {
+                                  await player
+                                      .play(AssetSource('sounds/wrong.mp3'));
                                 }
 
                                 answered1 = true;
-                                setState(() {}); // Update UI
+                                setState(() {});
                               }
                             }
 
-                            void checkAnswer2(StateSetter setState) {
+                            void checkAnswer2(StateSetter setState) async {
                               if (!answered2) {
                                 isCorrect2 = answerController2.text
                                         .trim()
@@ -821,14 +849,17 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                     'd';
 
                                 if (isCorrect2) {
-                                  totalScore +=
-                                      10; // Add 10 points if the answer is correct
-                                  progress =
-                                      totalScore / 1000; // Update progress bar
+                                  totalScore += 10;
+                                  progress = totalScore / 100;
+                                  await player
+                                      .play(AssetSource('sounds/correct.mp3'));
+                                } else {
+                                  await player
+                                      .play(AssetSource('sounds/wrong.mp3'));
                                 }
 
                                 answered2 = true;
-                                setState(() {}); // Update UI
+                                setState(() {});
                               }
                             }
 
@@ -883,7 +914,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Image.network(
-                                        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/Y.jpg',
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/Y.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL1kud2VicCIsImlhdCI6MTc0NDcxMzUzNSwiZXhwIjoxNzc2MjQ5NTM1fQ.jt_qgyVtz419gi9z_tCwALCISbvNLUDXgq-HRvDR--o',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -931,7 +962,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Image.network(
-                                        'https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/D.jpg',
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/D.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL0Qud2VicCIsImlhdCI6MTc0NDcxMzE1OSwiZXhwIjoxNzc2MjQ5MTU5fQ.9RFt4sDnPeookS3Igy8mqsoC8VRuCtB_ptwrhtUleaA',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -982,36 +1013,55 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                 ),
               ),
             ),
-            Row(
+           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Previous Button
-                ElevatedButton(
-                  onPressed: currentIndex > 0
-                      ? previousPage
-                      : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey,
-                    side: BorderSide(color: Colors.black, width: 1),
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  ), // Disabled if at the first section
-                  child: Text(
-                    'Previous',
-                    style: TextStyle(color: Colors.black),
-                  ),
-                ),
+                // Conditionally render the Previous button
+                if (currentIndex > 0 &&
+                    currentIndex < lessonSections.length - 2)
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        currentIndex--;
+                      });
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey,
+                      side: BorderSide(color: Colors.black, width: 1),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    ),
+                    child: Text(
+                      'Previous',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  )
+                else
+                  SizedBox(
+                      width: 120), // Placeholder to maintain spacing if needed
 
-                // Next Button
+                // Next or Finish Button
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (currentIndex < lessonSections.length - 1) {
-                      // Proceed to next activity if it's not the last one
                       setState(() {
                         currentIndex++;
                       });
                     } else {
-                      // If it's the last activity (Activity 2), return to Main Screen
-                      Navigator.pop(context);
+                      // final lessonManager = LessonManager();
+                      // final lessonId = await lessonManager.getCurrentLessonId();
+
+                      //if (lessonId != null) {
+                        final expManager = ExpManager();
+                        await expManager.addExp(
+                          totalScore);
+                          //lessonId: lessonId,
+                        //);
+                      //}
+
+                      if (context.mounted) {
+                        Navigator.pop(context);
+                      }
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -1027,7 +1077,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                   ),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

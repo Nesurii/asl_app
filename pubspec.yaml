@@ -25,6 +25,13 @@ dependencies:
 
   supabase_flutter: ^2.8.4
   flutter_facebook_auth: ^7.1.1
+  cached_network_image: ^3.4.1
+  flutter_cache_manager: ^3.4.1
+  flutter_blurhash: ^0.8.2
+  flutter_riverpod: ^2.6.1
+  provider: ^6.1.4
+  shared_preferences: ^2.2.2
+
 
 
 dev_dependencies:
@@ -41,32 +48,36 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-   - assets/alphabet_images/a.png
-   - assets/alphabet_images/b.png
-   - assets/alphabet_images/c.png
-   - assets/alphabet_images/d.png
-   - assets/alphabet_images/e.png
-   - assets/alphabet_images/f.png
-   - assets/alphabet_images/g.png
-   - assets/alphabet_images/h.png
-   - assets/alphabet_images/i.png
-   - assets/alphabet_images/j.png
-   - assets/alphabet_images/k.png
-   - assets/alphabet_images/l.png
-   - assets/alphabet_images/m.png
-   - assets/alphabet_images/n.png
-   - assets/alphabet_images/o.png
-   - assets/alphabet_images/p.png
-   - assets/alphabet_images/q.png
-   - assets/alphabet_images/r.png
-   - assets/alphabet_images/s.png
-   - assets/alphabet_images/t.png
-   - assets/alphabet_images/u.png
-   - assets/alphabet_images/v.png
-   - assets/alphabet_images/w.png
-   - assets/alphabet_images/x.png
-   - assets/alphabet_images/y.png
-   - assets/alphabet_images/z.png
+   - assets/images/rank1.jpg
+   - assets/images/bg.jpg
+   - assets/sounds/correct.mp3
+   - assets/sounds/wrong.mp3
+   - assets/alphabet_images/a.jpg
+   - assets/alphabet_images/b.jpg
+   - assets/alphabet_images/c.jpg
+   - assets/alphabet_images/d.jpg
+   - assets/alphabet_images/e.jpg
+   - assets/alphabet_images/f.jpg
+   - assets/alphabet_images/g.jpg
+   - assets/alphabet_images/h.jpg
+   - assets/alphabet_images/i.jpg
+   - assets/alphabet_images/j.jpg
+   - assets/alphabet_images/k.jpg
+   - assets/alphabet_images/l.jpg
+   - assets/alphabet_images/m.jpg
+   - assets/alphabet_images/n.jpg
+   - assets/alphabet_images/o.jpg
+   - assets/alphabet_images/p.jpg
+   - assets/alphabet_images/q.jpg
+   - assets/alphabet_images/r.jpg
+   - assets/alphabet_images/s.jpg
+   - assets/alphabet_images/t.jpg
+   - assets/alphabet_images/u.jpg
+   - assets/alphabet_images/v.jpg
+   - assets/alphabet_images/w.jpg
+   - assets/alphabet_images/x.jpg
+   - assets/alphabet_images/y.jpg
+   - assets/alphabet_images/z.jpg
    - assets/images/practice_background.png
    - assets/images/close_icon.png
    - assets/images/scenario_image.png
@@ -111,12 +122,13 @@ flutter:
    - assets/rewards/sticker9.jpg
    - assets/rewards/sticker10.jpg
    - assets/sounds/confetti.mp3
-   - assets/avatars/default_avatar.jpg
    - assets/avatars/avatar1.png
    - assets/avatars/avatar2.png
    - assets/avatars/avatar3.png
    - assets/avatars/avatar4.png
    - assets/avatars/avatar5.png
+   - assets/avatars/avatar6.png
+   - assets/images/International_Symbol_for _Deafness.png
 
 
 flutter_icons:

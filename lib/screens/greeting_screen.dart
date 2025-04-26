@@ -7,7 +7,7 @@ class GreetingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffffffff),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,14 +30,11 @@ class GreetingScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 5),
 
-            Image.asset(
-              'assets/images/avatar.gif',
-              width: 150,
-              height: 150,
-            ),
-            SizedBox(height: 30),
+            Image.asset('assets/images/avatar.gif',
+                width: 200, fit: BoxFit.contain),
+            SizedBox(height: 5),
 
             ElevatedButton(
               onPressed: () {

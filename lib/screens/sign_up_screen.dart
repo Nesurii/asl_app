@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mypod_flutter/screens/greeting_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../services/current_user.dart';
+
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 
@@ -62,6 +64,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
       'password': _passwordController.text,
       'username': _emailController.text.split('@')[0], // Default username
     });
+
+    // Fetch the inserted user data
+    final userData = await supabase
+        .from('user_account')
+        .select()
+        .eq('id', userId)
+        .single(); // get single user
+
+    // Save user data in Provider
+    currentUserData.setAccountData(userData);
+
+    // Fetch progress data
+      final progressData = await supabase
+          .from('user_progress')
+          .select()
+          .eq('user_id', user.id) // or whatever your foreign key column is
+          .maybeSingle(); // in case wala pang progress
+
+      if (progressData != null) {
+        currentUserData.setProgressData(progressData);
+      }
 
     log("User registered and data saved!");
     if (!mounted) return;

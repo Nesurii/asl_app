@@ -9,6 +9,34 @@ class LeaderboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Fetch this list from Supabase and sort by points DESC
+    final List<Map<String, dynamic>> leaderboard = [
+      {
+        'name': 'Rank 1 User',
+        'points': 1500,
+        'avatar': Icons.person,
+      },
+      {
+        'name': 'Rank 2 User',
+        'points': 1400,
+        'avatar': Icons.person,
+      },
+      {
+        'name': 'Rank 3 User',
+        'points': 1350,
+        'avatar': Icons.person,
+      },
+      {
+        'name': 'Rank 4 User',
+        'points': 1200,
+        'avatar': Icons.person,
+      },
+      // Add dummy entries until rank 10
+    ];
+
+    final topUser = leaderboard[0];
+    final otherUsers = leaderboard.sublist(1, leaderboard.length);
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -22,143 +50,226 @@ class LeaderboardScreen extends StatelessWidget {
             );
           },
         ),
-        title: Text('Leaderboard',
+        title: const Text('Leaderboard',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         backgroundColor: Colors.orange,
         elevation: 0,
       ),
+      bottomNavigationBar: _buildBottomNavBar(context),
       body: Column(
         children: [
-          SizedBox(height: 20),
-          _buildPodium(),
-          Expanded(child: _buildLeaderboardList()),
+          // 🔝 Top Rank 1
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/rank1.jpg'),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha((0.2 * 255).round()),
+                  blurRadius: 6,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Icon(
+                      Icons.person,
+                      size: 120,
+                      color: Colors.white.withAlpha((0.15 * 255).round()),
+                    ),
+                    Stack(
+                      alignment: Alignment.topRight,
+                      children: [
+                        CircleAvatar(
+                          radius: 50,
+                          backgroundColor: Colors.grey[300],
+                          child: Icon(
+                            topUser['avatar'],
+                            size: 50,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.amber,
+                            ),
+                            padding: const EdgeInsets.all(4),
+                            child: Icon(
+                              Icons.emoji_events,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  topUser['name'],
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  '${topUser['points']} pts',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.white70,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // 📋 Rank 2–10 Cards
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              child: ListView.builder(
+                itemCount: otherUsers.length,
+                itemBuilder: (context, index) {
+                  final user = otherUsers[index];
+                  return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 6),
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withAlpha((0.3 * 255).round()),
+                          blurRadius: 8,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundColor: Colors.grey,
+                          child: Icon(user['avatar'], color: Colors.white),
+                        ),
+                        const SizedBox(width: 16),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                user['name'],
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text('${user['points']} pts'),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          '#${index + 2}',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         ],
       ),
-      bottomNavigationBar: _buildBottomNavBar(context),
     );
   }
+}
 
-  Widget _buildPodium() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        _buildPodiumPlace(
-            2, "assets/avatars/default.png", 80, Colors.grey[300]!),
-        _buildPodiumPlace(1, "assets/avatars/default.png", 100, Colors.amber),
-        _buildPodiumPlace(
-            3, "assets/avatars/default.png", 80, Colors.brown[300]!),
-      ],
-    );
-  }
-
-  Widget _buildPodiumPlace(
-      int rank, String avatar, double height, Color color) {
-    return Column(
-      children: [
-        CircleAvatar(backgroundImage: AssetImage(avatar), radius: 30),
-        Container(
-          width: 70,
-          height: height,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: color, borderRadius: BorderRadius.circular(10)),
-          child: Text("$rank",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildLeaderboardList() {
-    return ListView.builder(
-      padding: EdgeInsets.symmetric(vertical: 10),
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return Card(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          child: ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage("assets/avatars/default.png"),
-              radius: 25,
+// ✅ Bottom NavBar (unchanged)
+Widget _buildBottomNavBar(BuildContext context) {
+  return BottomNavigationBar(
+    backgroundColor: Colors.white,
+    type: BottomNavigationBarType.fixed,
+    iconSize: 30,
+    selectedItemColor: Colors.orange,
+    unselectedItemColor: Colors.grey,
+    currentIndex: 3,
+    items: [
+      BottomNavigationBarItem(
+        icon: Image.asset('assets/icons/home_icon.png', width: 30, height: 30),
+        label: 'Home',
+      ),
+      BottomNavigationBarItem(
+        icon: Image.asset('assets/icons/asl_alphabet_icon.png',
+            width: 30, height: 30),
+        label: 'ASL Alphabets',
+      ),
+      BottomNavigationBarItem(
+        icon: Image.asset('assets/icons/practice_icon.png',
+            width: 30, height: 30),
+        label: 'Practice',
+      ),
+      BottomNavigationBarItem(
+        icon: Image.asset('assets/icons/leaderboard_icon.png',
+            width: 30, height: 30),
+        label: 'Leaderboard',
+      ),
+      BottomNavigationBarItem(
+        icon:
+            Image.asset('assets/icons/profile_icon.png', width: 30, height: 30),
+        label: 'Profile',
+      ),
+    ],
+    onTap: (index) {
+      switch (index) {
+        case 0:
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
             ),
-            title: Text("User Name"),
-            subtitle: Text("0 pts"),
-            trailing: Text("${index + 4}",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildBottomNavBar(BuildContext context) {
-    return BottomNavigationBar(
-      backgroundColor: Colors.white,
-      type: BottomNavigationBarType.fixed,
-      iconSize: 30,
-      selectedItemColor: Colors.orange, // Highlight sa label lang
-      unselectedItemColor: Colors.grey, // Normal na kulay sa di-selected tabs
-      currentIndex: 3, // Set to leaderboard tab by default
-      items: [
-        BottomNavigationBarItem(
-          icon:
-              Image.asset('assets/icons/home_icon.png', width: 30, height: 30),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/icons/asl_alphabet_icon.png',
-              width: 30, height: 30),
-          label: 'ASL Alphabets',
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/icons/practice_icon.png',
-              width: 30, height: 30),
-          label: 'Practice',
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/icons/leaderboard_icon.png',
-              width: 30, height: 30),
-          label: 'Leaderboard',
-        ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/icons/profile_icon.png',
-              width: 30, height: 30),
-          label: 'Profile',
-        ),
-      ],
-      onTap: (index) {
-        switch (index) {
-          case 0:
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => MainScreen(
-                    category:
-                        'Unit 1: Welcome'), // Palitan ang 'Unit: 1' ng tamang unit kung kailangan
-              ),
-            );
-            break;
-          case 1:
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => ASLAlphabetScreen()));
-            break;
-          case 2:
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => PracticeScreen()));
-            break;
-          case 3:
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => LeaderboardScreen()));
-            break;
-          case 4:
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => ProfileScreen()));
-            break;
-        }
-      },
-    );
-  }
+          );
+          break;
+        case 1:
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => ASLAlphabetScreen()));
+          break;
+        case 2:
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => PracticeScreen()));
+          break;
+        case 3:
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => LeaderboardScreen()));
+          break;
+        case 4:
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => ProfileScreen()));
+          break;
+      }
+    },
+  );
 }

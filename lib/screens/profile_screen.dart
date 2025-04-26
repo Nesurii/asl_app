@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:mypod_flutter/main.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import '../services/current_user.dart';
+import 'login_screen.dart';
 import 'main_screen.dart';
 import 'asl_alphabet_screen.dart';
 import 'practice_screen.dart';
 import 'leaderboard_screen.dart';
-import 'notification_screen.dart';
 import 'account_info_screen.dart';
 import 'about_us_screen.dart';
+import 'FAQ_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -18,286 +22,252 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   bool isSettingsSelected = false;
   int _selectedIndex = 4; // Default selected index for Profile
-  Map<String, dynamic>? userData;
-  bool isLoading = true;
+  List<String> earnedStickers = [];
 
   @override
   void initState() {
     super.initState();
-    fetchUserData();
+    _loadStickers();
   }
 
-  Future<void> fetchUserData() async {
-    try {
-      final user = supabase.auth.currentUser;
-      if (user == null) {
-        throw Exception("User not logged in");
-      }
-
-      // Fetch user details from the "users" table
-      final response = await supabase
-          .from('user_account')
-          .select()
-          .eq('id', user.id)  // Fetch data using the logged-in user's ID
-          .single();  // Use `.single()` since we expect only one result
-
-      setState(() {
-        userData = response;
-        isLoading = false;
-      });
-    } catch (error) {
-      debugPrint('Error fetching user data: $error');
-      setState(() {
-        isLoading = false;
-      });
-    }
+  void _loadStickers() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      earnedStickers = prefs.getStringList('stickers') ?? [];
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Top bar with back arrow and notification icon
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.black, size: 28),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            MainScreen(category: 'Unit 1: Welcome'),
-                      ),
-                    );
-                  },
-                ),
-                IconButton(
-                  icon: Icon(Icons.notifications_none,
-                      color: Colors.black, size: 28),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => NotificationScreen()),
-                    );
-                  },
-                ),
-              ],
-            ),
-          ),
-          // Profile Picture and Details
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: [
-                Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundImage: AssetImage(
-                          'assets/avatars/default_avatar.jpg'), // Replace with your default avatar path
-                    ),
-                    Positioned(
-                      right: 0,
-                      bottom: 0,
-                      child: GestureDetector(
-                        onTap: () => _showAvatarSelectionDialog(context),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.orange,
-                          ),
-                          child: Icon(Icons.add, color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${userData!['username']}',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      '${userData!['email']}',
-                      style: TextStyle(fontSize: 14, color: Colors.grey[700]),
-                    ),
-                    SizedBox(height: 8),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Level 1',
-                            style: TextStyle(
-                                fontSize: 14, color: Colors.grey[600])),
-                        SizedBox(height: 4),
-                        Container(
-                          width: screenWidth * 0.5,
-                          height: 8,
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: FractionallySizedBox(
-                            alignment: Alignment.centerLeft,
-                            widthFactor: 0.6,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+          _buildTopBar(),
+          _buildProfileHeader(),
           SizedBox(height: 24),
-          // Toggle Buttons for My Stats and Settings
-          Center(
-            child: ToggleButtons(
-              isSelected: [!isSettingsSelected, isSettingsSelected],
-              onPressed: (index) {
-                setState(() {
-                  isSettingsSelected = index == 1;
-                });
-              },
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.black,
-              selectedColor: Colors.white,
-              fillColor: Colors.orange,
-              borderColor: Colors.grey,
-              selectedBorderColor: Colors.orange,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  child: Text('My Stats', style: TextStyle(fontSize: 16)),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                  child: Text('Settings', style: TextStyle(fontSize: 16)),
-                ),
-              ],
-            ),
-          ),
+          _buildToggleButtons(),
           SizedBox(height: 16),
           Expanded(
-            child: isSettingsSelected ? _buildSettings() : _buildMyStats(),
+            child:
+                isSettingsSelected ? _buildSettings() : _buildMyAchievements(),
           ),
-          // Bottom Navigation Bar with Labels
-          BottomNavigationBar(
-            backgroundColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
-            iconSize: 30,
-            currentIndex: _selectedIndex,
-            selectedItemColor: Colors.orange,
-            unselectedItemColor: Colors.grey[600],
-            onTap: (index) {
-              setState(() {
-                _selectedIndex = index;
-              });
+          _buildBottomNavigationBar(),
+        ],
+      ),
+    );
+  }
 
-              switch (index) {
-                case 0:
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            MainScreen(category: 'Unit 1: Welcome')),
-                  );
-                  break;
-                case 1:
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ASLAlphabetScreen()),
-                  );
-                  break;
-                case 2:
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => PracticeScreen()),
-                  );
-                  break;
-                case 3:
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => LeaderboardScreen()),
-                  );
-                  break;
-                case 4:
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen()),
-                  );
-                  break;
-              }
+  Widget _buildTopBar() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.black, size: 28),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
+                ),
+              );
             },
-            items: [
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/home_icon.png',
-                    width: 30, height: 30),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/asl_alphabet_icon.png',
-                    width: 30, height: 30),
-                label: 'ASL Alphabet',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/practice_icon.png',
-                    width: 30, height: 30),
-                label: 'Practice',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/leaderboard_icon.png',
-                    width: 30, height: 30),
-                label: 'Leaderboard',
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset('assets/icons/profile_icon.png',
-                    width: 30, height: 30),
-                label: 'Profile',
-              ),
-            ],
           ),
         ],
       ),
     );
   }
 
-  // "My Stats" Section
-  Widget _buildMyStats() {
-    return Center(
-      child: Text(
-        'Stats will be shown here!',
-        style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+  Widget _buildProfileHeader() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Consumer<CurrentUserData>(
+            builder: (context, currentUserData, _) {
+              final avatarUrl = currentUserData.account?['avatar_url'];
+
+              return Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Colors.grey[300],
+                    backgroundImage: (avatarUrl != null && avatarUrl != '')
+                        ? AssetImage(avatarUrl)
+                        : null,
+                    child: (avatarUrl == null || avatarUrl == '')
+                        ? Icon(Icons.person, size: 50, color: Colors.white)
+                        : null,
+                  ),
+                  Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AccountInfoScreen(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.orange,
+                        ),
+                        child: Icon(Icons.edit, color: Colors.white, size: 20),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            },
+          ),
+          SizedBox(width: 16),
+          // Username + email section
+          Expanded(
+            child: Consumer<CurrentUserData>(
+              builder: (context, userData, _) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${userData.account?['username'] ?? ''}',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      '${userData.account?['email'] ?? ''}',
+                      style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  // "Settings" Section
+  Widget _buildToggleButtons() {
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 6,
+              offset: Offset(0, 2),
+            ),
+          ],
+        ),
+        child: ToggleButtons(
+          isSelected: [!isSettingsSelected, isSettingsSelected],
+          onPressed: (index) {
+            setState(() {
+              isSettingsSelected = index == 1;
+            });
+          },
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.grey.shade800,
+          selectedColor: Colors.white,
+          fillColor: Colors.orange,
+          borderColor: Colors.transparent,
+          selectedBorderColor: Colors.transparent,
+          splashColor: Colors.orange.withAlpha((0.2 * 255).round()),
+          highlightColor: Colors.transparent,
+          constraints: BoxConstraints(minHeight: 48, minWidth: 140),
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(
+                'My Achievements',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(
+                'Settings',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildMyAchievements() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            "Earned Stickers:",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Expanded(
+          child: earnedStickers.isEmpty
+              ? Center(child: Text("No stickers earned yet!"))
+              : GridView.builder(
+                  padding: EdgeInsets.all(16),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                  ),
+                  itemCount: earnedStickers.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black, width: 2),
+                        borderRadius: BorderRadius.circular(8),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withAlpha((0.5 * 255).round()),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(6),
+                        child: Image.asset(earnedStickers[index],
+                            fit: BoxFit.cover),
+                      ),
+                    );
+                  },
+                ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildSettings() {
     return Column(
       children: [
@@ -324,68 +294,112 @@ class _ProfileScreenState extends State<ProfileScreen> {
           },
         ),
         ListTile(
+          leading: Icon(Icons.question_answer),
+          title: Text('FAQ'),
+          trailing: Icon(Icons.arrow_forward_ios),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => FAQScreen()),
+            );
+          },
+        ),
+        ListTile(
           leading: Icon(Icons.logout, color: Colors.red),
           title: Text('Logout', style: TextStyle(color: Colors.red)),
-          onTap: () {
-            debugPrint("User logged out");
+          onTap: () async {
+            // Log the user out from Supabase
+            await Supabase.instance.client.auth.signOut();
+
+            if (!mounted) return; 
+            // Clear any locally stored user data using your provider
+            context.read<CurrentUserData>().logout(); // This clears the user data in your provider
+
+            // Optionally, navigate to the login screen after logout
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => LoginScreen()), // Replace with your Login screen
+            );
           },
         ),
       ],
     );
   }
 
-  void _showAvatarSelectionDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text("Select Avatar"),
-          content: SizedBox(
-            height: 190, // Adjust height as needed
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  children: List.generate(5, (index) {
-                    return GestureDetector(
-                      onTap: () {
-                        // Handle avatar selection
-                      },
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundImage:
-                            AssetImage('assets/avatars/avatar${index + 1}.png'),
-                      ),
-                    );
-                  }),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child:
-                          Text('Remove', style: TextStyle(color: Colors.red)),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Save the selected avatar
-                        Navigator.pop(context);
-                      },
-                      child: Text('Save', style: TextStyle(color: Colors.blue)),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        );
+  Widget _buildBottomNavigationBar() {
+    return BottomNavigationBar(
+      backgroundColor: Colors.white,
+      type: BottomNavigationBarType.fixed,
+      iconSize: 30,
+      currentIndex: _selectedIndex,
+      selectedItemColor: Colors.orange,
+      unselectedItemColor: Colors.grey[600],
+      onTap: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+
+        switch (index) {
+          case 0:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      MainScreen(category: 'Unit 1: Welcome')),
+            );
+            break;
+          case 1:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => ASLAlphabetScreen()),
+            );
+            break;
+          case 2:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => PracticeScreen()),
+            );
+            break;
+          case 3:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => LeaderboardScreen()),
+            );
+            break;
+          case 4:
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => ProfileScreen()),
+            );
+            break;
+        }
       },
+      items: [
+        BottomNavigationBarItem(
+          icon:
+              Image.asset('assets/icons/home_icon.png', width: 30, height: 30),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/icons/asl_alphabet_icon.png',
+              width: 30, height: 30),
+          label: 'ASL Alphabet',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/icons/practice_icon.png',
+              width: 30, height: 30),
+          label: 'Practice',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/icons/leaderboard_icon.png',
+              width: 30, height: 30),
+          label: 'Leaderboard',
+        ),
+        BottomNavigationBarItem(
+          icon: Image.asset('assets/icons/profile_icon.png',
+              width: 30, height: 30),
+          label: 'Profile',
+        ),
+      ],
     );
   }
 }

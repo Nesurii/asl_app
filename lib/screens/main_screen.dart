@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/lesson_progress';
 import 'category_selector_screen.dart';
 import 'asl_alphabet_screen.dart';
 import 'practice_screen.dart';
@@ -10,10 +11,51 @@ import 'lesson2_screen.dart';
 import 'lesson3_screen.dart';
 import 'lesson4_screen.dart';
 import 'lesson5_screen.dart';
+import 'lesson6_screen.dart';
+import 'lesson7_screen.dart';
+import 'lesson8_screen.dart';
+import 'lesson9_screen.dart';
+import 'lesson10_screen.dart';
+import 'lesson11_screen.dart';
+import 'lesson12_screen.dart';
+import 'lesson13_screen.dart';
+import 'lesson14_screen.dart';
+import 'lesson15_screen.dart';
+import 'lesson16_screen.dart';
+import 'lesson17_screen.dart';
+import 'lesson18_screen.dart';
+import 'lesson19_screen.dart';
+import 'lesson20_screen.dart';
+import 'lesson21_screen.dart';
+import 'lesson22_screen.dart';
+import 'lesson23_screen.dart';
+import 'lesson24_screen.dart';
+import 'lesson25_screen.dart';
+import 'lesson26_screen.dart';
+import 'lesson27_screen.dart';
+import 'lesson28_screen.dart';
+import 'lesson29_screen.dart';
+import 'lesson30_screen.dart';
+import 'lesson31_screen.dart';
+import 'lesson32_screen.dart';
+import 'lesson33_screen.dart';
+import 'lesson34_screen.dart';
+import 'lesson35_screen.dart';
+import 'lesson36_screen.dart';
+import 'lesson37_screen.dart';
+import 'lesson38_screen.dart';
+import 'lesson39_screen.dart';
+import 'lesson40_screen.dart';
 import 'quiz1_screen.dart';
 import 'quiz2_screen.dart';
 import 'quiz3_screen.dart';
 import 'quiz4_screen.dart';
+import 'quiz5_screen.dart';
+import 'quiz6_screen.dart';
+import 'quiz7_screen.dart';
+import 'quiz8_screen.dart';
+import 'quiz9_screen.dart';
+import 'quiz10_screen.dart';
 
 class MainScreen extends StatefulWidget {
   final String category;
@@ -34,12 +76,12 @@ class _MainScreenState extends State<MainScreen> {
     'Welcome',
     'Getting Started',
     'Getting to Know You',
+    'Numbers',
+    'Time',
     'Family and Friends',
     'School Days',
-    'Sports and Activities',
     'My Daily Routine',
     'Describing People',
-    'My Home and Community',
     'My Plans'
   ];
 
@@ -117,6 +159,12 @@ class _MainScreenState extends State<MainScreen> {
       appBar: null,
       body: Stack(
         children: [
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/bg.jpg',
+              fit: BoxFit.cover,
+            ),
+          ),
           ListView.builder(
             controller: _scrollController,
             padding: EdgeInsets.only(top: 100, bottom: 20),
@@ -148,9 +196,9 @@ class _MainScreenState extends State<MainScreen> {
       padding: EdgeInsets.symmetric(vertical: 8),
       child: Center(
         child: Text(
-          '----- $title -----',
+          '------- $title ------',
           style: TextStyle(
-              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black54),
+              fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
     );
@@ -210,7 +258,18 @@ class _MainScreenState extends State<MainScreen> {
                           return Quiz3Screen();
                         case 4:
                           return Quiz4Screen();
-
+                        case 5:
+                          return Quiz5Screen();
+                        case 6:
+                          return Quiz6Screen();
+                        case 7:
+                          return Quiz7Screen();
+                        case 8:
+                          return Quiz8Screen();
+                        case 9:
+                          return Quiz9Screen();
+                        case 10:
+                          return Quiz10Screen();
                         default:
                           return Quiz1Screen(); // Fallback
                       }
@@ -229,8 +288,12 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                   );
                 }
-              : () {
+              : () async {
                   if (circleNumber != null) {
+                    final lessonManager = LessonManager();
+                    await lessonManager.updateCurrentLesson('lesson $circleNumber');
+                    
+                     if (!mounted) return;
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -246,6 +309,76 @@ class _MainScreenState extends State<MainScreen> {
                               return Lesson4Screen();
                             case 5:
                               return Lesson5Screen();
+                            case 6:
+                              return Lesson6Screen();
+                            case 7:
+                              return Lesson7Screen();
+                            case 8:
+                              return Lesson8Screen();
+                            case 9:
+                              return Lesson9Screen();
+                            case 10:
+                              return Lesson10Screen();
+                            case 11:
+                              return Lesson11Screen();
+                            case 12:
+                              return Lesson12Screen();
+                            case 13:
+                              return Lesson13Screen();
+                            case 14:
+                              return Lesson14Screen();
+                            case 15:
+                              return Lesson15Screen();
+                            case 16:
+                              return Lesson16Screen();
+                            case 17:
+                              return Lesson17Screen();
+                            case 18:
+                              return Lesson18Screen();
+                            case 19:
+                              return Lesson19Screen();
+                            case 20:
+                              return Lesson20Screen();
+                            case 21:
+                              return Lesson21Screen();
+                            case 22:
+                              return Lesson22Screen();
+                            case 23:
+                              return Lesson23Screen();
+                            case 24:
+                              return Lesson24Screen();
+                            case 25:
+                              return Lesson25Screen();
+                            case 26:
+                              return Lesson26Screen();
+                            case 27:
+                              return Lesson27Screen();
+                            case 28:
+                              return Lesson28Screen();
+                            case 29:
+                              return Lesson29Screen();
+                            case 30:
+                              return Lesson30Screen();
+                            case 31:
+                              return Lesson31Screen();
+                            case 32:
+                              return Lesson32Screen();
+                            case 33:
+                              return Lesson33Screen();
+                            case 34:
+                              return Lesson34Screen();
+                            case 35:
+                              return Lesson35Screen();
+                            case 36:
+                              return Lesson36Screen();
+                            case 37:
+                              return Lesson37Screen();
+                            case 38:
+                              return Lesson38Screen();
+                            case 39:
+                              return Lesson39Screen();
+                            case 40:
+                              return Lesson40Screen();
                             default:
                               return Lesson1Screen(); // Fallback
                           }
@@ -264,9 +397,9 @@ class _MainScreenState extends State<MainScreen> {
         ),
         child: Center(
           child: isQuiz
-              ? Icon(Icons.quiz, color: Colors.white, size: 36)
+              ? Icon(Icons.assignment, color: Colors.white, size: 36)
               : isChest
-                  ? Icon(Icons.lock, color: Colors.white, size: 36)
+                  ? Icon(Icons.emoji_events, color: Colors.white, size: 36)
                   : circleNumber != null
                       ? Text(
                           '$circleNumber',
@@ -286,12 +419,12 @@ class _MainScreenState extends State<MainScreen> {
     'Welcome': Colors.orange,
     'Getting Started': Colors.green,
     'Getting to Know You': Colors.purple,
-    'Family and Friends': Colors.red,
-    'School Days': Color(0xffE53888),
-    'Sports and Activities': Colors.blue,
-    'My Daily Routine': Colors.pink,
-    'Describing People': Colors.indigo,
-    'My Home and Community': Color(0xffF4CE14),
+    'Numbers': Colors.red,
+    'Time': Color(0xffE53888),
+    'Family and Friends': Colors.blue,
+    'School Days': Colors.pink,
+    'My Daily Routine': Colors.indigo,
+    'Describing People': Color(0xffF4CE14),
     'My Plans': Color(0xff00B8A9),
   };
 
@@ -316,7 +449,7 @@ class _MainScreenState extends State<MainScreen> {
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withAlpha((0.2 * 255).toInt()),
+                color: Colors.black.withAlpha((0.2 * 255).round()),
                 blurRadius: 5,
                 spreadRadius: 2,
               ),

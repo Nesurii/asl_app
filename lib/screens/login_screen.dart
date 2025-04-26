@@ -4,6 +4,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:mypod_flutter/main.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import '../services/current_user.dart';
+//import '../services/user_progress.dart';
 import 'greeting_screen.dart';
 import 'forgot_password_screen.dart';
 import 'sign_up_screen.dart';
@@ -45,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if (context.mounted) {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-              builder: (context) => const GreetingScreen(),
+              builder: (context) => GreetingScreen(),
             ),
           );
         }
@@ -70,10 +72,33 @@ class _LoginScreenState extends State<LoginScreen> {
 
       if (res.user != null) {
         log("User signed in.");
+
+        // Fetch user data 
+        final userData = await supabase
+            .from('user_account')
+            .select()
+            .eq('id', res.user!.id)
+            .single();
+
+        // Store globally
+        currentUserData.setAccountData(userData);
+        
+        // Fetch user progress
+        final progressData = await supabase
+            .from('user_progress')
+            .select()
+            .eq('user_id', res.user!.id) 
+            .maybeSingle(); 
+
+        if (progressData != null) {
+          currentUserData.setProgressData(progressData);
+        }
+
+
         if (!mounted) return;
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const GreetingScreen()),
+          MaterialPageRoute(builder: (context) => GreetingScreen()),
         );
       } else {
         setState(() => _errorMessage = 'Invalid email or password.');
@@ -84,69 +109,61 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  /// Google sign-in
+  // google sign-in
   Future<AuthResponse> _googleSignIn() async {
-      final GoogleSignIn googleSignIn = GoogleSignIn(
-        serverClientId: '913397498781-baldk0vv4aobc3omc0c5v2fa5hidapag.apps.googleusercontent.com',
-        scopes: ['email'],
-      );
+    final googleUser = await GoogleSignIn(
+      serverClientId: '913397498781-baldk0vv4aobc3omc0c5v2fa5hidapag.apps.googleusercontent.com',
+      scopes: ['email'],
+    ).signIn();
 
-      try {
-      final googleUser = await googleSignIn.signIn();
-      if (googleUser == null) {
-        throw 'User canceled sign-in';
-      }
+    if (googleUser == null) throw 'Sign-in cancelled';
 
-      final googleAuth = await googleUser.authentication;
-      final idToken = googleAuth.idToken;
-      final accessToken = googleAuth.accessToken;
+    final googleAuth = await googleUser.authentication;
+    final idToken = googleAuth.idToken;
+    final accessToken = googleAuth.accessToken;
 
-      if (idToken == null || accessToken == null) {
-        throw 'Failed to retrieve authentication tokens';
-      }
+    if (idToken == null || accessToken == null) throw 'Missing tokens';
 
-      // Authenticate user with Supabase
-      final AuthResponse authResponse = await supabase.auth.signInWithIdToken(
-        provider: OAuthProvider.google,
-        idToken: idToken,
-        accessToken: accessToken,
-      );
+    final authResponse = await supabase.auth.signInWithIdToken(
+      provider: OAuthProvider.google,
+      idToken: idToken,
+      accessToken: accessToken,
+    );
 
-      final user = authResponse.user;
-      if (user == null) {
-        throw 'Authentication failed';
-      }
+    final user = authResponse.user;
+    if (user == null) throw 'Auth failed';
 
-      // Check if user already exists in user_account table
-      final existingUser = await supabase
-          .from('user_account')
-          .select()
-          .eq('id', user.id)
-          .maybeSingle();
+    // Insert user + progress if not exists
+    final existingUser = await supabase.from('user_account').select().eq('id', user.id).maybeSingle();
+    if (existingUser == null) {
+      await supabase.from('user_account').insert({
+        'id': user.id,
+        'email': user.email,
+        'password': 'google-auth',
+        'username': user.userMetadata?['display_name'] ?? user.email?.split('@')[0],
+      });
 
-      if (existingUser == null) {
-        // Insert new user into the user_account table
-        await supabase.from('user_account').insert({
-          'id': user.id,
-          'email': user.email,
-          'password' : 'google-auth',
-          'username': user.userMetadata?['display_name'] ?? user.email?.split('@')[0],
-        });
-      }
-
-      return authResponse; // Return auth response for further handling
-    } catch (e) {
-      log("Google sign-in error: $e");
-
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Google sign-in failed: $e")),
-        );
-      }
-
-      rethrow; // Preserve the original error
+      await supabase.from('user_progress').insert({
+        'user_id': user.id,
+        'current_lesson': null,
+        'current_unit': null,
+        'lessons_completed': 0,
+        'exp': 0,
+        'stickers_earned': [],
+        'quiz_scores': {},
+      });
     }
+
+    // Fetch and store
+    final userData = await supabase.from('user_account').select().eq('id', user.id).single();
+    currentUserData.setAccountData(userData);
+
+    final progressData = await supabase.from('user_progress').select().eq('user_id', user.id).maybeSingle();
+    if (progressData != null) currentUserData.setProgressData(progressData);
+
+    return authResponse;
   }
+
 
 
   @override

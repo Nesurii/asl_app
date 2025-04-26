@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:math';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RewardScreen extends StatefulWidget {
   final int rewardIndex;
 
-  const RewardScreen({super.key, required this.rewardIndex}); 
+  const RewardScreen({super.key, required this.rewardIndex});
 
   @override
   State<RewardScreen> createState() => _RewardScreenState();
@@ -46,12 +47,12 @@ class _RewardScreenState extends State<RewardScreen> {
     "You got the Welcome sticker!",
     "Here's your Getting Started sticker!",
     "You unlocked Getting to Know You sticker!",
-    "Enjoy your Family and Friends sticker!",
-    "You earned the School Days sticker!",
-    "Grab your Sports and Activities sticker!",
-    "You unlocked My Daily Routine sticker!",
-    "You got the Describing People sticker!!",
-    "Here's your My Home and Community sticker!",
+    "Enjoy your Numbers sticker!",
+    "You earned the Time sticker!",
+    "Grab your Family and Friends sticker!",
+    "You unlocked School DaysRoutine sticker!",
+    "You got the My Daily Routine sticker!!",
+    "Here's your Describing People sticker!",
     "Making Plans sticker unlocked!",
   ];
 
@@ -75,6 +76,16 @@ class _RewardScreenState extends State<RewardScreen> {
     _confettiController.dispose();
     _audioPlayer.dispose();
     super.dispose();
+  }
+
+  void _saveSticker(int index) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> savedStickers = prefs.getStringList('stickers') ?? [];
+
+    if (!savedStickers.contains(rewardImages[index])) {
+      savedStickers.add(rewardImages[index]);
+      await prefs.setStringList('stickers', savedStickers);
+    }
   }
 
   @override
@@ -110,7 +121,7 @@ class _RewardScreenState extends State<RewardScreen> {
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withAlpha((0.2 * 255).toInt()),
+                        color: Colors.black.withAlpha((0.2 * 255).round()),
                         blurRadius: 5,
                         spreadRadius: 2,
                       ),
@@ -155,6 +166,7 @@ class _RewardScreenState extends State<RewardScreen> {
                 // OK Button
                 ElevatedButton(
                   onPressed: () {
+                    _saveSticker(widget.rewardIndex); // Save sticker
                     Navigator.pop(context);
                   },
                   style: ElevatedButton.styleFrom(

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'package:supabase_flutter/supabase_flutter.dart';
+// import '../main.dart';
+//import '../services/current_user.dart';
 import 'main_screen.dart';
 
 class CategorySelectorScreen extends StatelessWidget {
@@ -19,32 +23,32 @@ class CategorySelectorScreen extends StatelessWidget {
       'levelRange': 'Level 9-12'
     },
     {
-      'title': 'Unit 4: Family and Friends',
+      'title': 'Unit 4: Numbers',
       'image': 'assets/images/unit4.jpg',
       'levelRange': 'Level 13-16'
     },
     {
-      'title': 'Unit 5: School Days',
+      'title': 'Unit 5: Time',
       'image': 'assets/images/unit5.jpg',
       'levelRange': 'Level 17-20'
     },
     {
-      'title': 'Unit 6: Sports and Activities',
+      'title': 'Unit 6: Family and Friends',
       'image': 'assets/images/unit6.jpg',
       'levelRange': 'Level 21-24'
     },
     {
-      'title': 'Unit 7: My Daily Routine',
+      'title': 'Unit 7: School Days',
       'image': 'assets/images/unit7.jpg',
       'levelRange': 'Level 25-28'
     },
     {
-      'title': 'Unit 8: Describing People',
+      'title': 'Unit 8: My Daily Routine',
       'image': 'assets/images/unit8.jpg',
       'levelRange': 'Level 29-32'
     },
     {
-      'title': 'Unit 9: My Home and Community',
+      'title': 'Unit 9: Describing people',
       'image': 'assets/images/unit9.jpg',
       'levelRange': 'Level 33-36'
     },
@@ -86,22 +90,55 @@ class CategorySelectorScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final module = modules[index];
             return GestureDetector(
-              onTap: () {
+ 
+              onTap: () async {
+                final currentUnit = module['title']!;
+
+                // // Update user progress in the database
+                // try {
+                //   final userId = currentUserData.account?['user_id']; 
+                //   if (userId != null) {
+                //     final response = await Supabase.instance.client
+                //         .from('user_progress')
+                //         .upsert({
+                //           'user_id': userId,  // Use the user_id to identify the record
+                //           'current_unit': currentUnit,
+                //         });
+
+                //     if (response.error != null) {
+                //       throw Exception('Error updating user progress: ${response.error!.message}');
+                //     }
+                //   }
+                // } catch (e) {
+                //   debugPrint('Error updating user progress: $e');
+                //   // Handle any errors that occur during the database operation
+                // }
+
+                // if (!mounted) return;
+                // // Update currentUserData via Provider
+                // final updatedProgressData = {
+                //   ...(currentUserData.progress ?? {}),
+                //   'current_unit': currentUnit,
+                // };
+                
+                // Provider.of<CurrentUserData>(context, listen: false).setProgressData(updatedProgressData);
+
+                // Navigate to MainScreen
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        MainScreen(category: module['title']!),
+                    builder: (context) => MainScreen(category: currentUnit),
                   ),
                 );
               },
+
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withAlpha((0.5 * 255).toInt()),
+                      color: Colors.grey.withAlpha((0.5 * 255).round()),
                       spreadRadius: 2,
                       blurRadius: 5,
                       offset: Offset(0, 3),
