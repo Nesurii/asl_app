@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
-import '../services/exp_progress.dart';
-import '../services/lesson_progress';
-
-//import '../services/current_user.dart';
+import '../services/completed_lessons_progress.dart';
+import '../services/state_progress.dart';
 
 class Lesson1Screen extends StatefulWidget {
-  const Lesson1Screen({super.key});
+  final String lessonId;
+  const Lesson1Screen({super.key, required this.lessonId});
 
   @override
   State<Lesson1Screen> createState() => _Lesson1ScreenState();
@@ -16,9 +15,16 @@ class Lesson1Screen extends StatefulWidget {
 class _Lesson1ScreenState extends State<Lesson1Screen> {
   int currentIndex = 0;
   int totalScore = 0;
-  //int lessonCompleted = 0;
+  final lessonManager = LessonManager();
   final PageController _pageController = PageController();
   final AudioPlayer player = AudioPlayer();
+
+  bool answeredQuestion1 = false;
+  bool answeredQuestion2 = false;
+  bool answeredQuestion3 = false;
+  bool answered1 = false;
+  bool answered2 = false;
+  bool lessonCompleted = false; 
 
   final Map<int, bool> _isZoomed = {};
 
@@ -88,7 +94,35 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
     },
   ];
 
-  void nextPage() {
+  @override
+  void initState() {
+    super.initState();
+    _loadSavedPage(); 
+  }
+
+  Future<void> _loadSavedPage() async {
+    final currentState = await lessonManager.getCurrentState();
+
+    if (currentState != null) {
+      final lessonPages = Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
+      final savedPageTitle = lessonPages[widget.lessonId]; 
+
+      if (savedPageTitle != null) {
+        // Parse the page number from savedPageTitle
+        final match = RegExp(r'Page (\d+):').firstMatch(savedPageTitle);
+        if (match != null) {
+          final savedPageIndex = int.tryParse(match.group(1)!);
+          if (savedPageIndex != null && savedPageIndex < lessonSections.length) {
+            setState(() {
+              currentIndex = savedPageIndex; // Jump to saved page
+            });
+          }
+        }
+      }
+    }
+  }
+
+  Future<void> nextPage() async {
     if (currentIndex < lessonSections.length - 1) {
       _pageController.animateToPage(
         currentIndex + 1,
@@ -98,7 +132,7 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
     }
   }
 
-  void previousPage() {
+  Future<void> previousPage() async {
     if (currentIndex > 0) {
       _pageController.animateToPage(
         currentIndex - 1,
@@ -106,6 +140,23 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
         curve: Curves.easeInOut,
       );
     }
+  }
+
+  @override
+  void dispose() {
+    if (!lessonCompleted) {
+      _saveCurrentPage(); 
+    }
+    super.dispose();
+  }
+
+   Future<void> _saveCurrentPage() async {
+    final section = lessonSections[currentIndex];
+
+    await lessonManager.updateCurrentPageForLesson(
+      widget.lessonId,
+      'Page $currentIndex: ${section['title']}',
+    );
   }
 
   @override
@@ -462,8 +513,6 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                               ],
                             );
                           case 'Lesson Completed!':
-                            // lessonCompleted += 1;
-                            // currentUserData.updateProgressField('lessons_completed', lessonCompleted);
                             return Column(
                               children: [
                                 Text(
@@ -485,10 +534,6 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                             int correctAnswer1 = 1;
                             int correctAnswer2 = 3;
                             int correctAnswer3 = 2;
-
-                            bool answeredQuestion1 = false;
-                            bool answeredQuestion2 = false;
-                            bool answeredQuestion3 = false;
 
                             double progress = 0.0;
                             int maxPoints = 100; // Maximum score possible
@@ -809,8 +854,6 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                             double progress =
                                 totalScore / 100; // Update progress
 
-                            bool answered1 = false;
-                            bool answered2 = false;
                             bool isCorrect1 = false;
                             bool isCorrect2 = false;
 
@@ -1043,27 +1086,57 @@ class _Lesson1ScreenState extends State<Lesson1Screen> {
                 // Next or Finish Button
                 ElevatedButton(
                   onPressed: () async {
+                    bool allQuestionsAnsweredQuiz = answeredQuestion1 &&
+                        answeredQuestion2 &&
+                        answeredQuestion3;
+                    bool allQuestionsAnsweredInput = answered1 && answered2;
+
+                    if (context.mounted) {
+                      if (currentIndex == lessonSections.length - 2) {
+                        // Quiz section (second-to-the-last page)
+                        if (!allQuestionsAnsweredQuiz) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please answer all quiz questions before proceeding.'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                          return;
+                        }
+                      } else if (currentIndex == lessonSections.length - 1) {
+                        // Input section (last page)
+                        if (!allQuestionsAnsweredInput) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please answer all input questions before finishing.'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                          return;
+                        }
+                      }
+                    }
                     if (currentIndex < lessonSections.length - 1) {
                       setState(() {
                         currentIndex++;
                       });
+                      _saveCurrentPage();
                     } else {
-                      // final lessonManager = LessonManager();
-                      // final lessonId = await lessonManager.getCurrentLessonId();
+                      // mark completed lessons
+                      final lessonCompletionManager = LessonCompletionManager();
+                      await lessonCompletionManager.completeLesson(
+                        lessonId: widget.lessonId,
+                        score: totalScore,
+                      );
 
-                      //if (lessonId != null) {
-                        final expManager = ExpManager();
-                        await expManager.addExp(
-                          totalScore);
-                          //lessonId: lessonId,
-                        //);
-                      //}
-
+                      lessonCompleted = true; 
                       if (context.mounted) {
-                        Navigator.pop(context);
+                        Navigator.pop(context, true);
                       }
+                      await lessonManager.resetLessonProgress(widget.lessonId);
                     }
                   },
+
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     side: BorderSide(color: Colors.black, width: 1),

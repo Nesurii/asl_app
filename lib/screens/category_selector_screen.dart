@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:supabase_flutter/supabase_flutter.dart';
-// import '../main.dart';
-//import '../services/current_user.dart';
+import '../services/state_progress.dart';
 import 'main_screen.dart';
 
 class CategorySelectorScreen extends StatelessWidget {
@@ -93,43 +90,17 @@ class CategorySelectorScreen extends StatelessWidget {
  
               onTap: () async {
                 final currentUnit = module['title']!;
+                final lessonManager = LessonManager();
+                await lessonManager.updateCurrentUnit(currentUnit);
 
-                // // Update user progress in the database
-                // try {
-                //   final userId = currentUserData.account?['user_id']; 
-                //   if (userId != null) {
-                //     final response = await Supabase.instance.client
-                //         .from('user_progress')
-                //         .upsert({
-                //           'user_id': userId,  // Use the user_id to identify the record
-                //           'current_unit': currentUnit,
-                //         });
-
-                //     if (response.error != null) {
-                //       throw Exception('Error updating user progress: ${response.error!.message}');
-                //     }
-                //   }
-                // } catch (e) {
-                //   debugPrint('Error updating user progress: $e');
-                //   // Handle any errors that occur during the database operation
-                // }
-
-                // if (!mounted) return;
-                // // Update currentUserData via Provider
-                // final updatedProgressData = {
-                //   ...(currentUserData.progress ?? {}),
-                //   'current_unit': currentUnit,
-                // };
-                
-                // Provider.of<CurrentUserData>(context, listen: false).setProgressData(updatedProgressData);
-
-                // Navigate to MainScreen
+                if (context.mounted) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => MainScreen(category: currentUnit),
                   ),
                 );
+              }
               },
 
               child: Container(

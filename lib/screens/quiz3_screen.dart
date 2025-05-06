@@ -46,6 +46,7 @@ class _Quiz3ScreenState extends State<Quiz3Screen> {
   List<String> shuffledTexts = [];
   List<String> shuffledMediaUrls = [];
   Set<String> usedTexts = {};
+  Set<String> answeredItems = Set<String>();
 
   int currentPage = 0;
   final List<List<String>> pages = [
@@ -145,7 +146,7 @@ class _Quiz3ScreenState extends State<Quiz3Screen> {
               ],
             ),
           ),
-          Positioned(
+           Positioned(
             bottom: 30,
             right: 30,
             child: CircleAvatar(
@@ -154,18 +155,32 @@ class _Quiz3ScreenState extends State<Quiz3Screen> {
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, size: 20, color: Colors.white),
                 onPressed: () {
-                  if (currentPage < pages.length - 1) {
-                    setState(() {
-                      currentPage++;
-                      shuffleCurrentPage();
-                    });
+                  if (answeredItems.length == shuffledTexts.length) {
+                    if (currentPage < pages.length - 1) {
+                      setState(() {
+                        currentPage++;
+                        shuffleCurrentPage();
+                        answeredItems
+                            .clear(); // Clear answered items for the next page
+                      });
+                    } else {
+                      // Last Page: Redirect to FillInTheBlankScreen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              FillInTheBlankScreen(totalScore: totalScore),
+                        ),
+                      );
+                    }
                   } else {
-                    // Last Page: Redirect to FillInTheBlankScreen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            FillInTheBlankScreen(totalScore: totalScore),
+                    // Show snackbar kapag hindi pa kompleto
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Please answer all quiz questions before proceeding.'),
+                        backgroundColor: Colors.red,
+                        duration: Duration(seconds: 2),
                       ),
                     );
                   }
@@ -255,13 +270,15 @@ Widget buildMatchingSection(String text, String shuffledMedia) {
               Expanded(
                 flex: 1,
                 child: DragTarget<String>(
-                  onWillAcceptWithDetails: (DragTargetDetails<String> details) {
+                   onWillAcceptWithDetails: (DragTargetDetails<String> details) {
                     return correctMatches.containsKey(details.data);
-                  },
+                  }, 
                   onAcceptWithDetails: (DragTargetDetails<String> details) async {
-                    final receivedText = details.data;
+                     final receivedText = details.data;
                     setState(() {
-                      usedTexts.add(receivedText); // prevent future drags
+                      usedTexts.add(receivedText); // Prevent future drags
+                      answeredItems
+                          .add(receivedText); // Track the answered item
 
                       if (correctMatches[receivedText] == shuffledMedia) {
                         userMatches[text] = shuffledMedia;
@@ -271,7 +288,6 @@ Widget buildMatchingSection(String text, String shuffledMedia) {
                         dropAreaColors[text] = Colors.red;
                       }
                     });
-
                     if (correctMatches[receivedText] == shuffledMedia) {
                       await player.play(AssetSource('sounds/correct.mp3'));
                     } else {
@@ -371,15 +387,6 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
     } catch (e) {
       debugPrint("Error playing sound: $e");
     }
-
-    if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(isCorrect ? "Correct!" : "Incorrect! Try again."),
-        backgroundColor: isCorrect ? Colors.green : Colors.red,
-        duration: Duration(seconds: 2),
-      ),
-    );
   }
 
   @override
@@ -478,34 +485,46 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               ),
             ],
           ),
-          Positioned(
+         Positioned(
             bottom: 30,
             right: 30,
             child: Container(
               width: 50,
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.orange,
+                color: Colors.orange, // Always orange
                 shape: BoxShape.circle,
               ),
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, color: Colors.white),
                 onPressed: () async {
-                  final currentContext = context;
+                  if (answered) {
 
-                  Navigator.pushReplacement(
-                    currentContext,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          MainScreen(category: 'Unit 3: Getting to Know You'),
-                    ),
-                  );
-
-                  // update quiz score
-                  await updateQuiz(
-                    quizNumber: 3,
-                    totalScore: totalScore,
-                  );
+                    // update quiz score
+                    await updateQuiz(
+                      quizId: 'Unit 3',
+                      totalScore: totalScore,
+                    ); 
+                    
+                    if(context.mounted){
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              MainScreen(category: 'Unit 3:Getting to Know You'),
+                        ),
+                      );
+                    }
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Please answer all quiz questions before proceeding.'),
+                        backgroundColor: Colors.red,
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  }
                 },
               ),
             ),

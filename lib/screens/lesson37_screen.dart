@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import '../services/completed_lessons_progress.dart';
+import '../services/state_progress.dart';
 import 'video_player_widget.dart';
 
 class Lesson37Screen extends StatefulWidget {
-  const Lesson37Screen({super.key});
+  final String lessonId;
+
+  const Lesson37Screen({super.key, required this.lessonId});
 
   @override
   State<Lesson37Screen> createState() => _Lesson37ScreenState();
@@ -14,6 +18,14 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
   int currentIndex = 0;
   int totalScore = 0;
   final AudioPlayer player = AudioPlayer();
+  final lessonManager = LessonManager();
+
+  bool lessonCompleted = false;
+  bool answeredQuestion1 = false;
+  bool answeredQuestion4 = false;
+  bool answeredQuestion5 = false;
+  bool answered1 = false;
+  bool answered2 = false;
 
   final List<Map<String, dynamic>> lessonSections = [
     {
@@ -27,11 +39,41 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadSavedPage(); 
+  }
+
+  Future<void> _loadSavedPage() async {
+    
+    final currentState = await lessonManager.getCurrentState();
+
+    if (currentState != null) {
+      final lessonPages = Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
+      final savedPageTitle = lessonPages[widget.lessonId]; 
+
+      if (savedPageTitle != null) {
+        // Parse the page number from savedPageTitle
+        final match = RegExp(r'Page (\d+):').firstMatch(savedPageTitle);
+        if (match != null) {
+          final savedPageIndex = int.tryParse(match.group(1)!);
+          if (savedPageIndex != null && savedPageIndex < lessonSections.length) {
+            setState(() {
+              currentIndex = savedPageIndex; // Jump to saved page
+            });
+          }
+        }
+      }
+    }
+  }
+
   void nextSection() {
     if (currentIndex < lessonSections.length - 1) {
       setState(() {
         currentIndex++;
       });
+      _saveCurrentPage();
     }
   }
 
@@ -40,7 +82,25 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
       setState(() {
         currentIndex--;
       });
+      _saveCurrentPage();
     }
+  }
+
+   @override
+  void dispose() {
+    if (!lessonCompleted) {
+      _saveCurrentPage(); 
+    }
+    super.dispose();
+  }
+
+  Future<void> _saveCurrentPage() async {
+    final section = lessonSections[currentIndex];
+
+    await lessonManager.updateCurrentPageForLesson(
+      widget.lessonId,
+      'Page $currentIndex: ${section['title']}',
+    );
   }
 
   @override
@@ -434,13 +494,7 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                               int correctAnswer4 = 2;
                               int correctAnswer5 = 3;
 
-                              bool answeredQuestion1 = false;
-                              bool answeredQuestion4 = false;
-                              bool answeredQuestion5 = false;
-
-                              bool answered1 = false;
                               bool isCorrect1 = false;
-                              bool answered2 = false;
                               bool isCorrect2 = false;
 
                               TextEditingController answerController1 =
@@ -723,17 +777,42 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                                             fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(height: 10),
+                                      Text(
+                                        'Tap the frame to select the answer',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                      ),
+                                      SizedBox(height: 10),
                                       Column(
                                         children: [
                                           Container(
-                                            color: getButtonColor(4, 1),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(4,
+                                                  1), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(4, 1);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -744,14 +823,31 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                                           ),
                                           SizedBox(height: 10),
                                           Container(
-                                            color: getButtonColor(4, 2),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(4,
+                                                  2), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(4, 2);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -762,18 +858,35 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                                           ),
                                           SizedBox(height: 10),
                                           Container(
-                                            color: getButtonColor(4, 3),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(4,
+                                                  3), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(4, 3);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
-                                                      "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/desert.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9kZXNlcnQud2VibSIsImlhdCI6MTc0NDgyNTIxMywiZXhwIjoxNzc2MzYxMjEzfQ.DB6TbWIo1MDXClwrhEEHDTzlsOJskaOfRu2SV6BrePc",
+                                                      'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/desert.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9kZXNlcnQud2VibSIsImlhdCI6MTc0NDgyNTIxMywiZXhwIjoxNzc2MzYxMjEzfQ.DB6TbWIo1MDXClwrhEEHDTzlsOJskaOfRu2SV6BrePc',
                                                 ),
                                               ),
                                             ),
@@ -790,17 +903,42 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                                             fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(height: 10),
+                                      Text(
+                                        'Tap the frame to select the answer',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                      ),
+                                      SizedBox(height: 10),
                                       Column(
                                         children: [
                                           Container(
-                                            color: getButtonColor(5, 1),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(5,
+                                                  1), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(5, 1);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -811,14 +949,31 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                                           ),
                                           SizedBox(height: 10),
                                           Container(
-                                            color: getButtonColor(5, 2),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(5,
+                                                  2), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(5, 2);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -829,18 +984,35 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                                           ),
                                           SizedBox(height: 10),
                                           Container(
-                                            color: getButtonColor(5, 3),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(5,
+                                                  3), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(5, 3);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
-                                                      "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/star.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9zdGFyLndlYm0iLCJpYXQiOjE3NDQ4MjU0MDgsImV4cCI6MTc3NjM2MTQwOH0.WoeaxNnSqan9b3Dnxh9354kymPQVAFHgveQTRsW5eXQ",
+                                                      'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/star.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9zdGFyLndlYm0iLCJpYXQiOjE3NDQ4MjU0MDgsImV4cCI6MTc3NjM2MTQwOH0.WoeaxNnSqan9b3Dnxh9354kymPQVAFHgveQTRsW5eXQ',
                                                 ),
                                               ),
                                             ),
@@ -867,7 +1039,7 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                 ),
               ),
             ),
-            Row(
+           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Conditionally show the "Previous" button
@@ -887,7 +1059,39 @@ class _Lesson37ScreenState extends State<Lesson37Screen> {
                 // Next or Finish Button
                 ElevatedButton(
                   onPressed: (currentIndex == 2)
-                      ? () => Navigator.pop(context)
+                      ? () async {
+                          
+                          bool allQuestionsAnsweredQuiz = answeredQuestion1 &&
+                              answered1 &&
+                              answered2 &&
+                              answeredQuestion4 &&
+                              answeredQuestion5;
+
+                          if(context.mounted){
+                          if (!allQuestionsAnsweredQuiz) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                    'Please answer all quiz questions before finishing.'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                            return;
+                          }
+                          // mark completed lessons
+                            final lessonCompletionManager = LessonCompletionManager();
+                            await lessonCompletionManager.completeLesson(
+                              lessonId: widget.lessonId,
+                              score: totalScore,
+                            );
+
+                            lessonCompleted = true; 
+                            if (context.mounted) {
+                              Navigator.pop(context, true);
+                            }
+                            await lessonManager.resetLessonProgress(widget.lessonId);
+                          }
+                        }
                       : nextSection,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,

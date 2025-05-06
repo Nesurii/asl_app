@@ -109,20 +109,24 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  // google sign-in
+  // Google Sign-In
   Future<AuthResponse> _googleSignIn() async {
     final googleUser = await GoogleSignIn(
       serverClientId: '913397498781-baldk0vv4aobc3omc0c5v2fa5hidapag.apps.googleusercontent.com',
       scopes: ['email'],
     ).signIn();
 
-    if (googleUser == null) throw 'Sign-in cancelled';
+    if (googleUser == null) {
+      throw 'Sign-in cancelled';
+    }
 
     final googleAuth = await googleUser.authentication;
     final idToken = googleAuth.idToken;
     final accessToken = googleAuth.accessToken;
 
-    if (idToken == null || accessToken == null) throw 'Missing tokens';
+    if (idToken == null || accessToken == null) {
+      throw 'Missing tokens';
+    }
 
     final authResponse = await supabase.auth.signInWithIdToken(
       provider: OAuthProvider.google,
@@ -131,40 +135,56 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     final user = authResponse.user;
-    if (user == null) throw 'Auth failed';
+    if (user == null) {
+      throw 'Auth failed';
+    }
 
-    // Insert user + progress if not exists
-    final existingUser = await supabase.from('user_account').select().eq('id', user.id).maybeSingle();
+    // Check if user already exists
+    final existingUser = await supabase
+        .from('user_account')
+        .select()
+        .eq('id', user.id)
+        .maybeSingle();
+
+    // If user does not exist, insert new records
     if (existingUser == null) {
       await supabase.from('user_account').insert({
         'id': user.id,
         'email': user.email,
         'password': 'google-auth',
-        'username': user.userMetadata?['display_name'] ?? user.email?.split('@')[0],
-      });
+        'username': user.userMetadata?['full_name'] ?? user.email?.split('@')[0],
+      }).select().single(); 
 
-      await supabase.from('user_progress').insert({
-        'user_id': user.id,
-        'current_lesson': null,
-        'current_unit': null,
+      await supabase.from('user_progresss').insert({
+        'id': user.id,
         'lessons_completed': 0,
         'exp': 0,
         'stickers_earned': [],
         'quiz_scores': {},
-      });
+        'activity_scores': {},
+        'current_state':{},
+      }).select().single();
     }
 
-    // Fetch and store
-    final userData = await supabase.from('user_account').select().eq('id', user.id).single();
+    // Fetch and cache user data
+    final userData = await supabase
+        .from('user_account')
+        .select()
+        .eq('id', user.id)
+        .single();
     currentUserData.setAccountData(userData);
 
-    final progressData = await supabase.from('user_progress').select().eq('user_id', user.id).maybeSingle();
-    if (progressData != null) currentUserData.setProgressData(progressData);
+    final progressData = await supabase
+        .from('user_progresss')
+        .select()
+        .eq('id', user.id)
+        .maybeSingle();
+    if (progressData != null) {
+      currentUserData.setProgressData(progressData);
+    }
 
     return authResponse;
   }
-
-
 
   @override
   Widget build(BuildContext context) {

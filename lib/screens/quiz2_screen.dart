@@ -35,7 +35,7 @@ class _Quiz2ScreenState extends State<Quiz2Screen> {
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/need.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvbmVlZC53ZWJtIiwiaWF0IjoxNzQzODU5Mzk5LCJleHAiOjE3NzUzOTUzOTl9.6W93HsAqhibqdlNbWwirbB21HvC2b14WfpcfaYof9kc",
     "Sorry":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/sorry.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvc29ycnkud2VibSIsImlhdCI6MTc0Mzg1OTQ4NywiZXhwIjoxNzc1Mzk1NDg3fQ.pXhpf2EddgNBbgvZVc2I6sYX-S4vFsRpAnlipRHoEtI",
-    " Thank you":
+    "Thank you":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/thank%20you.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvdGhhbmsgeW91LndlYm0iLCJpYXQiOjE3NDM5MzEzOTgsImV4cCI6MTc3NTQ2NzM5OH0.7iTwikxrfWtUxy5g2-4mdmdcLy86Cr_hWAuJIXx7DHc",
     "Again":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/Again.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvQWdhaW4ud2VibSIsImlhdCI6MTc0MzQzMjUyNywiZXhwIjoxNzc0OTY4NTI3fQ.7xymbDcgL7NzMTf_tfbw-ZAjIlf_Fm2ovU_Cnw8MNvw"
@@ -46,6 +46,7 @@ class _Quiz2ScreenState extends State<Quiz2Screen> {
   List<String> shuffledTexts = [];
   List<String> shuffledMediaUrls = [];
   Set<String> usedTexts = {};
+  Set<String> answeredItems = Set<String>();
 
   int currentPage = 0;
   final List<List<String>> pages = [
@@ -154,18 +155,32 @@ class _Quiz2ScreenState extends State<Quiz2Screen> {
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, size: 20, color: Colors.white),
                 onPressed: () {
-                  if (currentPage < pages.length - 1) {
-                    setState(() {
-                      currentPage++;
-                      shuffleCurrentPage();
-                    });
+                  if (answeredItems.length == shuffledTexts.length) {
+                    if (currentPage < pages.length - 1) {
+                      setState(() {
+                        currentPage++;
+                        shuffleCurrentPage();
+                        answeredItems
+                            .clear(); // Clear answered items for the next page
+                      });
+                    } else {
+                      // Last Page: Redirect to FillInTheBlankScreen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              FillInTheBlankScreen(totalScore: totalScore),
+                        ),
+                      );
+                    }
                   } else {
-                    // Last Page: Redirect to FillInTheBlankScreen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            FillInTheBlankScreen(totalScore: totalScore),
+                    // Show snackbar kapag hindi pa kompleto
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Please answer all quiz questions before proceeding.'),
+                        backgroundColor: Colors.red,
+                        duration: Duration(seconds: 2),
                       ),
                     );
                   }
@@ -255,13 +270,15 @@ class _Quiz2ScreenState extends State<Quiz2Screen> {
               Expanded(
                 flex: 1,
                 child: DragTarget<String>(
-                  onWillAcceptWithDetails: (DragTargetDetails<String> details) {
+                   onWillAcceptWithDetails: (DragTargetDetails<String> details) {
                     return correctMatches.containsKey(details.data);
-                  },
-                  onAcceptWithDetails: (DragTargetDetails<String> details) async {
-                    final receivedText = details.data;
+                  }, 
+                   onAcceptWithDetails: (DragTargetDetails<String> details) async {
+                     final receivedText = details.data;
                     setState(() {
-                      usedTexts.add(receivedText); // prevent future drags
+                      usedTexts.add(receivedText); // Prevent future drags
+                      answeredItems
+                          .add(receivedText); // Track the answered item
 
                       if (correctMatches[receivedText] == shuffledMedia) {
                         userMatches[text] = shuffledMedia;
@@ -271,7 +288,6 @@ class _Quiz2ScreenState extends State<Quiz2Screen> {
                         dropAreaColors[text] = Colors.red;
                       }
                     });
-
                     if (correctMatches[receivedText] == shuffledMedia) {
                       await player.play(AssetSource('sounds/correct.mp3'));
                     } else {
@@ -372,15 +388,6 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
     } catch (e) {
       debugPrint("Error playing sound: $e");
     }
-
-    if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(isCorrect ? "Correct!" : "Incorrect! Try again."),
-        backgroundColor: isCorrect ? Colors.green : Colors.red,
-        duration: Duration(seconds: 2),
-      ),
-    );
   }
 
   @override
@@ -479,35 +486,46 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               ),
             ],
           ),
-          Positioned(
+         Positioned(
             bottom: 30,
             right: 30,
             child: Container(
               width: 50,
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.orange,
+                color: Colors.orange, // Always orange
                 shape: BoxShape.circle,
               ),
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, color: Colors.white),
                 onPressed: () async {
-                  final currentContext = context;
-                  
-                  Navigator.pushReplacement(
-                    currentContext,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          MainScreen(category: 'Unit 2: Getting Started'),
-                    ),
-                  );
+                  if (answered) {
 
-                  // update quiz score
-                  await updateQuiz(
-                    quizNumber: 2,
-                    totalScore: totalScore,
-                  );
+                    // update quiz score
+                    await updateQuiz(
+                      quizId: 'Unit 2',
+                      totalScore: totalScore,
+                    ); 
 
+                    if(context.mounted){
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              MainScreen(category: 'Unit 2: Getting Started'),
+                        ),
+                      );
+                    }
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Please answer all quiz questions before proceeding.'),
+                        backgroundColor: Colors.red,
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  }
                 },
               ),
             ),

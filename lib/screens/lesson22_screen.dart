@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import '../services/completed_lessons_progress.dart';
+import '../services/state_progress.dart';
 import 'video_player_widget.dart';
 
 class Lesson22Screen extends StatefulWidget {
-  const Lesson22Screen({super.key});
+  final String lessonId;
+
+  const Lesson22Screen({super.key, required this.lessonId});
 
   @override
   State<Lesson22Screen> createState() => _Lesson22ScreenState();
@@ -14,6 +18,14 @@ class _Lesson22ScreenState extends State<Lesson22Screen> {
   int currentIndex = 0;
   int totalScore = 0;
   final AudioPlayer player = AudioPlayer();
+  final lessonManager = LessonManager();
+
+  bool lessonCompleted = false;
+  bool answeredQuestion1 = false;
+  bool answeredQuestion3 = false;
+  bool answeredQuestion4 = false;
+  bool answeredQuestion5 = false;
+  bool answered1 = false;
 
   final List<Map<String, dynamic>> lessonSections = [
     {
@@ -33,11 +45,41 @@ class _Lesson22ScreenState extends State<Lesson22Screen> {
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadSavedPage(); 
+  }
+
+  Future<void> _loadSavedPage() async {
+    
+    final currentState = await lessonManager.getCurrentState();
+
+    if (currentState != null) {
+      final lessonPages = Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
+      final savedPageTitle = lessonPages[widget.lessonId]; 
+
+      if (savedPageTitle != null) {
+        // Parse the page number from savedPageTitle
+        final match = RegExp(r'Page (\d+):').firstMatch(savedPageTitle);
+        if (match != null) {
+          final savedPageIndex = int.tryParse(match.group(1)!);
+          if (savedPageIndex != null && savedPageIndex < lessonSections.length) {
+            setState(() {
+              currentIndex = savedPageIndex; // Jump to saved page
+            });
+          }
+        }
+      }
+    }
+  }
+
   void nextSection() {
     if (currentIndex < lessonSections.length - 1) {
       setState(() {
         currentIndex++;
       });
+      _saveCurrentPage();
     }
   }
 
@@ -46,7 +88,25 @@ class _Lesson22ScreenState extends State<Lesson22Screen> {
       setState(() {
         currentIndex--;
       });
+      _saveCurrentPage();
     }
+  }
+
+   @override
+  void dispose() {
+    if (!lessonCompleted) {
+      _saveCurrentPage(); 
+    }
+    super.dispose();
+  }
+
+  Future<void> _saveCurrentPage() async {
+    final section = lessonSections[currentIndex];
+
+    await lessonManager.updateCurrentPageForLesson(
+      widget.lessonId,
+      'Page $currentIndex: ${section['title']}',
+    );
   }
 
   @override
@@ -349,12 +409,6 @@ class _Lesson22ScreenState extends State<Lesson22Screen> {
                               int correctAnswer4 = 2;
                               int correctAnswer5 = 1;
 
-                              bool answeredQuestion1 = false;
-                              bool answeredQuestion3 = false;
-                              bool answeredQuestion4 = false;
-                              bool answeredQuestion5 = false;
-
-                              bool answered1 = false;
                               bool isCorrect1 = false;
 
                               TextEditingController answerController1 =
@@ -769,7 +823,39 @@ class _Lesson22ScreenState extends State<Lesson22Screen> {
                 // Next or Finish Button
                 ElevatedButton(
                   onPressed: (currentIndex == 4)
-                      ? () => Navigator.pop(context)
+                      ? () async {
+
+                          bool allQuestionsAnsweredQuiz = answeredQuestion1 &&
+                              answered1 &&
+                              answeredQuestion3 &&
+                              answeredQuestion4 &&
+                              answeredQuestion5;
+
+                          if(context.mounted){
+                          if (!allQuestionsAnsweredQuiz) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                    'Please answer all quiz questions before finishing.'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                            return;
+                          }
+                          // mark completed lessons
+                            final lessonCompletionManager = LessonCompletionManager();
+                            await lessonCompletionManager.completeLesson(
+                              lessonId: widget.lessonId,
+                              score: totalScore,
+                            );
+
+                            lessonCompleted = true; 
+                            if (context.mounted) {
+                              Navigator.pop(context, true);
+                            }
+                            await lessonManager.resetLessonProgress(widget.lessonId);
+                          }
+                        }
                       : nextSection,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,

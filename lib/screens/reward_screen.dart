@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:math';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import '../services/stickers_progress.dart';
 
 class RewardScreen extends StatefulWidget {
   final int rewardIndex;
@@ -78,15 +79,6 @@ class _RewardScreenState extends State<RewardScreen> {
     super.dispose();
   }
 
-  void _saveSticker(int index) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    List<String> savedStickers = prefs.getStringList('stickers') ?? [];
-
-    if (!savedStickers.contains(rewardImages[index])) {
-      savedStickers.add(rewardImages[index]);
-      await prefs.setStringList('stickers', savedStickers);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -165,10 +157,15 @@ class _RewardScreenState extends State<RewardScreen> {
 
                 // OK Button
                 ElevatedButton(
-                  onPressed: () {
-                    _saveSticker(widget.rewardIndex); // Save sticker
-                    Navigator.pop(context);
+                  onPressed: () async {
+                      String earnedStickerPath = rewardImages[widget.rewardIndex];
+                      await updateStickers(stickerId: earnedStickerPath);
+
+                      if (context.mounted) {
+                        Navigator.pop(context);
+                      }
                   },
+                  
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     shape: RoundedRectangleBorder(

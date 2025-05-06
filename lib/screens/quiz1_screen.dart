@@ -46,6 +46,7 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
   List<String> shuffledTexts = [];
   List<String> shuffledMediaUrls = [];
   Set<String> usedTexts = {};
+  Set<String> answeredItems = Set<String>();
 
   int currentPage = 0;
   final List<List<String>> pages = [
@@ -154,18 +155,32 @@ class _Quiz1ScreenState extends State<Quiz1Screen> {
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, size: 20, color: Colors.white),
                 onPressed: () {
-                  if (currentPage < pages.length - 1) {
-                    setState(() {
-                      currentPage++;
-                      shuffleCurrentPage();
-                    });
+                  if (answeredItems.length == shuffledTexts.length) {
+                    if (currentPage < pages.length - 1) {
+                      setState(() {
+                        currentPage++;
+                        shuffleCurrentPage();
+                        answeredItems
+                            .clear(); // Clear answered items for the next page
+                      });
+                    } else {
+                      // Last Page: Redirect to FillInTheBlankScreen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              FillInTheBlankScreen(totalScore: totalScore),
+                        ),
+                      );
+                    }
                   } else {
-                    // Last Page: Redirect to FillInTheBlankScreen
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            FillInTheBlankScreen(totalScore: totalScore),
+                    // Show snackbar kapag hindi pa kompleto
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Please answer all quiz questions before proceeding.'),
+                        backgroundColor: Colors.red,
+                        duration: Duration(seconds: 2),
                       ),
                     );
                   }
@@ -257,11 +272,13 @@ Widget buildMatchingSection(String text, String shuffledMedia) {
                 child: DragTarget<String>(
                   onWillAcceptWithDetails: (DragTargetDetails<String> details) {
                     return correctMatches.containsKey(details.data);
-                  },
-                  onAcceptWithDetails: (DragTargetDetails<String> details) async {
+                  }, 
+                   onAcceptWithDetails: (DragTargetDetails<String> details) async {
                     final receivedText = details.data;
                     setState(() {
-                      usedTexts.add(receivedText); // prevent future drags
+                      usedTexts.add(receivedText); // Prevent future drags
+                      answeredItems
+                          .add(receivedText); // Track the answered item
 
                       if (correctMatches[receivedText] == shuffledMedia) {
                         userMatches[text] = shuffledMedia;
@@ -271,7 +288,6 @@ Widget buildMatchingSection(String text, String shuffledMedia) {
                         dropAreaColors[text] = Colors.red;
                       }
                     });
-
                     if (correctMatches[receivedText] == shuffledMedia) {
                       await player.play(AssetSource('sounds/correct.mp3'));
                     } else {
@@ -373,15 +389,6 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
     } catch (e) {
       debugPrint("Error playing sound: $e");
     }
-
-    if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(isCorrect ? "Correct!" : "Incorrect! Try again."),
-        backgroundColor: isCorrect ? Colors.green : Colors.red,
-        duration: Duration(seconds: 2),
-      ),
-    );
   }
 
   @override
@@ -494,28 +501,40 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               width: 50,
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.orange,
+                color: Colors.orange, // Always orange
                 shape: BoxShape.circle,
               ),
               child: IconButton(
                 icon: Icon(Icons.arrow_forward, color: Colors.white),
                 onPressed: () async {
-                  final currentContext = context;
+                  if (answered) {
 
-                  Navigator.pushReplacement(
-                    currentContext,
-                    MaterialPageRoute(
-                      builder: (context) => MainScreen(category: 'Unit 1: Welcome'),
-                    ),
-                  );
-
-                  // update quiz score
-                  await updateQuiz(
-                    quizNumber: 1,
-                    totalScore: totalScore,
-                  );
+                    // update quiz score
+                    await updateQuiz(
+                      quizId: 'Unit 1',
+                      totalScore: totalScore,
+                    ); 
+                    
+                    if(context.mounted){
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              MainScreen(category: 'Unit 1: Welcome'),
+                        ),
+                      );
+                    }
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                            'Please answer all quiz questions before proceeding.'),
+                        backgroundColor: Colors.red,
+                        duration: Duration(seconds: 2),
+                      ),
+                    );
+                  }
                 },
-
               ),
             ),
           ),

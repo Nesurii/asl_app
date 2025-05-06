@@ -7,24 +7,29 @@ class CurrentUserData extends ChangeNotifier {
 
   Map<String, dynamic>? _accountData;
   Map<String, dynamic>? _progressData;
+  Map<String, dynamic>? _leaderboardData; // ADD THIS
 
   Map<String, dynamic>? get account => _accountData;
   Map<String, dynamic>? get progress => _progressData;
+  Map<String, dynamic>? get leaderboard => _leaderboardData; // Getter
+
   bool get isLoggedIn => _accountData != null;
 
-  /// Set user_account data
   void setAccountData(Map<String, dynamic> newData) {
     _accountData = newData;
     notifyListeners();
   }
 
-  /// Set user_progress data
   void setProgressData(Map<String, dynamic> newData) {
     _progressData = newData;
     notifyListeners();
   }
 
-  /// Update a specific field in user_account
+  void setLeaderboardData(Map<String, dynamic> newData) { // ADD THIS
+    _leaderboardData = newData;
+    notifyListeners();
+  }
+
   void updateAccountField(String key, dynamic value) {
     if (_accountData != null) {
       _accountData![key] = value;
@@ -32,7 +37,6 @@ class CurrentUserData extends ChangeNotifier {
     }
   }
 
-  /// Update a specific field in user_progress
   void updateProgressField(String key, dynamic value) {
     if (_progressData != null) {
       _progressData![key] = value;
@@ -40,10 +44,17 @@ class CurrentUserData extends ChangeNotifier {
     }
   }
 
-  /// Clears all user data (logout)
+  void updateLeaderboardField(String key, dynamic value) { // ADD THIS
+    if (_leaderboardData != null) {
+      _leaderboardData![key] = value;
+      notifyListeners();
+    }
+  }
+
   void clear() {
     _accountData = null;
     _progressData = null;
+    _leaderboardData = null; // Clear din leaderboard
     notifyListeners();
   }
 

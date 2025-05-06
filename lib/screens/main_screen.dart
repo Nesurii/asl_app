@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../services/lesson_progress';
+import '../services/current_user.dart';
+import '../services/state_progress.dart';
 import 'category_selector_screen.dart';
 import 'asl_alphabet_screen.dart';
 import 'practice_screen.dart';
@@ -71,7 +72,9 @@ class _MainScreenState extends State<MainScreen> {
   String _currentSectionTitle = "";
   int _currentUnitNumber = 0;
   int chestCircleCounter = 1; // Counter for orange circles
+  final lessonManager = LessonManager();
   final ScrollController _scrollController = ScrollController();
+  //List<int> unlockedLessons = [];
   final List<String> sectionTitles = [
     'Welcome',
     'Getting Started',
@@ -106,7 +109,7 @@ class _MainScreenState extends State<MainScreen> {
     }
   }
 
-  void _onScroll() {
+  Future<void> _onScroll() async {
     double offset = _scrollController.offset;
     int sectionIndex = (offset / 664).floor();
     if (sectionIndex >= 0 && sectionIndex < sectionTitles.length) {
@@ -115,6 +118,7 @@ class _MainScreenState extends State<MainScreen> {
         _currentUnitNumber = sectionIndex + 1; // Add 1 to make it 1-indexed
       });
     }
+    await lessonManager.updateCurrentUnit('$_currentUnitNumber : $_currentSectionTitle');
   }
 
   void _onTabTapped(int index) {
@@ -207,7 +211,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget _buildCircles(int sectionIndex) {
     int startNumber =
         sectionIndex * 4 + 1; // Start number for blue circles (1, 5, 9, 13,...)
-    int orangeCircleNumber = sectionIndex; // Unique number for orange circles
+    int orangeCircleNumber = sectionIndex + 1; // Unique number for orange circles
     int quizNumber = sectionIndex + 1; // Unique quiz number
 
     return Column(
@@ -239,180 +243,268 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget _buildCircle(Color color,
-      {bool isQuiz = false, bool isChest = false, int? circleNumber}) {
+  bool isLessonUnlocked(int lessonNumber) {
+    // Lesson 1 is always unlocked
+    if (lessonNumber == 1) return true;
+
+    final completedLessons = currentUserData.progress?['lessons_completed'];
+    final quizScores = currentUserData.progress?['quiz_scores'];
+
+    if (completedLessons is! List || quizScores is! Map<String, dynamic>) {
+      return false;
+    }
+
+    final prevLessonId = 'lesson ${lessonNumber - 1}';
+
+    // Unlock normally if previous lesson is completed
+    final prevLessonCompleted = completedLessons.contains(prevLessonId);
+
+    // Additional rule: if lesson is start of a new unit (5, 9, 13, ...)
+    final isUnitStart = (lessonNumber - 1) % 4 == 0;
+
+    if (isUnitStart) {
+      final prevUnit = (lessonNumber - 1) ~/ 4;
+      final prevQuizKey = 'Unit $prevUnit';
+      final prevQuizScore = quizScores[prevQuizKey];
+
+      final quizPerfect = prevQuizScore == 100;
+
+      return prevLessonCompleted && quizPerfect;
+    }
+
+    return prevLessonCompleted;
+  }
+
+
+  bool isChestUnlocked(int chestNumber) {
+    final quizScores = currentUserData.progress?['quiz_scores'];
+    if (quizScores == null || quizScores is! Map<String, dynamic>) return false;
+
+    final quizKey = 'Unit $chestNumber';
+    final score = quizScores[quizKey];
+
+    debugPrint('Checking chest unlock for $quizKey → score: $score');
+
+    return score == 100;
+  }
+
+
+  bool isUnitCompleted(int quizNumber) {
+    final completedLessons = currentUserData.progress?['lessons_completed'];
+    if (completedLessons is! List) return false;
+
+    // Lessons required: Lesson (quizNumber * 4 - 3) to Lesson (quizNumber * 4)
+    final start = (quizNumber - 1) * 4 + 1;
+    final end = quizNumber * 4;
+
+    for (int i = start; i <= end; i++) {
+      if (!completedLessons.contains('lesson $i')) return false;
+    }
+
+    return true;
+  }
+
+  Widget _buildCircle(Color color, {bool isQuiz = false, bool isChest = false, int? circleNumber}) {
+  // Determine if the lesson, quiz, or chest is locked
+    final isLocked = circleNumber != null && (
+      (!isQuiz && !isChest && !isLessonUnlocked(circleNumber)) || // lock lessons
+      (isQuiz && !isUnitCompleted(circleNumber)) ||               // lock quizzes
+      (isChest && !isChestUnlocked(circleNumber))                 // lock chests unless quiz = 100
+    );
+
     return GestureDetector(
-      onTap: isQuiz
-          ? () {
-              if (circleNumber != null) {
+      onTap: isLocked
+    ? () {
+        // Show locked message
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              isChest
+                  ? 'Score a perfect 100 on Quiz $circleNumber to unlock the reward!'
+                  : isQuiz
+                      ? 'Complete all 4 lessons in this unit to unlock the quiz!'
+                      : 'Complete previous lessons to unlock.',
+            ),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    : isQuiz
+        ? () async {
+            // Navigate to quiz screen when unlocked
+            if (circleNumber != null) {
+              // You can show a loading indicator here if necessary
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => _getQuizScreen(circleNumber)),
+              );
+            }
+          }
+        : isChest
+            ? () async {
+                // Navigate to reward screen when chest is unlocked
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      switch (circleNumber) {
-                        case 1:
-                          return Quiz1Screen();
-                        case 2:
-                          return Quiz2Screen();
-                        case 3:
-                          return Quiz3Screen();
-                        case 4:
-                          return Quiz4Screen();
-                        case 5:
-                          return Quiz5Screen();
-                        case 6:
-                          return Quiz6Screen();
-                        case 7:
-                          return Quiz7Screen();
-                        case 8:
-                          return Quiz8Screen();
-                        case 9:
-                          return Quiz9Screen();
-                        case 10:
-                          return Quiz10Screen();
-                        default:
-                          return Quiz1Screen(); // Fallback
-                      }
-                    },
-                  ),
+                  MaterialPageRoute(builder: (context) => RewardScreen(rewardIndex: circleNumber ?? 0)),
                 );
               }
-            }
-          : isChest
-              ? () {
-                  Navigator.push(
+            : () async {
+                // Navigate to lesson screen when unlocked
+                if (circleNumber != null) {
+                  await lessonManager.updateCurrentLesson('Lesson $circleNumber');
+
+                  if (!mounted) return;
+
+                  final result = await Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          RewardScreen(rewardIndex: circleNumber ?? 0),
-                    ),
+                    MaterialPageRoute(builder: (context) => _getLessonScreen(circleNumber)),
                   );
-                }
-              : () async {
-                  if (circleNumber != null) {
-                    final lessonManager = LessonManager();
-                    await lessonManager.updateCurrentLesson('lesson $circleNumber');
-                    
-                     if (!mounted) return;
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          switch (circleNumber) {
-                            case 1:
-                              return Lesson1Screen();
-                            case 2:
-                              return Lesson2Screen();
-                            case 3:
-                              return Lesson3Screen();
-                            case 4:
-                              return Lesson4Screen();
-                            case 5:
-                              return Lesson5Screen();
-                            case 6:
-                              return Lesson6Screen();
-                            case 7:
-                              return Lesson7Screen();
-                            case 8:
-                              return Lesson8Screen();
-                            case 9:
-                              return Lesson9Screen();
-                            case 10:
-                              return Lesson10Screen();
-                            case 11:
-                              return Lesson11Screen();
-                            case 12:
-                              return Lesson12Screen();
-                            case 13:
-                              return Lesson13Screen();
-                            case 14:
-                              return Lesson14Screen();
-                            case 15:
-                              return Lesson15Screen();
-                            case 16:
-                              return Lesson16Screen();
-                            case 17:
-                              return Lesson17Screen();
-                            case 18:
-                              return Lesson18Screen();
-                            case 19:
-                              return Lesson19Screen();
-                            case 20:
-                              return Lesson20Screen();
-                            case 21:
-                              return Lesson21Screen();
-                            case 22:
-                              return Lesson22Screen();
-                            case 23:
-                              return Lesson23Screen();
-                            case 24:
-                              return Lesson24Screen();
-                            case 25:
-                              return Lesson25Screen();
-                            case 26:
-                              return Lesson26Screen();
-                            case 27:
-                              return Lesson27Screen();
-                            case 28:
-                              return Lesson28Screen();
-                            case 29:
-                              return Lesson29Screen();
-                            case 30:
-                              return Lesson30Screen();
-                            case 31:
-                              return Lesson31Screen();
-                            case 32:
-                              return Lesson32Screen();
-                            case 33:
-                              return Lesson33Screen();
-                            case 34:
-                              return Lesson34Screen();
-                            case 35:
-                              return Lesson35Screen();
-                            case 36:
-                              return Lesson36Screen();
-                            case 37:
-                              return Lesson37Screen();
-                            case 38:
-                              return Lesson38Screen();
-                            case 39:
-                              return Lesson39Screen();
-                            case 40:
-                              return Lesson40Screen();
-                            default:
-                              return Lesson1Screen(); // Fallback
-                          }
-                        },
-                      ),
-                    );
+
+                  if (result == true) {
+                    setState(() {}); // refresh the main screen after a lesson is completed
                   }
-                },
+                }
+              },
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 8),
+        margin: const EdgeInsets.symmetric(vertical: 8),
         width: 80,
         height: 80,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: color,
+          color: isLocked ? Colors.grey : color, // Locking means greying out
         ),
         child: Center(
-          child: isQuiz
-              ? Icon(Icons.assignment, color: Colors.white, size: 36)
-              : isChest
-                  ? Icon(Icons.emoji_events, color: Colors.white, size: 36)
-                  : circleNumber != null
-                      ? Text(
-                          '$circleNumber',
-                          style: TextStyle(
+          child: isLocked
+              ? const Icon(Icons.lock, color: Colors.white, size: 36)
+              : isQuiz
+                  ? const Icon(Icons.assignment, color: Colors.white, size: 36) // Quiz icon
+                  : isChest
+                      ? const Icon(Icons.emoji_events, color: Colors.white, size: 36) // Chest icon
+                      : Text(
+                          '${circleNumber ?? ''}',
+                          style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
-                        )
-                      : null,
+                        ), // Display lesson number
         ),
       ),
     );
+  }
+
+  Widget _getLessonScreen(int lessonNumber) {
+    switch (lessonNumber) {
+      case 1:
+        return Lesson1Screen(lessonId: 'lesson $lessonNumber');
+      case 2:
+        return Lesson2Screen(lessonId: 'lesson $lessonNumber');
+      case 3:
+        return Lesson3Screen(lessonId: 'lesson $lessonNumber');
+      case 4:
+        return Lesson4Screen(lessonId: 'lesson $lessonNumber');
+      case 5:
+        return Lesson5Screen(lessonId: 'lesson $lessonNumber');
+      case 6:
+        return Lesson6Screen(lessonId: 'lesson $lessonNumber');
+      case 7:
+        return Lesson7Screen(lessonId: 'lesson $lessonNumber');
+      case 8:
+        return Lesson8Screen(lessonId: 'lesson $lessonNumber');
+      case 9:
+        return Lesson9Screen(lessonId: 'lesson $lessonNumber');
+      case 10:
+        return Lesson10Screen(lessonId: 'lesson $lessonNumber');
+      case 11:
+        return Lesson11Screen(lessonId: 'lesson $lessonNumber');
+      case 12:
+        return Lesson12Screen(lessonId: 'lesson $lessonNumber');
+      case 13:
+        return Lesson13Screen(lessonId: 'lesson $lessonNumber');
+      case 14:
+        return Lesson14Screen(lessonId: 'lesson $lessonNumber');
+      case 15:
+        return Lesson15Screen(lessonId: 'lesson $lessonNumber');
+      case 16:
+        return Lesson16Screen(lessonId: 'lesson $lessonNumber');
+      case 17:
+        return Lesson17Screen(lessonId: 'lesson $lessonNumber');
+      case 18:
+        return Lesson18Screen(lessonId: 'lesson $lessonNumber');
+      case 19:
+        return Lesson19Screen(lessonId: 'lesson $lessonNumber');
+      case 20:
+        return Lesson20Screen(lessonId: 'lesson $lessonNumber');
+      case 21:
+        return Lesson21Screen(lessonId: 'lesson $lessonNumber');
+      case 22:
+        return Lesson22Screen(lessonId: 'lesson $lessonNumber');
+      case 23:
+        return Lesson23Screen(lessonId: 'lesson $lessonNumber');
+      case 24:
+        return Lesson24Screen(lessonId: 'lesson $lessonNumber');
+      case 25:
+        return Lesson25Screen(lessonId: 'lesson $lessonNumber');
+      case 26:
+        return Lesson26Screen(lessonId: 'lesson $lessonNumber');
+      case 27:
+        return Lesson27Screen(lessonId: 'lesson $lessonNumber');
+      case 28:
+        return Lesson28Screen(lessonId: 'lesson $lessonNumber');
+      case 29:
+        return Lesson29Screen(lessonId: 'lesson $lessonNumber');
+      case 30:
+        return Lesson30Screen(lessonId: 'lesson $lessonNumber');
+      case 31:
+        return Lesson31Screen(lessonId: 'lesson $lessonNumber');
+      case 32:
+        return Lesson32Screen(lessonId: 'lesson $lessonNumber');
+      case 33:
+        return Lesson33Screen(lessonId: 'lesson $lessonNumber');
+      case 34:
+        return Lesson34Screen(lessonId: 'lesson $lessonNumber');
+      case 35:
+        return Lesson35Screen(lessonId: 'lesson $lessonNumber');
+      case 36:
+        return Lesson36Screen(lessonId: 'lesson $lessonNumber');
+      case 37:
+        return Lesson37Screen(lessonId: 'lesson $lessonNumber');
+      case 38:
+        return Lesson38Screen(lessonId: 'lesson $lessonNumber');
+      case 39:
+        return Lesson39Screen(lessonId: 'lesson $lessonNumber');
+      case 40:
+        return Lesson40Screen(lessonId: 'lesson $lessonNumber');
+      default:
+        return Lesson1Screen(lessonId: 'lesson $lessonNumber');
+    }
+  }
+
+  Widget _getQuizScreen(int quizNumber) {
+    switch (quizNumber) {
+      case 1:
+        return Quiz1Screen();
+      case 2:
+        return Quiz2Screen();
+      case 3:
+        return Quiz3Screen();
+      case 4:
+        return Quiz4Screen();
+      case 5:
+        return Quiz5Screen();
+      case 6:
+        return Quiz6Screen();
+      case 7:
+        return Quiz7Screen();
+      case 8:
+        return Quiz8Screen();
+      case 9:
+        return Quiz9Screen();
+      case 10:
+        return Quiz10Screen();
+      default:
+        return Quiz1Screen();
+    }
   }
 
   final Map<String, Color> sectionColors = {

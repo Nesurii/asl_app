@@ -77,9 +77,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     // Fetch progress data
       final progressData = await supabase
-          .from('user_progress')
+          .from('user_progresss')
           .select()
-          .eq('user_id', user.id) // or whatever your foreign key column is
+          .eq('id', user.id) // or whatever your foreign key column is
           .maybeSingle(); // in case wala pang progress
 
       if (progressData != null) {

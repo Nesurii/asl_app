@@ -493,19 +493,22 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
                 onPressed: () async {
                   final currentContext = context;
 
-                  Navigator.pushReplacement(
-                    currentContext,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          MainScreen(category: 'Unit 10: Making Plans'),
-                    ),
-                  );
-
                   // update quiz score
                   await updateQuiz(
-                    quizNumber: 10,
+                    quizId: 'Unit 10',
                     totalScore: totalScore,
                   );
+
+                  if(context.mounted){
+                    Navigator.pushReplacement(
+                      currentContext,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            MainScreen(category: 'Unit 10: Making Plans'),
+                      ),
+                    );
+                  }
+                  
                 },
               ),
             ),

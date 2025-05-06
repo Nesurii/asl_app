@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import '../services/completed_lessons_progress.dart';
+import '../services/state_progress.dart';
 import 'video_player_widget.dart';
 
 class Lesson15Screen extends StatefulWidget {
-  const Lesson15Screen({super.key});
+final String lessonId;
+
+  const Lesson15Screen({super.key, required this.lessonId});
 
   @override
   State<Lesson15Screen> createState() => _Lesson15ScreenState();
@@ -14,6 +18,14 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
   int currentIndex = 0;
   int totalScore = 0;
   final AudioPlayer player = AudioPlayer();
+  final lessonManager = LessonManager();
+
+  bool answeredQuestion3 = false;
+  bool answeredQuestion4 = false;
+  bool answered1 = false;
+  bool answered2 = false;
+  bool answered3 = false;
+  bool lessonCompleted = false;
 
   final List<Map<String, dynamic>> lessonSections = [
     {
@@ -33,11 +45,41 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
     },
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _loadSavedPage(); 
+  }
+
+  Future<void> _loadSavedPage() async {
+    
+    final currentState = await lessonManager.getCurrentState();
+
+    if (currentState != null) {
+      final lessonPages = Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
+      final savedPageTitle = lessonPages[widget.lessonId]; 
+
+      if (savedPageTitle != null) {
+        // Parse the page number from savedPageTitle
+        final match = RegExp(r'Page (\d+):').firstMatch(savedPageTitle);
+        if (match != null) {
+          final savedPageIndex = int.tryParse(match.group(1)!);
+          if (savedPageIndex != null && savedPageIndex < lessonSections.length) {
+            setState(() {
+              currentIndex = savedPageIndex; // Jump to saved page
+            });
+          }
+        }
+      }
+    }
+  }
+
   void nextSection() {
     if (currentIndex < lessonSections.length - 1) {
       setState(() {
         currentIndex++;
       });
+      _saveCurrentPage();
     }
   }
 
@@ -46,7 +88,25 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
       setState(() {
         currentIndex--;
       });
+      _saveCurrentPage();
     }
+  }
+
+   @override
+  void dispose() {
+    if (!lessonCompleted) {
+      _saveCurrentPage(); 
+    }
+    super.dispose();
+  }
+
+  Future<void> _saveCurrentPage() async {
+    final section = lessonSections[currentIndex];
+
+    await lessonManager.updateCurrentPageForLesson(
+      widget.lessonId,
+      'Page $currentIndex: ${section['title']}',
+    );
   }
 
   @override
@@ -752,12 +812,6 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                               int correctAnswer3 = 2;
                               int correctAnswer4 = 3;
 
-                              bool answeredQuestion3 = false;
-                              bool answeredQuestion4 = false;
-
-                              bool answered1 = false;
-                              bool answered2 = false;
-                              bool answered3 = false;
                               bool isCorrect1 = false;
                               bool isCorrect2 = false;
                               bool isCorrect3 = false;
@@ -1058,17 +1112,42 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                             fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(height: 10),
+                                      Text(
+                                        'Tap the frame to select the answer',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                      ),
+                                      SizedBox(height: 10),
                                       Column(
                                         children: [
                                           Container(
-                                            color: getButtonColor(4, 1),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(4,
+                                                  1), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(4, 1);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -1079,14 +1158,31 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                           ),
                                           SizedBox(height: 10),
                                           Container(
-                                            color: getButtonColor(4, 2),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(4,
+                                                  2), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(4, 2);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -1097,14 +1193,31 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                           ),
                                           SizedBox(height: 10),
                                           Container(
-                                            color: getButtonColor(4, 3),
+                                            decoration: BoxDecoration(
+                                              color: getButtonColor(4,
+                                                  3), // dynamic background 					color
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                  color: Colors.black54,
+                                                  width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.black12,
+                                                  blurRadius: 4,
+                                                  offset: Offset(2, 2),
+                                                ),
+                                              ],
+                                            ),
                                             child: InkWell(
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
                                               onTap: () {
                                                 setState(() {
                                                   checkAnswer(4, 3);
                                                 });
                                               },
-                                              child: Container(
+                                              child: Padding(
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
@@ -1199,14 +1312,46 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                 // Next or Finish Button
                 ElevatedButton(
                   onPressed: (currentIndex == 4)
-                      ? () => Navigator.pop(context)
+                      ? () async {
+
+                          bool allQuestionsAnsweredQuiz = answered1 &&
+                              answered2 &&
+                              answeredQuestion3 &&
+                              answeredQuestion4 &&
+                              answered3;
+
+                          if(context.mounted){
+                          if (!allQuestionsAnsweredQuiz) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                    'Please answer all quiz questions before finishing.'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                            return;
+                          }
+                          // mark completed lessons
+                            final lessonCompletionManager = LessonCompletionManager();
+                            await lessonCompletionManager.completeLesson(
+                              lessonId: widget.lessonId,
+                              score: totalScore,
+                            );
+
+                          lessonCompleted = true; 
+                          if (context.mounted) {
+                            Navigator.pop(context, true);
+                          }
+                          await lessonManager.resetLessonProgress(widget.lessonId);
+                          }
+                        }
                       : nextSection,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     side: BorderSide(color: Colors.black, width: 1),
                   ),
                   child: Text(
-                    (currentIndex ==4) ? 'Finish' : 'Next',
+                    (currentIndex == 4) ? 'Finish' : 'Next',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),

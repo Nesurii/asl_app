@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/current_user.dart';
 import 'login_screen.dart';
@@ -22,20 +21,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   bool isSettingsSelected = false;
   int _selectedIndex = 4; // Default selected index for Profile
-  List<String> earnedStickers = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _loadStickers();
-  }
-
-  void _loadStickers() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      earnedStickers = prefs.getStringList('stickers') ?? [];
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,6 +135,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Total EXP: ${userData.progress?['exp'] ?? ''}',
+                      style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                    ),
                   ],
                 );
               },
@@ -220,53 +212,57 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildMyAchievements() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Text(
-            "Earned Stickers:",
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
+  final progressData = Provider.of<CurrentUserData>(context).progress;
+  final List<dynamic>? earnedStickers = progressData?['stickers_earned'];
+
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Text(
+          "Earned Stickers:",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        Expanded(
-          child: earnedStickers.isEmpty
-              ? Center(child: Text("No stickers earned yet!"))
-              : GridView.builder(
-                  padding: EdgeInsets.all(16),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                  ),
-                  itemCount: earnedStickers.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black, width: 2),
-                        borderRadius: BorderRadius.circular(8),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withAlpha((0.5 * 255).round()),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: Image.asset(earnedStickers[index],
-                            fit: BoxFit.cover),
-                      ),
-                    );
-                  },
+      ),
+      if (earnedStickers != null && earnedStickers.isNotEmpty)
+        Center( 
+          child: Wrap( 
+            spacing: 12,
+            runSpacing: 12,
+            children: earnedStickers.map((sticker) {
+              return Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.black, width: 2),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 6,
+                      offset: Offset(2, 4),
+                    ),
+                  ],
+                  color: Colors.white,
                 ),
+                padding: EdgeInsets.all(16),
+                child: Image.asset(
+                  '$sticker',
+                  width: 70,
+                  height: 70,
+                  fit: BoxFit.cover,
+                ),
+              );
+            }).toList(),
+          ),
+        )
+      else
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Text("No stickers earned yet."),
         ),
-      ],
-    );
-  }
+    ],
+  );
+}
 
   Widget _buildSettings() {
     return Column(
