@@ -1,0 +1,2 @@
+C:/Users/ASUS/Downloads/NESLIE FILES/asl_app/android/app/.cxx/RelWithDebInfo/686d6u2w/x86/CMakeFiles/edit_cache.dir
+C:/Users/ASUS/Downloads/NESLIE FILES/asl_app/android/app/.cxx/RelWithDebInfo/686d6u2w/x86/CMakeFiles/rebuild_cache.dir
