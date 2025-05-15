@@ -79,7 +79,6 @@ class _RewardScreenState extends State<RewardScreen> {
     super.dispose();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +121,7 @@ class _RewardScreenState extends State<RewardScreen> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
-                      rewardImages[widget.rewardIndex],
+                      rewardImages[widget.rewardIndex-1],
                       width: 180,
                       height: 180,
                       fit: BoxFit.cover,
@@ -133,7 +132,7 @@ class _RewardScreenState extends State<RewardScreen> {
 
                 // Large Greeting Text
                 Text(
-                  rewardGreetings[widget.rewardIndex],
+                  rewardGreetings[widget.rewardIndex-1],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30,
@@ -145,7 +144,7 @@ class _RewardScreenState extends State<RewardScreen> {
 
                 // Smaller Subtext
                 Text(
-                  rewardTexts[widget.rewardIndex],
+                  rewardTexts[widget.rewardIndex-1],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 14,
@@ -158,14 +157,13 @@ class _RewardScreenState extends State<RewardScreen> {
                 // OK Button
                 ElevatedButton(
                   onPressed: () async {
-                      String earnedStickerPath = rewardImages[widget.rewardIndex];
-                      await updateStickers(stickerId: earnedStickerPath);
+                    String earnedStickerPath = rewardImages[widget.rewardIndex-1];
+                    await updateStickers(stickerId: earnedStickerPath);
 
-                      if (context.mounted) {
-                        Navigator.pop(context);
-                      }
+                    if (context.mounted) {
+                      Navigator.pop(context);
+                    }
                   },
-                  
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     shape: RoundedRectangleBorder(

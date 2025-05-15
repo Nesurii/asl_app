@@ -14,38 +14,38 @@ class _Unit1PracticeScreenState extends State<Unit1PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: Now that you know the Alphabet signs, try fingerspelling the word GAME. You can follow the guide below.',
+          'Practice 1: You were greeting someone you just met at your school by saying hello. Try signing the visual guide below.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/G.A.M.E..webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvRy5BLk0uRS4ud2VibSIsImlhdCI6MTc0NDgwMDA5OCwiZXhwIjoxNzc2MzM2MDk4fQ.nmOu_qNzjfz8t7NdBUzli33var6XypDNq6gD1qgxby0',
-      'videoLabel': 'Game',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/hello.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvaGVsbG8ud2VibSIsImlhdCI6MTc0MzQyNTE3MiwiZXhwIjoxNzc0OTYxMTcyfQ.L6KBXlQYq6vf4l5bLa3Mc3wH_GrEKp83Rzq9dcumvdc',
+      'videoLabel': 'Hello',
     },
     {
       'practiceText':
-          'Practice 2: You were asked how you were, try this response.',
+          'Practice 2: You were asked how you were, and you were just fine. Try signing the visual guide below.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/I_m%20fine,%20how%20are%20you.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvSV9tIGZpbmUsIGhvdyBhcmUgeW91LndlYm0iLCJpYXQiOjE3NDM0MzI3MzcsImV4cCI6MTc3NDk2ODczN30.y_kWhbUr1mBNaW0U0k--a9d06wX2HIHw439iua1SDPc',
-      'videoLabel': 'I’m fine, how are you?',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/fine.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvZmluZS53ZWJtIiwiaWF0IjoxNzQzNDI1MDcwLCJleHAiOjE3NzQ5NjEwNzB9.1i-n5W2kUWQDha9s_tFRU92gnTpN5eMouSvhBoWzSaw',
+      'videoLabel': 'Fine',
     },
     {
       'practiceText':
-          'Practice 3: You were happy meeting a new friend. Try this as farewell.',
+          'Practice 3: You were bidding goodbye to your friends, saying you’ll see them tomorrow. Try signing the visual guide below.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/i_m%20happy%20to%20meet%20you.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvaV9tIGhhcHB5IHRvIG1lZXQgeW91LndlYm0iLCJpYXQiOjE3NDM0MjUzNzcsImV4cCI6MTc3NDk2MTM3N30.W99IOQZX4drFbJ_KANr4XEvgenqd44fxaCc8bIyqFJI',
-      'videoLabel': 'I’m happy to meet you',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%203/Goodbye.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDMvR29vZGJ5ZS53ZWJtIiwiaWF0IjoxNzQzNDMxNzMyLCJleHAiOjE3NzQ5Njc3MzJ9.2RfM5qMqulkT474Id3A9IVujErIcpjQg31M6ZiGCuHQ',
+      'videoLabel': 'Goodbye',
     },
     {
       'practiceText':
-          'Practice 4: It’s your turn to introduce yourself. Follow the visual guide below.',
+          'Practice 4: You introduced yourself and started by saying your name. Try to practice signing “name” and follow the visual guide below.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/My%20name%20is%20judith.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvTXkgbmFtZSBpcyBqdWRpdGgud2VibSIsImlhdCI6MTc0MzQzMjc3NSwiZXhwIjoxNzc0OTY4Nzc1fQ.75teHY1m80QNPzj2yM7dLnvEmTvAWRfMwseOh0sN7xE',
-      'videoLabel': 'My name is Judith',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/name.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvbmFtZS53ZWJtIiwiaWF0IjoxNzQzNDMyNzkwLCJleHAiOjE3NzQ5Njg3OTB9.zxC4ml6ObuEBNUk3EuOLjT3SZjoBUrJ9NCu7CskqsCM',
+      'videoLabel': 'Name',
     },
     {
       'practiceText':
-          'Practice 5: You want to introduce someone to your friends. Try the visual guide below.',
+          'Practice 5: You want to introduce someone to your friends. Try signing “friend”.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/Her%20name%20is%20Hannah.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvSGVyIG5hbWUgaXMgSGFubmFoLndlYm0iLCJpYXQiOjE3NDM0MzI2NjYsImV4cCI6MTc3NDk2ODY2Nn0.Jndu8AdP9-aMXICw2QlN_w_zB-jgr2wZN1gohWGdFdE',
-      'videoLabel': 'Her name is Hannah',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/friend.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvZnJpZW5kLndlYm0iLCJpYXQiOjE3NDM0MzI2MjAsImV4cCI6MTc3NDk2ODYyMH0.zXV7n383AKR3BrTRSL8e-k70yng1D4DkRM1vpxWEIIg',
+      'videoLabel': 'Friend',
     },
   ];
 

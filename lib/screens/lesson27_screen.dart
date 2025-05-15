@@ -346,7 +346,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To forget",
+                                          text: "Forget",
                                         ),
                                       ],
                                     ),
@@ -384,26 +384,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To major in",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2027/middle%20school.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI3L21pZGRsZSBzY2hvb2wud2VibSIsImlhdCI6MTc0NDY1MzgzMiwiZXhwIjoxNzc2MTg5ODMyfQ.b453qwpZfOD5OYMDvKD-1wQdyRUU4EO3KR4Q4I92IKQ'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Middle School",
+                                          text: "Major in",
                                         ),
                                       ],
                                     ),
@@ -422,7 +403,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To remember",
+                                          text: "Remember",
                                         ),
                                       ],
                                     ),
@@ -441,7 +422,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To take (something)",
+                                          text: "Take (something)",
                                         ),
                                       ],
                                     ),
@@ -460,7 +441,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To think",
+                                          text: "Think",
                                         ),
                                       ],
                                     ),
@@ -1087,7 +1068,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To correct/To grade",
+                                          text: "Correct/Grade",
                                         ),
                                       ],
                                     ),
@@ -1106,7 +1087,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To erase (on board)",
+                                          text: "Erase (on board)",
                                         ),
                                       ],
                                     ),
@@ -1125,7 +1106,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To erase (on paper)",
+                                          text: "Erase (on paper)",
                                         ),
                                       ],
                                     ),
@@ -1144,7 +1125,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To hand out",
+                                          text: "Hand out",
                                         ),
                                       ],
                                     ),
@@ -1182,7 +1163,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To spot/To see",
+                                          text: "Spot/See",
                                         ),
                                       ],
                                     ),
@@ -1220,7 +1201,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To study",
+                                          text: "Study",
                                         ),
                                       ],
                                     ),
@@ -1258,7 +1239,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To write",
+                                          text: "Write",
                                         ),
                                       ],
                                     ),
@@ -1277,7 +1258,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be wrong/Error",
+                                          text: "Wrong/Error",
                                         ),
                                       ],
                                     ),
@@ -1296,7 +1277,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be good at",
+                                          text: "Good at",
                                         ),
                                       ],
                                     ),
@@ -1315,7 +1296,7 @@ class _Lesson27ScreenState extends State<Lesson27Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be bad at",
+                                          text: "Bad at",
                                         ),
                                       ],
                                     ),

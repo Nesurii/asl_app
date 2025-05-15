@@ -426,7 +426,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To dance",
+                                          text: "Dance",
                                         ),
                                       ],
                                     ),
@@ -445,7 +445,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To line up",
+                                          text: "Line up",
                                         ),
                                       ],
                                     ),
@@ -464,7 +464,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To look at",
+                                          text: "Look at",
                                         ),
                                       ],
                                     ),
@@ -502,7 +502,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To ride a horse",
+                                          text: "Ride a horse",
                                         ),
                                       ],
                                     ),
@@ -852,7 +852,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To flock to",
+                                          text: "Flock to",
                                         ),
                                       ],
                                     ),
@@ -1097,7 +1097,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To jump (animal)",
+                                          text: "Jump (animal)",
                                         ),
                                       ],
                                     ),
@@ -1116,7 +1116,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To sit next to",
+                                          text: "Sit next to",
                                         ),
                                       ],
                                     ),
@@ -1269,7 +1269,7 @@ class _Lesson28ScreenState extends State<Lesson28Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To drink",
+                                          text: "Drink",
                                         ),
                                       ],
                                     ),

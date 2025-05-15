@@ -14,39 +14,39 @@ class _Unit2PracticeScreenState extends State<Unit2PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: This is one of the signs that learners get confused because of the similarity with the handshape. Practice it!',
+          'Practice 1: This is one of the signs that learners gets confused because of the similarity with the handshape. Practice it!',
       'imageUrls':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%205/1.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDUvMS53ZWJwIiwiaWF0IjoxNzQzODYxMjcyLCJleHAiOjE3NzUzOTcyNzJ9.NAEEo0h8KdtahfswXrPQ34MTqusy7Mu72egtfni3PxI, https://huggingface.co/datasets/nesuri/app_asl_data/resolve/main/asl-data/static_signs/D.jpg',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%205/1.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDUvMS53ZWJwIiwiaWF0IjoxNzQzODYxMjcyLCJleHAiOjE3NzUzOTcyNzJ9.NAEEo0h8KdtahfswXrPQ34MTqusy7Mu72egtfni3PxI',
       'videoLabel':
-          'Number 1 is in the left picture, and letter D is in the right picture.',
+          '1',
     },
     {
       'practiceText':
-          'Practice 2: It is a holiday so there were no classes and many of your friends liked it. You can try this to communicate with them.',
+          'Practice 2: You got sick so you missed classes yesterday. Try signing the visual guide below.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/me%20too,%20i'm%20happy.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvbWUgdG9vLCBpJ20gaGFwcHkud2VibSIsImlhdCI6MTc0Mzg2MTk1MSwiZXhwIjoxNzc1Mzk3OTUxfQ.o5XehWjNWzckpvduLK5PER9AZayxl9WoJolzpqHgSw0",
-      'videoLabel': 'Me too. I’m happy',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%206/Sick.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDYvU2ljay53ZWJtIiwiaWF0IjoxNzQzODU4OTEzLCJleHAiOjE3NzUzOTQ5MTN9.V_zijxyiLdjR0d-HWnV4yowRB-UQg4xFKHqAyrePtwc",
+      'videoLabel': 'Sick',
     },
     {
       'practiceText':
-          'Practice 3: The desk is too heavy for you and you want to ask for help in moving it. You can try signing this.',
+          'Practice 3: The desk is too heavy for you, so you asked for help moving it. You can try signing this.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/please%20help%20me%20move%20the%20table.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvcGxlYXNlIGhlbHAgbWUgbW92ZSB0aGUgdGFibGUud2VibSIsImlhdCI6MTc0Mzg2MTk0MCwiZXhwIjoxNzc1Mzk3OTQwfQ.-xtpipRdBSk8A_KiWEJmTEr1ulheaKFdldteF53dmd4',
-      'videoLabel': 'Please help me move the desk',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/help.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaGVscC53ZWJtIiwiaWF0IjoxNzQ2NjI1MjM1LCJleHAiOjE3NzgxNjEyMzV9.XBjdzEMzp13OAb04gdmJFz3O5fvLJV3d1rK-HlTaIag',
+      'videoLabel': 'Help',
     },
     {
       'practiceText':
-          'Practice 4: You want to ask someone if they are deaf. You can try asking like this.',
+          'Practice 4: You want to ask someone if they are deaf. Try signing the “deaf”.',
       'videoUrl':
           'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%208/are%20you%20deaf.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDgvYXJlIHlvdSBkZWFmLndlYm0iLCJpYXQiOjE3NDM4NjAxNDEsImV4cCI6MTc3NTM5NjE0MX0.tOunmP0lvtK0qxfIoDESrtKa7vC-H-sKRj7QGQ9j5wY',
-      'videoLabel': 'Are you deaf?',
+      'videoLabel': 'Deaf',
     },
     {
       'practiceText':
-          'Practice 5: You were asked by someone if you are deaf but you are part of the Hearing community. Try this response.',
+          'Practice 5: You were asked by someone if you are deaf but you are part of the Hearing community. Try signing this',
       'videoUrl':
           'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%208/no,%20i_m%20hearing.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDgvbm8sIGlfbSBoZWFyaW5nLndlYm0iLCJpYXQiOjE3NDM4NjAyNTMsImV4cCI6MTc3NTM5NjI1M30.NU182QaVo4u0blg_QWILpEAzGJhjykZOVmIdyzhq9RU',
-      'videoLabel': 'No, I am Hearing',
+      'videoLabel': 'Hearing',
     },
   ];
 

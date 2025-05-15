@@ -405,7 +405,26 @@ class _Lesson8ScreenState extends State<Lesson8Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Deaf",
+                                          text: "Deaf (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%208/deaf%20ver.%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDgvZGVhZiB2ZXIuIDIud2VibSIsImlhdCI6MTc0Mzg2MDIzNiwiZXhwIjoxNzc1Mzk2MjM2fQ.9N8EIg1ngYEHPmx84RnW4SYvp8KM4OkffK6a-ctvVwo'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Deaf (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -424,7 +443,26 @@ class _Lesson8ScreenState extends State<Lesson8Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Hearing",
+                                          text: "Hearing (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/hearing%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaGVhcmluZyB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjA4MTk3LCJleHAiOjE3NzgxNDQxOTd9.alWdk3EiC55gd5aPUqs30kRGjUSdMQx5Vc8wmvgXVe8'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Hearing (Version 2)",
                                         ),
                                       ],
                                     ),

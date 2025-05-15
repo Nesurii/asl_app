@@ -15,35 +15,35 @@ class _Unit3PracticeScreenState extends State<Unit3PracticeScreen> {
     {
       'practiceText': 'Practice 1: Try signing this WH-Question.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/where%20are%20you%20going.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvd2hlcmUgYXJlIHlvdSBnb2luZy53ZWJtIiwiaWF0IjoxNzQ0MDE3Njk4LCJleHAiOjE3NzU1NTM2OTh9.hLnI1iU09II_kG07TKuf4gzaIFk3nrVhGdIAC84UCR4",
-      'videoLabel': 'Where are you going?',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/what.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hhdC53ZWJtIiwiaWF0IjoxNzQ2NjA2NjE1LCJleHAiOjE3NzgxNDI2MTV9.beAFt0Nd4o58PBR1ysD63F34Oy2oyJa6GS4xyYK9vCM",
+      'videoLabel': 'What?',
     },
     {
       'practiceText':
-          'Practice 2: You were asked where you live. You can try responding like this.',
+          'Practice 2: You were asked where you live. You replied saying you were from Bicol. You can try practicing the word “From”.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/I%20live%20in%20manila.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvSSBsaXZlIGluIG1hbmlsYS53ZWJtIiwiaWF0IjoxNzQ0MDE3NjkzLCJleHAiOjE3NzU1NTM2OTN9.eUlx8yvXRw52549cEnZvIV552OCRPd8COluiqIWElnY",
-      'videoLabel': 'I live in Manila',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/from.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvZnJvbS53ZWJtIiwiaWF0IjoxNzQ2NjA5NDc1LCJleHAiOjE3NzgxNDU0NzV9.VAUCCizeYuFcIRN84jYWCyUUNJ9FmpnEgpKIjxdM-XU",
+      'videoLabel': 'From',
     },
     {
-      'practiceText': 'Practice 3: Try practicing your email address!',
+      'practiceText': 'Practice 3: You have received an email that needs an urgent response. Try signing the word “email”! ',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/My%20email%20address%20is%20jade@gmail.com.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTXkgZW1haWwgYWRkcmVzcyBpcyBqYWRlQGdtYWlsLmNvbS53ZWJtIiwiaWF0IjoxNzQ0MDM0Mzg4LCJleHAiOjE3NzU1NzAzODh9.n4uSX2cHBlVCEOPklVyp0tGkVvDk5xQWTsNX7QDslfY',
-      'videoLabel': 'My email address is jade@gmail.com',
-    },
-    {
-      'practiceText':
-          'Practice 4: Try describing the weather today. You can use this as practice.',
-      'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/The%20weather%20is%20sunny%20today.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvVGhlIHdlYXRoZXIgaXMgc3VubnkgdG9kYXkud2VibSIsImlhdCI6MTc0NDExNTAxOCwiZXhwIjoxNzc1NjUxMDE4fQ.PbHgvJlsweTxB_4hdAbRycVBbPUFro01lgTpRGJGIH0',
-      'videoLabel': 'The weather is sunny today',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/email.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvZW1haWwud2VibSIsImlhdCI6MTc0NjYxMDc3MSwiZXhwIjoxNzc4MTQ2NzcxfQ.SuiJgH09gm0SU1nz9Bjoz7zj7FnSs07iB2S_JGpRrEc',
+      'videoLabel': 'Email',
     },
     {
       'practiceText':
-          'Practice 5: You were asked to describe the weather. Try using this!',
+          'Practice 4: The weather is sunny today. Try signing “weather” as practice.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/It%20is%20rainy%20today.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvSXQgaXMgcmFpbnkgdG9kYXkud2VibSIsImlhdCI6MTc0NDExNTAzMiwiZXhwIjoxNzc1NjUxMDMyfQ.yJE5Vl0VCy9eUIo3Hqgb7IyhyZXmPEw2s6HwdMjNESM',
-      'videoLabel': 'It is rainy today',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/weather%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3dlYXRoZXIgdmVyLiAxLndlYm0iLCJpYXQiOjE3NDQwMzM1MjEsImV4cCI6MTc3NTU2OTUyMX0.rAeFfYeAYnV8VYTmmm2n8Y66i3Ymos_loTOe1gmEO5Q',
+      'videoLabel': 'Weather',
+    },
+    {
+      'practiceText':
+          'Practice 5: You were asked to describe the weather today, and the weather forecast said that it is likely to rain. Try practicing the sign for “rain”.',
+      'videoUrl':
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/rain.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvcmFpbi53ZWJtIiwiaWF0IjoxNzQ2NjE4ODM1LCJleHAiOjE3NzgxNTQ4MzV9.UGpUbmIJgkm4S9L9Y2eWpkWiBtkQEZ1qq6tU-ylkBmQ',
+      'videoLabel': 'Rain',
     },
   ];
 

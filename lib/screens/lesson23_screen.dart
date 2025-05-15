@@ -264,7 +264,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To get together",
+                                          text: "Get together",
                                         ),
                                       ],
                                     ),
@@ -283,7 +283,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To go out/Leave",
+                                          text: "Go out/Leave",
                                         ),
                                       ],
                                     ),
@@ -340,7 +340,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be single",
+                                          text: "Single",
                                         ),
                                       ],
                                     ),
@@ -462,7 +462,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To go to",
+                                          text: "Go to",
                                         ),
                                       ],
                                     ),
@@ -682,7 +682,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To argue",
+                                          text: "Argue",
                                         ),
                                       ],
                                     ),
@@ -701,7 +701,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To date",
+                                          text: "Date",
                                         ),
                                       ],
                                     ),
@@ -720,7 +720,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To fall inlove",
+                                          text: "Fall inlove",
                                         ),
                                       ],
                                     ),
@@ -739,7 +739,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To flirt",
+                                          text: "Flirt",
                                         ),
                                       ],
                                     ),
@@ -758,7 +758,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To get along",
+                                          text: "Get along",
                                         ),
                                       ],
                                     ),
@@ -1183,7 +1183,7 @@ class _Lesson23ScreenState extends State<Lesson23Screen> {
                                   isCorrect2 = answerController2.text
                                           .trim()
                                           .toLowerCase() ==
-                                      'no, no. let me sign it again.';
+                                      'wave no';
 
                                   if (isCorrect2) {
                                     totalScore += 10;

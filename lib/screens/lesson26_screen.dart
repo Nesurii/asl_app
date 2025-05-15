@@ -468,7 +468,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To learn",
+                                          text: "Learn",
                                         ),
                                       ],
                                     ),
@@ -522,7 +522,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                       children: [
                                         TextSpan(
                                           text:
-                                              "<Teacher> = <To teach> + <Agent marker>",
+                                              "<Teacher> = <Teach> + <Agent marker>",
                                         ),
                                       ],
                                     ),
@@ -573,7 +573,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To teach",
+                                          text: "Teach",
                                         ),
                                       ],
                                     ),
@@ -628,7 +628,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                       children: [
                                         TextSpan(
                                           text:
-                                              "<Athlete> = <To play sports>	+	<Agent marker>",
+                                              "<Athlete> = <Play sports>	+	<Agent marker>",
                                         ),
                                       ],
                                     ),
@@ -679,7 +679,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To play sports",
+                                          text: "Play sports",
                                         ),
                                       ],
                                     ),
@@ -861,7 +861,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To cook",
+                                          text: "Cook",
                                         ),
                                       ],
                                     ),
@@ -880,7 +880,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To manage",
+                                          text: "Manage",
                                         ),
                                       ],
                                     ),
@@ -899,7 +899,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To pick on",
+                                          text: "Pick on",
                                         ),
                                       ],
                                     ),
@@ -918,7 +918,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To serve",
+                                          text: "Serve",
                                         ),
                                       ],
                                     ),
@@ -937,7 +937,7 @@ class _Lesson26ScreenState extends State<Lesson26Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To write",
+                                          text: "Write",
                                         ),
                                       ],
                                     ),

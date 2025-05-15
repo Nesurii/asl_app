@@ -260,7 +260,7 @@ class _Lesson18ScreenState extends State<Lesson18Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be broke",
+                                          text: "Broke",
                                         ),
                                       ],
                                     ),
@@ -279,7 +279,7 @@ class _Lesson18ScreenState extends State<Lesson18Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To buy",
+                                          text: "Buy",
                                         ),
                                       ],
                                     ),
@@ -298,7 +298,7 @@ class _Lesson18ScreenState extends State<Lesson18Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be cheap",
+                                          text: "Cheap",
                                         ),
                                       ],
                                     ),
@@ -336,7 +336,7 @@ class _Lesson18ScreenState extends State<Lesson18Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To earn",
+                                          text: "Earn",
                                         ),
                                       ],
                                     ),
@@ -393,7 +393,7 @@ class _Lesson18ScreenState extends State<Lesson18Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To leave (something)",
+                                          text: "Leave (something)",
                                         ),
                                       ],
                                     ),
@@ -431,7 +431,7 @@ class _Lesson18ScreenState extends State<Lesson18Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To pay",
+                                          text: "Pay",
                                         ),
                                       ],
                                     ),

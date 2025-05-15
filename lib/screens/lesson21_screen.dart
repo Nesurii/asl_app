@@ -404,7 +404,7 @@ class _Lesson21ScreenState extends State<Lesson21Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To have",
+                                          text: "Have",
                                         ),
                                       ],
                                     ),
@@ -461,7 +461,7 @@ class _Lesson21ScreenState extends State<Lesson21Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Total/To add up",
+                                          text: "Total/Add up",
                                         ),
                                       ],
                                     ),
@@ -797,7 +797,7 @@ class _Lesson21ScreenState extends State<Lesson21Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be dead/Missing",
+                                          text: "Dead/Missing",
                                         ),
                                       ],
                                     ),
@@ -816,7 +816,7 @@ class _Lesson21ScreenState extends State<Lesson21Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To divorce",
+                                          text: "Divorce",
                                         ),
                                       ],
                                     ),
@@ -835,7 +835,7 @@ class _Lesson21ScreenState extends State<Lesson21Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To marry",
+                                          text: "Marry",
                                         ),
                                       ],
                                     ),

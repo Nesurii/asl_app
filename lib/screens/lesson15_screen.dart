@@ -443,7 +443,7 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To celebrate",
+                                          text: "Celebrate",
                                         ),
                                       ],
                                     ),
@@ -470,7 +470,7 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%204/Lesson%2015/born.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDQvTGVzc29uIDE1L2Jvcm4ud2VibSIsImlhdCI6MTc0NDExOTc2NSwiZXhwIjoxNzc1NjU1NzY1fQ.oADcdlnFMXbr8M0N_rxB4nxM0oyzjchOcSJxP-LcZOs'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/born.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYm9ybi53ZWJtIiwiaWF0IjoxNzQ2NjA5NjQxLCJleHAiOjE3NzgxNDU2NDF9.nHWq6ExkHCvRLFWSt5CmJ4aNDe_x6esyDK9joabUfFM'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -481,7 +481,45 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Born",
+                                          text: "Born (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/born%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYm9ybiB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjA5Njk5LCJleHAiOjE3NzgxNDU2OTl9.3AAJjE-YVJGGtYwn0MqmeSaLGSyuEbyopinc21kuWQU'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Born (Version 2)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/born%20ver%203.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYm9ybiB2ZXIgMy53ZWJtIiwiaWF0IjoxNzQ2NjA5NzEwLCJleHAiOjE3NzgxNDU3MTB9.wgH1dOzCz6EvJEFmmmTLYNTSkvDgKgW4luK3VMftWKk'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Born (Version 3)",
                                         ),
                                       ],
                                     ),
@@ -558,44 +596,6 @@ class _Lesson15ScreenState extends State<Lesson15Screen> {
                                       children: [
                                         TextSpan(
                                           text: "Summer",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%204/Lesson%2015/winter.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDQvTGVzc29uIDE1L3dpbnRlci53ZWJtIiwiaWF0IjoxNzQ0MTE5NDM5LCJleHAiOjE3NzU2NTU0Mzl9.6U3SPjg3COfOBDjxRvSYrG5t8wPDcAasQFRzwV2Sypc'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.justify,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Winter",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%204/Lesson%2015/fall%20(Season).webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDQvTGVzc29uIDE1L2ZhbGwgKFNlYXNvbikud2VibSIsImlhdCI6MTc0NDExOTcyMywiZXhwIjoxNzc1NjU1NzIzfQ.IM90Z2sjZgvmJpENE7JOjaM1ZcthkPyX8NKWtfpVvLQ'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.justify,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Fall",
                                         ),
                                       ],
                                     ),

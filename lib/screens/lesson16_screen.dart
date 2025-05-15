@@ -870,7 +870,7 @@ class _Lesson16ScreenState extends State<Lesson16Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%204/Lesson%2016/old.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDQvTGVzc29uIDE2L29sZC53ZWJtIiwiaWF0IjoxNzQ0MTI1MzQxLCJleHAiOjE3NzU2NjEzNDF9.XyaEdYuKhI3zuzlzbobcjHQtEQrStsqd5SZ5iaGdx3s"),
+                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/old.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvb2xkLndlYm0iLCJpYXQiOjE3NDY2MTg5MjgsImV4cCI6MTc3ODE1NDkyOH0.O2-4tC4gbmXgdt42hZURz3wDMweelbDIY7A_hNs71QY"),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -1023,7 +1023,7 @@ class _Lesson16ScreenState extends State<Lesson16Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To get",
+                                          text: "Get",
                                         ),
                                       ],
                                     ),
@@ -1042,7 +1042,7 @@ class _Lesson16ScreenState extends State<Lesson16Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To graduate",
+                                          text: "Graduate",
                                         ),
                                       ],
                                     ),
@@ -1099,7 +1099,7 @@ class _Lesson16ScreenState extends State<Lesson16Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To pass down/Descendants",
+                                          text: "Pass down/Descendants",
                                         ),
                                       ],
                                     ),
@@ -1118,7 +1118,7 @@ class _Lesson16ScreenState extends State<Lesson16Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To vote",
+                                          text: "Vote",
                                         ),
                                       ],
                                     ),

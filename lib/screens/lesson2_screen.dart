@@ -50,23 +50,24 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
   @override
   void initState() {
     super.initState();
-    _loadSavedPage(); 
+    _loadSavedPage();
   }
 
   Future<void> _loadSavedPage() async {
-    
     final currentState = await lessonManager.getCurrentState();
 
     if (currentState != null) {
-      final lessonPages = Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
-      final savedPageTitle = lessonPages[widget.lessonId]; 
+      final lessonPages =
+          Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
+      final savedPageTitle = lessonPages[widget.lessonId];
 
       if (savedPageTitle != null) {
         // Parse the page number from savedPageTitle
         final match = RegExp(r'Page (\d+):').firstMatch(savedPageTitle);
         if (match != null) {
           final savedPageIndex = int.tryParse(match.group(1)!);
-          if (savedPageIndex != null && savedPageIndex < lessonSections.length) {
+          if (savedPageIndex != null &&
+              savedPageIndex < lessonSections.length) {
             setState(() {
               currentIndex = savedPageIndex; // Jump to saved page
             });
@@ -78,7 +79,6 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
 
   Future<void> nextSection() async {
     if (currentIndex < lessonSections.length - 1) {
-      
       setState(() {
         currentIndex++;
       });
@@ -88,7 +88,6 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
 
   Future<void> previousSection() async {
     if (currentIndex > 0) {
-
       setState(() {
         currentIndex--;
       });
@@ -99,12 +98,12 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
   @override
   void dispose() {
     if (!lessonCompleted) {
-      _saveCurrentPage(); 
+      _saveCurrentPage();
     }
     super.dispose();
   }
 
-   Future<void> _saveCurrentPage() async {
+  Future<void> _saveCurrentPage() async {
     final section = lessonSections[currentIndex];
 
     await lessonManager.updateCurrentPageForLesson(
@@ -445,7 +444,7 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                   SizedBox(height: 15),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/busy.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvYnVzeS53ZWJtIiwiaWF0IjoxNzQzNDI1MDA0LCJleHAiOjE3NzQ5NjEwMDR9.nrQgtLFBxTRTRTrgjFqPd7dMWweHF5UrXOs_6nUUfkc',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/busy.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYnVzeS53ZWJtIiwiaWF0IjoxNzQ2NjAyODEwLCJleHAiOjE3NzgxMzg4MTB9.BAfJ_4SMFsvIMjQb3wW6pHhgNEIlvqGLy7TN_2JfXdo',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -457,7 +456,7 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be busy",
+                                          text: "Busy",
                                         ),
                                       ],
                                     ),
@@ -477,7 +476,7 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be happy",
+                                          text: "Happy",
                                         ),
                                       ],
                                     ),
@@ -517,7 +516,47 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Confused",
+                                          text: "Confused (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/confused%20ver.%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvY29uZnVzZWQgdmVyLiAyLndlYm0iLCJpYXQiOjE3NDM0MjUwMTgsImV4cCI6MTc3NDk2MTAxOH0.tosTa4vyR4vjZe8qq30NShjnK1sWW96knK-iuLSWlGY',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Confused (Version 2)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/confused.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvY29uZnVzZWQud2VibSIsImlhdCI6MTc0NjYwMjg2MSwiZXhwIjoxNzc4MTM4ODYxfQ.wVmwHrJJpWsz8QowTLdVlXlQCLPiY53lXfBiVkz12VY',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Confused (Version 3)",
                                         ),
                                       ],
                                     ),
@@ -597,7 +636,7 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be good/Well",
+                                          text: "Good/Well",
                                         ),
                                       ],
                                     ),
@@ -625,7 +664,7 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/tired.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvdGlyZWQud2VibSIsImlhdCI6MTc0MzQyNjEwNCwiZXhwIjoxNzc0OTYyMTA0fQ.HJAINbkHMtHSRFS4evydL331DfBYzpsXMxvgAApIx_Q',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/tired.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdGlyZWQud2VibSIsImlhdCI6MTc0NjYwNzM2NCwiZXhwIjoxNzc4MTQzMzY0fQ.jIF_dzvyUi2epJEm0wE8e90BIOYzYE9xhhol8JNAwf4',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -637,26 +676,27 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be tired",
+                                          text: "Tired (Version 1)",
                                         ),
                                       ],
                                     ),
                                   ),
-                                  SizedBox(height: 30),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/tired%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdGlyZWQgdmVyIDIud2VibSIsImlhdCI6MTc0NjYwNzM0MywiZXhwIjoxNzc4MTQzMzQzfQ.fuI2TdUORYZoYUVTZMxE_IzefREg6BxW12lBW9RfehA',
+                                  ),
+                                  SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
                                     text: TextSpan(
                                       style: TextStyle(
-                                          color: Colors.black, fontSize: 18),
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Note: ",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        TextSpan(
-                                          text:
-                                              "ASL is different from English, especially in the structure of phrases and sentences. The verb “to be” may or may not be included in the sentence but the sign will still be the same.",
+                                          text: "Tired (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -819,7 +859,8 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey),
                                       ),
                                       SizedBox(height: 10),
                                       Column(
@@ -1014,13 +1055,14 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                       SizedBox(height: 10),
+                                      SizedBox(height: 10),
                                       Text(
                                         'Tap the frame to select the answer',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey),
                                       ),
                                       SizedBox(height: 10),
                                       Column(
@@ -1106,13 +1148,14 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                             fontSize: 18,
                                             fontWeight: FontWeight.bold),
                                       ),
-                                       SizedBox(height: 10),
+                                      SizedBox(height: 10),
                                       Text(
                                         'Tap the frame to select the answer',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey),
                                       ),
                                       SizedBox(height: 10),
                                       Column(
@@ -1120,7 +1163,7 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                                           Container(
                                             decoration: BoxDecoration(
                                               color: getButtonColor(5,
-                                                1), // dynamic background 					color
+                                                  1), // dynamic background 					color
                                               borderRadius:
                                                   BorderRadius.circular(12),
                                               border: Border.all(
@@ -1228,17 +1271,18 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                 // Next or Finish Button
                 ElevatedButton(
                   onPressed: (currentIndex == 5)
-                    ? () async {
-                        bool allQuestionsAnsweredQuiz = answeredQuestion1 &&
-                            answeredQuestion2 &&
-                            answeredQuestion3 &&
-                            answeredQuestion4 &&
-                            answeredQuestion5;
-                        
+                      ? () async {
+                          bool allQuestionsAnsweredQuiz = answeredQuestion1 &&
+                              answeredQuestion2 &&
+                              answeredQuestion3 &&
+                              answeredQuestion4 &&
+                              answeredQuestion5;
+
                           if (!allQuestionsAnsweredQuiz) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text('Please answer all quiz questions before finishing.'),
+                                content: Text(
+                                    'Please answer all quiz questions before finishing.'),
                                 backgroundColor: Colors.red,
                               ),
                             );
@@ -1246,19 +1290,21 @@ class _Lesson2ScreenState extends State<Lesson2Screen> {
                           }
 
                           // mark completed lessons
-                          final lessonCompletionManager = LessonCompletionManager();
+                          final lessonCompletionManager =
+                              LessonCompletionManager();
                           await lessonCompletionManager.completeLesson(
                             lessonId: widget.lessonId,
                             score: totalScore,
                           );
 
-                          lessonCompleted = true; 
+                          lessonCompleted = true;
                           if (context.mounted) {
                             Navigator.pop(context, true);
                           }
-                          await lessonManager.resetLessonProgress(widget.lessonId);
+                          await lessonManager
+                              .resetLessonProgress(widget.lessonId);
                         }
-                    : nextSection,
+                      : nextSection,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.orange,
                     side: BorderSide(color: Colors.black, width: 1),

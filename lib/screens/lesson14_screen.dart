@@ -441,7 +441,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be thirsty",
+                                          text: "Thirsty",
                                         ),
                                       ],
                                     ),
@@ -498,7 +498,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To work/Job",
+                                          text: "Work/Job",
                                         ),
                                       ],
                                     ),
@@ -517,7 +517,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To eat/Food",
+                                          text: "Eat/Food",
                                         ),
                                       ],
                                     ),
@@ -536,7 +536,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be hungry",
+                                          text: "Hungry",
                                         ),
                                       ],
                                     ),
@@ -555,7 +555,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be ready",
+                                          text: "Ready",
                                         ),
                                       ],
                                     ),
@@ -589,7 +589,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%204/Lesson%2014/tomorrow.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDQvTGVzc29uIDE0L3RvbW9ycm93LndlYm0iLCJpYXQiOjE3NDQxMTcwNTEsImV4cCI6MTc3NTY1MzA1MX0.0r2BKXW4ACPLs4A8MzM1YM8Xtjx3FWslYvhMJiO5B9o'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/tomorrow.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdG9tb3Jyb3cud2VibSIsImlhdCI6MTc0NjYzNDU0OSwiZXhwIjoxNzc4MTcwNTQ5fQ.qR1EBcZFsnddqvwrh3bCwD4jPxiHs6kDo3X7DA1sAdQ'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -638,7 +638,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To chat/To hangout",
+                                          text: "Chat/Hangout",
                                         ),
                                       ],
                                     ),
@@ -676,7 +676,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To enjoy/Have fun",
+                                          text: "Enjoy/Have fun",
                                         ),
                                       ],
                                     ),
@@ -695,7 +695,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To kick back/Take it easy",
+                                          text: "Kick back/Take it easy",
                                         ),
                                       ],
                                     ),
@@ -714,7 +714,7 @@ class _Lesson14ScreenState extends State<Lesson14Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To play sports",
+                                          text: "Play sports",
                                         ),
                                       ],
                                     ),

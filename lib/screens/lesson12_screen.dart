@@ -247,7 +247,26 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Weather",
+                                          text: "Weather (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/weather%20ver.%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3dlYXRoZXIgdmVyLiAyLndlYm0iLCJpYXQiOjE3NDQwMzM1MjcsImV4cCI6MTc3NTU2OTUyN30.2qbOxxC_h6Z6v033icZlf9dAh8KHNW3S53zpgzfs2w8'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Weather (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -266,7 +285,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be hot",
+                                          text: "Hot",
                                         ),
                                       ],
                                     ),
@@ -285,7 +304,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be cloudy/Cloud",
+                                          text: "Cloudy/Cloud",
                                         ),
                                       ],
                                     ),
@@ -304,7 +323,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be cold",
+                                          text: "Cold",
                                         ),
                                       ],
                                     ),
@@ -323,7 +342,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be cool",
+                                          text: "Cool",
                                         ),
                                       ],
                                     ),
@@ -331,7 +350,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/to%20rain.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3RvIHJhaW4ud2VibSIsImlhdCI6MTc0NDAzMzQ2NSwiZXhwIjoxNzc1NTY5NDY1fQ.ZMzpHB0LCuSZlglEGSCFkIWTPrAHvRSLn4C8JVAkz6A'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/rain.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvcmFpbi53ZWJtIiwiaWF0IjoxNzQ2NjE4ODM1LCJleHAiOjE3NzgxNTQ4MzV9.UGpUbmIJgkm4S9L9Y2eWpkWiBtkQEZ1qq6tU-ylkBmQ'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -342,7 +361,26 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To rain",
+                                          text: "Rain",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/rainy.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3JhaW55LndlYm0iLCJpYXQiOjE3NDY2MTg4MDksImV4cCI6MTc3ODE1NDgwOX0.mkV2m3EoVl4MtWyDierJNXIXq2tfdYEZmB1nv7Wa7Uo'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Rainy",
                                         ),
                                       ],
                                     ),
@@ -361,7 +399,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To snow",
+                                          text: "Snow",
                                         ),
                                       ],
                                     ),
@@ -380,7 +418,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be sunny",
+                                          text: "Sunny",
                                         ),
                                       ],
                                     ),
@@ -406,7 +444,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be warm",
+                                          text: "Warm",
                                         ),
                                       ],
                                     ),
@@ -425,7 +463,7 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be windy/Wind ",
+                                          text: "Windy/Wind ",
                                         ),
                                       ],
                                     ),
@@ -464,44 +502,6 @@ class _Lesson12ScreenState extends State<Lesson12Screen> {
                                       children: [
                                         TextSpan(
                                           text: "Flood",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/tornado.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3Rvcm5hZG8ud2VibSIsImlhdCI6MTc0NDAzMzQ3MSwiZXhwIjoxNzc1NTY5NDcxfQ.De9Txef237Yu_FO6lyEgJeRvl2kPSXYqOXFma4EuMHo'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.justify,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Tornado",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/huricane.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL2h1cmljYW5lLndlYm0iLCJpYXQiOjE3NDQwMzMzNDksImV4cCI6MTc3NTU2OTM0OX0.kzoSdbLWvgm84dfr8xV8EotIBpK_Ci9FAgeuDXPZKUA'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.justify,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Hurricane",
                                         ),
                                       ],
                                     ),

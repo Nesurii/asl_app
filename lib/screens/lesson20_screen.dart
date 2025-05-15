@@ -857,7 +857,7 @@ class _Lesson20ScreenState extends State<Lesson20Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To stay",
+                                          text: "Stay",
                                         ),
                                       ],
                                     ),

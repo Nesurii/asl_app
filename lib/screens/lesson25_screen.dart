@@ -321,44 +321,6 @@ class _Lesson25ScreenState extends State<Lesson25Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/stadium.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3N0YWRpdW0ud2VibSIsImlhdCI6MTc0NDY0MzQxMSwiZXhwIjoxNzc2MTc5NDExfQ.5KqEC8A6mfz9lBVVGvV5e5DcBZ-8VnV4INSiWtChYOo'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Stadium/Auditorium",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/theatre.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3RoZWF0cmUud2VibSIsImlhdCI6MTc0NDY0MzM1NSwiZXhwIjoxNzc2MTc5MzU1fQ.1loxJyUSRPSuJaaqFuKs7sCfojsP-XEkbY7mJyn3Arc'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Theater",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
                                           'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/Laboratory.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L0xhYm9yYXRvcnkud2VibSIsImlhdCI6MTc0NDY0MzUxNSwiZXhwIjoxNzc2MTc5NTE1fQ.Gq7IfTXIqQPw2SjQcRKqV8C-FEn9vtbyzG1qzmqjDuw'),
                                   SizedBox(height: 10),
                                   RichText(
@@ -397,63 +359,6 @@ class _Lesson25ScreenState extends State<Lesson25Screen> {
                                       children: [
                                         TextSpan(
                                           text: "Pool",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/student%20center.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3N0dWRlbnQgY2VudGVyLndlYm0iLCJpYXQiOjE3NDQ2NDMzODMsImV4cCI6MTc3NjE3OTM4M30.n9SpWDV3JLEOSBIXjCRAWJbm_DNCJXla1nhZPKeyCpE'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Student center",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/technology%20center.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3RlY2hub2xvZ3kgY2VudGVyLndlYm0iLCJpYXQiOjE3NDQ2NDMzNzQsImV4cCI6MTc3NjE3OTM3NH0.RO2zOwqU9UmP6gz8DYxg7PS2vBkA8TS_wqR4e8-ST7s'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Technology center",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/activity%20center.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L2FjdGl2aXR5IGNlbnRlci53ZWJtIiwiaWF0IjoxNzQ0NjQzNjY1LCJleHAiOjE3NzYxNzk2NjV9.Rvy2gv5xmMdyTe6Mo1jzJcSBBKtn6zy3yCVLKa-7Ap8'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Activity center ",
                                         ),
                                       ],
                                     ),
@@ -530,44 +435,6 @@ class _Lesson25ScreenState extends State<Lesson25Screen> {
                                       children: [
                                         TextSpan(
                                           text: "Front",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/snack%20machine.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3NuYWNrIG1hY2hpbmUud2VibSIsImlhdCI6MTc0NDY0MzQzMSwiZXhwIjoxNzc2MTc5NDMxfQ.LApi2RHxCKScxGp5lOw8KbTSXmwa8U6NaPHGsJdqQnA'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Snack machine",
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 20),
-                                  CustomVideoPlayer(
-                                      videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/soda%20machine.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3NvZGEgbWFjaGluZS53ZWJtIiwiaWF0IjoxNzQ0NjQzNDIwLCJleHAiOjE3NzYxNzk0MjB9.wbGLIPKfCL7yKHwIPLg9gULlYkj7Gsmsxcn8911t-PA'),
-                                  SizedBox(height: 10),
-                                  RichText(
-                                    textAlign: TextAlign.center,
-                                    text: TextSpan(
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: "Soda machine",
                                         ),
                                       ],
                                     ),
@@ -650,7 +517,7 @@ class _Lesson25ScreenState extends State<Lesson25Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To look for",
+                                          text: "Look for",
                                         ),
                                       ],
                                     ),

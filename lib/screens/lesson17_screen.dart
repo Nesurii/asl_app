@@ -700,7 +700,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To arrive (person)",
+                                          text: "Arrive (person)",
                                         ),
                                       ],
                                     ),
@@ -719,7 +719,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To arrive (plane)",
+                                          text: "Arrive (plane)",
                                         ),
                                       ],
                                     ),
@@ -738,7 +738,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To depart (plane)",
+                                          text: "Depart (plane)",
                                         ),
                                       ],
                                     ),
@@ -764,7 +764,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To start/Begin",
+                                          text: "Start/Begin",
                                         ),
                                       ],
                                     ),
@@ -783,7 +783,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To take off (person)",
+                                          text: "Take off (person)",
                                         ),
                                       ],
                                     ),
@@ -802,7 +802,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To finish/To be done",
+                                          text: "Finish/Done",
                                         ),
                                       ],
                                     ),
@@ -821,7 +821,7 @@ class _Lesson17ScreenState extends State<Lesson17Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be late",
+                                          text: "Late",
                                         ),
                                       ],
                                     ),

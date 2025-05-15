@@ -254,7 +254,26 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "What",
+                                          text: "What (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                   SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/what.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hhdC53ZWJtIiwiaWF0IjoxNzQ2NjA2NjE1LCJleHAiOjE3NzgxNDI2MTV9.beAFt0Nd4o58PBR1ysD63F34Oy2oyJa6GS4xyYK9vCM'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "What (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -262,7 +281,26 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/when.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvd2hlbi53ZWJtIiwiaWF0IjoxNzQ0MDI3Mzk3LCJleHAiOjE3NzU1NjMzOTd9.i_i7BvkY4772gUDL-LIVVbC2Xt6hx8RrRJ2v9l8tWFI'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/what%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hhdCB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjA2NTkyLCJleHAiOjE3NzgxNDI1OTJ9.Ck1Ss3go9GxIn-Gz6OuN5mWD0VPZXFkoWf_4hggnmPU'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "What (Version 3)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/when.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hlbi53ZWJtIiwiaWF0IjoxNzQ2NjA2NzAzLCJleHAiOjE3NzgxNDI3MDN9.R1l9e4K73QXNbFgBuhGugRnArzvZOZm1bLi-sBrreos'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -281,7 +319,45 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/why%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvd2h5IHZlci4gMS53ZWJtIiwiaWF0IjoxNzQ0MDI3NjEyLCJleHAiOjE3NzU1NjM2MTJ9.MB9QuDaxNoOe1eTxkQABt_2vLKXcSPdbGoEOZKDvFvM'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/where.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hlcmUud2VibSIsImlhdCI6MTc0NjYwNjY4MiwiZXhwIjoxNzc4MTQyNjgyfQ.LaTlmK12WrzADws9rghro6-2yPTU6-iEXWPAmL7VKaE'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Where (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/where%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hlcmUgdmVyIDIud2VibSIsImlhdCI6MTc0NjYwNjY1NCwiZXhwIjoxNzc4MTQyNjU0fQ.jF7cLXRQIlP-rDArkwv_ImdZesfN17m3TAJTZnAY7V4'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Where (Version 2)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/why.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2h5LndlYm0iLCJpYXQiOjE3NDY2MDkzNzgsImV4cCI6MTc3ODE0NTM3OH0.mjnrzg3_JITjxB3B3D2AQlmMqgWHgQkAoYz9ZjF-ZmE'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -425,7 +501,7 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/why%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvd2h5IHZlci4gMS53ZWJtIiwiaWF0IjoxNzQ0MDI3NjEyLCJleHAiOjE3NzU1NjM2MTJ9.MB9QuDaxNoOe1eTxkQABt_2vLKXcSPdbGoEOZKDvFvM'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/why.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2h5LndlYm0iLCJpYXQiOjE3NDY2MDkzNzgsImV4cCI6MTc3ODE0NTM3OH0.mjnrzg3_JITjxB3B3D2AQlmMqgWHgQkAoYz9ZjF-ZmE'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -508,7 +584,7 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/question%20mark.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvcXVlc3Rpb24gbWFyay53ZWJtIiwiaWF0IjoxNzQ0MDI3MzA1LCJleHAiOjE3NzU1NjMzMDV9.MibTi8iTj1Rs-rFvP0XMSPUdkDQBl69a0EGd4ZlEEVM'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/question%20mark.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvcXVlc3Rpb24gbWFyay53ZWJtIiwiaWF0IjoxNzQ2NjA5NTI2LCJleHAiOjE3NzgxNDU1MjZ9.WV27hkGLmCSzbwZwlE1TtL-bXsSl5DEPsA4My89IrG4'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -637,7 +713,7 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To ask",
+                                          text: "Ask",
                                         ),
                                       ],
                                     ),
@@ -755,7 +831,7 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To get better",
+                                          text: "Get better",
                                         ),
                                       ],
                                     ),
@@ -774,7 +850,7 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To get worse",
+                                          text: "Get worse",
                                         ),
                                       ],
                                     ),
@@ -801,7 +877,7 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/water.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvd2F0ZXIud2VibSIsImlhdCI6MTc0NDAyNzM2OCwiZXhwIjoxNzc1NTYzMzY4fQ.kXK6MXO90nvdmLPhriKg_8iTgL-isXtrhH-LPU7RUHo'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/water.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2F0ZXIud2VibSIsImlhdCI6MTc0NjYwODA5MiwiZXhwIjoxNzc4MTQ0MDkyfQ.CTN9Xd_A0WJ6AZj59vUdEK5CvBqaEn7kRMbBSoUK6-4'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -812,7 +888,26 @@ class _Lesson9ScreenState extends State<Lesson9Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Water/Water fountain",
+                                          text: "Water",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/water%20fountain.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2F0ZXIgZm91bnRhaW4ud2VibSIsImlhdCI6MTc0NjYwODA4MSwiZXhwIjoxNzc4MTQ0MDgxfQ.CjdyxVVlx7MIUAEtanGxVzD_5Bimx8-glb-6Vdwz5Rw'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Water fountain",
                                         ),
                                       ],
                                     ),

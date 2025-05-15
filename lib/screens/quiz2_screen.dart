@@ -32,9 +32,7 @@ class _Quiz2ScreenState extends State<Quiz2Screen> {
     "Deaf":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%208/deaf%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDgvZGVhZiB2ZXIuIDEud2VibSIsImlhdCI6MTc0Mzg2MDIzMSwiZXhwIjoxNzc1Mzk2MjMxfQ.Xh-Z_J9EftpKlQ3TBE4WMaD46fM0_0rAcwQsJugQt2E",
     "Need":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/need.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvbmVlZC53ZWJtIiwiaWF0IjoxNzQzODU5Mzk5LCJleHAiOjE3NzUzOTUzOTl9.6W93HsAqhibqdlNbWwirbB21HvC2b14WfpcfaYof9kc",
-    "Sorry":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/sorry.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvc29ycnkud2VibSIsImlhdCI6MTc0Mzg1OTQ4NywiZXhwIjoxNzc1Mzk1NDg3fQ.pXhpf2EddgNBbgvZVc2I6sYX-S4vFsRpAnlipRHoEtI",
+        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/shttps://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/need.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbmVlZC53ZWJtIiwiaWF0IjoxNzQ2NjE3NTk1LCJleHAiOjE3NzgxNTM1OTV9.wXOxXaFnCLNQB9bphk5htI9iwrWh4-5xqVFro7ZGjpkbase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/sorry.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvc29ycnkud2VibSIsImlhdCI6MTc0Mzg1OTQ4NywiZXhwIjoxNzc1Mzk1NDg3fQ.pXhpf2EddgNBbgvZVc2I6sYX-S4vFsRpAnlipRHoEtI",
     "Thank you":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/thank%20you.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvdGhhbmsgeW91LndlYm0iLCJpYXQiOjE3NDM5MzEzOTgsImV4cCI6MTc3NTQ2NzM5OH0.7iTwikxrfWtUxy5g2-4mdmdcLy86Cr_hWAuJIXx7DHc",
     "Again":
@@ -368,6 +366,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
     List<String> correctAnswers = [
       "i'm deaf, please help me",
       "i'm deaf please help me",
+      "im deaf please help me",
     ];
     String userAnswer = answerController.text.trim().toLowerCase();
 
