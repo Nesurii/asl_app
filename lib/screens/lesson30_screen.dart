@@ -212,7 +212,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 30),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5LndlYm0iLCJpYXQiOjE3NDY2NjQ5MTcsImV4cCI6MTc3ODIwMDkxN30.kjJFUz4KMEUFXeK539y8CC4NaMIOjN5Mx34uRUaJcxw'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5LndlYm0iLCJpYXQiOjE3NDcyOTA5NzcsImV4cCI6MTc3ODgyNjk3N30.uhg-VfClh4exObuk7JiSmzv4LlHvksqjyiZTAF6oQ7k'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -231,7 +231,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/morning.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbW9ybmluZy53ZWJtIiwiaWF0IjoxNzQ2NjY1MDgwLCJleHAiOjE3NzgyMDEwODB9.3lP-P26Hlo1D913NP-DlPnLR-FO98mpvljPFZ2Jip8c'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/morning.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbW9ybmluZy53ZWJtIiwiaWF0IjoxNzQ3MjkwODQ3LCJleHAiOjE3Nzg4MjY4NDd9.pizrdERRLeXz2cci3AcSaQFQb-7Rhpl11gWSfD5eQDw'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -250,7 +250,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/afternoon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYWZ0ZXJub29uLndlYm0iLCJpYXQiOjE3NDY2NjUxNTksImV4cCI6MTc3ODIwMTE1OX0.sIbAul48perRWFEhx0xdusoo5_-W6KSzvjm8XvxZzb0'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/afternoon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYWZ0ZXJub29uLndlYm0iLCJpYXQiOjE3NDcyODc4MzMsImV4cCI6MTc3ODgyMzgzM30.iIEzisT-odc081JhAtW959ZmxuTh3H8aPlZS6lmJ7vw'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -269,7 +269,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/evening,%20night.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvZXZlbmluZywgbmlnaHQud2VibSIsImlhdCI6MTc0NjYwNzU0NiwiZXhwIjoxNzc4MTQzNTQ2fQ.xLUchRVwtDpZJu_ELLI1aKxtc5W7GFoiEO37Ne1RG24'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/evening,%20night.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvZXZlbmluZywgbmlnaHQud2VibSIsImlhdCI6MTc0NzI5MDg3MiwiZXhwIjoxNzc4ODI2ODcyfQ.fcrN8LSle4yOzmJ2F-Etw00L_yv7OM-BzLkS4iYcbbk'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -288,7 +288,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/afternoon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYWZ0ZXJub29uLndlYm0iLCJpYXQiOjE3NDY2NjUxNTksImV4cCI6MTc3ODIwMTE1OX0.sIbAul48perRWFEhx0xdusoo5_-W6KSzvjm8XvxZzb0'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20afternoon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IGFmdGVybm9vbi53ZWJtIiwiaWF0IjoxNzQ3MjkwOTMyLCJleHAiOjE3Nzg4MjY5MzJ9.aPKb3J4WUWmbFEHyBXBgZklFcLpAJM20I6lIt0NN7qg'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -307,7 +307,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/morning.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbW9ybmluZy53ZWJtIiwiaWF0IjoxNzQ2NjY1MDgwLCJleHAiOjE3NzgyMDEwODB9.3lP-P26Hlo1D913NP-DlPnLR-FO98mpvljPFZ2Jip8c'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20morning.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IG1vcm5pbmcud2VibSIsImlhdCI6MTc0NzI5MDk2NywiZXhwIjoxNzc4ODI2OTY3fQ.lpzmzZ_WpXDI_Sx5q6PEhu5SV4MLJ41RyfBatlTKtAg'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -326,7 +326,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20night.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IG5pZ2h0LndlYm0iLCJpYXQiOjE3NDY2NjUzMzUsImV4cCI6MTc3ODIwMTMzNX0.2NgryNofXqjrjiYPNJywu_AVr6OCIz_x6K5rfkQi4ag'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20night.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IG5pZ2h0LndlYm0iLCJpYXQiOjE3NDcyODk3MjUsImV4cCI6MTc3ODgyNTcyNX0.fykQeoKs-dcifD5tr7H7jkAiKxaoL91rrv97Zu1Va4A'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -345,7 +345,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20week.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IHdlZWsud2VibSIsImlhdCI6MTc0NjY2NTM3MCwiZXhwIjoxNzc4MjAxMzcwfQ.G3LrLvk-UAB1TntF9S0FNdnw360XHTKBHvUJhQUISUI'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20week.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IHdlZWsud2VibSIsImlhdCI6MTc0NzI5MTAyNSwiZXhwIjoxNzc4ODI3MDI1fQ.zwzyT3GJdY1tj9uf7D92TkO47UA8_DK-NWazoc9kky8'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -364,7 +364,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20year.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IHllYXIud2VibSIsImlhdCI6MTc0NjY2NTQyOCwiZXhwIjoxNzc4MjAxNDI4fQ.wn169ZdKiWB9UYUpNyQ61ZWBvF7-pB9zHkNkWMEKQPY'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20week.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IHdlZWsud2VibSIsImlhdCI6MTc0NzI5MTAyNSwiZXhwIjoxNzc4ODI3MDI1fQ.zwzyT3GJdY1tj9uf7D92TkO47UA8_DK-NWazoc9kky8'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -409,7 +409,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 30),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20take%20a%20bath.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHRha2UgYSBiYXRoLndlYm0iLCJpYXQiOjE3NDY2NjU1MTcsImV4cCI6MTc3ODIwMTUxN30.0idNzCMykz4koeKwVy5x-liI-dWDEljnteQpJaRrtNA'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20take%20a%20bath.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHRha2UgYSBiYXRoLndlYm0iLCJpYXQiOjE3NDcyOTEzNzIsImV4cCI6MTc3ODgyNzM3Mn0.zHJkXHQKGI046iS3xhZRIvsGG5QKas6rdo-ngDlQTFI'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -428,7 +428,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20breakfast.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBicmVha2Zhc3Qud2VibSIsImlhdCI6MTc0NjY2NTU3NSwiZXhwIjoxNzc4MjAxNTc1fQ.4pV-aGg7IA_s1-byDgDkBCihi6dCDRS9BYuc-ge7PcI'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20do%20chores.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGRvIGNob3Jlcy53ZWJtIiwiaWF0IjoxNzQ3MjkxMTY2LCJleHAiOjE3Nzg4MjcxNjZ9.mIKNzl3mBu25DOIVv32phC_DsiwCLXN7RL8gtaY7Fbs'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -447,7 +447,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20brush%20one's%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGJydXNoIG9uZSdzIGhhaXIud2VibSIsImlhdCI6MTc0NjY2NTYxMSwiZXhwIjoxNzc4MjAxNjExfQ.29qb-GxSnNjKDe8-E19PGk9xyxP5I8M9rCfGCYpCjdc"),
+                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20brush%20one's%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGJydXNoIG9uZSdzIGhhaXIud2VibSIsImlhdCI6MTc0NzI5MTEzMiwiZXhwIjoxNzc4ODI3MTMyfQ.2x8UeX1oPgu1LO0kRcmzztSLpi6au5SmrxcWqUZGEhk"),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -466,7 +466,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20brush%20one's%20teeth.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGJydXNoIG9uZSdzIHRlZXRoLndlYm0iLCJpYXQiOjE3NDY2NjU2NDksImV4cCI6MTc3ODIwMTY0OX0.3L9MeD-kFLUTwffH5P9MX-RMPF-3WfvFJGx_Zy2uYks"),
+                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20brush%20one's%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGJydXNoIG9uZSdzIGhhaXIud2VibSIsImlhdCI6MTc0NzI5MTEzMiwiZXhwIjoxNzc4ODI3MTMyfQ.2x8UeX1oPgu1LO0kRcmzztSLpi6au5SmrxcWqUZGEhk"),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -485,7 +485,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20comb%20one's%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGNvbWIgb25lJ3MgaGFpci53ZWJtIiwiaWF0IjoxNzQ2NjY1NjgyLCJleHAiOjE3NzgyMDE2ODJ9.1s-tj1cVbusdOs1RJak9Yp2SagNVRAAK39Jm9L7FX0M"),
+                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20comb%20one's%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGNvbWIgb25lJ3MgaGFpci53ZWJtIiwiaWF0IjoxNzQ3MjkxMTU2LCJleHAiOjE3Nzg4MjcxNTZ9.RBUbADft0cQ4rA3m_9THZzCCDObB5vNwu56S23w6do0"),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -504,7 +504,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20dressed.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCBkcmVzc2VkLndlYm0iLCJpYXQiOjE3NDY2NjU3MjYsImV4cCI6MTc3ODIwMTcyNn0.ItL94rQZ9YbSTR9raTztIsB4XlphF50pXsRcyGxwYVE'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20dressed.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCBkcmVzc2VkLndlYm0iLCJpYXQiOjE3NDcyOTEyMzcsImV4cCI6MTc3ODgyNzIzN30.m33BRaJgbhPhzSB2kQvNnGwGHOKSRYO500eM2wPkODI'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -523,7 +523,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20ready.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCByZWFkeS53ZWJtIiwiaWF0IjoxNzQ2NjY1NzUzLCJleHAiOjE3NzgyMDE3NTN9.Fgi2FQSneX2vcY94A4nqhVOVw6AX1DEuec9xPAYaC40'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20ready.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCByZWFkeS53ZWJtIiwiaWF0IjoxNzQ3MjkxMjY3LCJleHAiOjE3Nzg4MjcyNjd9.rZqGNOnZfhdUrVxEC2o3Yx_YgqrMqfTXUpksJsJ2-1I'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -542,7 +542,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20ready%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCByZWFkeSB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjY1NzgwLCJleHAiOjE3NzgyMDE3ODB9.nOtrYbPwov1vmkdpHmSXA9E2zyShVBpAhOwkEUrooYg'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20ready%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCByZWFkeSB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ3MjkxMjU5LCJleHAiOjE3Nzg4MjcyNTl9.9pHn6wcWDEJ8B4PnQkuHsoHtLe5X4WVtIYTBMKKg3kw'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -561,7 +561,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20up.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCB1cC53ZWJtIiwiaWF0IjoxNzQ2NjY1ODA5LCJleHAiOjE3NzgyMDE4MDl9.xVzdW-obLv0MSrI5Qz79fJtlC6nScnaLXPSoXbSmS9Y'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20get%20up.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdldCB1cC53ZWJtIiwiaWF0IjoxNzQ3MjkxMjc0LCJleHAiOjE3Nzg4MjcyNzR9.7HpbJrbmCBf89Wf4G7FFusa8UorHrYpQxpzltUJ7ctE'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -580,7 +580,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20put%20on%20makeup.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHB1dCBvbiBtYWtldXAud2VibSIsImlhdCI6MTc0NjY2NTg0MCwiZXhwIjoxNzc4MjAxODQwfQ.ev92P6zM4mnUzbhDV6k5DX47fUpHrzPlK2xQzDs5rK0'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20put%20on%20makeup.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHB1dCBvbiBtYWtldXAud2VibSIsImlhdCI6MTc0NzI5MTMwMSwiZXhwIjoxNzc4ODI3MzAxfQ.LN3xRtdxS8hXNN8KgTfnr7Pc_YNOK-tNMXfXCqz1biI'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -599,7 +599,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20oversleep.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIG92ZXJzbGVlcC53ZWJtIiwiaWF0IjoxNzQ2NjY1ODY0LCJleHAiOjE3NzgyMDE4NjR9.W6QbhXOLNWgx3IqZkBfDRYim0IbeJq7RCcUZuXUMFgQ'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20oversleep.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIG92ZXJzbGVlcC53ZWJtIiwiaWF0IjoxNzQ3MjkxMjkzLCJleHAiOjE3Nzg4MjcyOTN9.-Sji1KFRhjagJ9UncK576qGo4titKNS_Vu97X--Lwf0'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -618,7 +618,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20shave%20.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNoYXZlIC53ZWJtIiwiaWF0IjoxNzQ2NjY1ODg5LCJleHAiOjE3NzgyMDE4ODl9.MnMgUfcr3lQJKum-sHmgPlzOjwZnhg-kAEP5CqaEQ7E'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20shave%20.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNoYXZlIC53ZWJtIiwiaWF0IjoxNzQ3MjkxMzU4LCJleHAiOjE3Nzg4MjczNTh9.aUIZj-K1OcyEfNWKakhz5TPk4IcXy027DSJnrYVCbUE'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -637,7 +637,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20shave%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNoYXZlIHZlciAyLndlYm0iLCJpYXQiOjE3NDY2NjU5MTksImV4cCI6MTc3ODIwMTkxOX0.dT6SEdDQw_khvyuyDqcn3HIEqk2pfQwt-5O7ymtLxaU'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20shave%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNoYXZlIHZlciAyLndlYm0iLCJpYXQiOjE3NDcyOTEzMzUsImV4cCI6MTc3ODgyNzMzNX0.uBoQmzKQXK-D5M88vnfnp5tIAistOdegXKKV2d8mnDI'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -656,7 +656,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20shower.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNob3dlci53ZWJtIiwiaWF0IjoxNzQ2NjY1OTQ4LCJleHAiOjE3NzgyMDE5NDh9.5X4qPEHSnXSyG-lPpS-q5IrvzZcqgSFd0t5Gsyn2ZeE'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20shower.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNob3dlci53ZWJtIiwiaWF0IjoxNzQ3MjkxMzY1LCJleHAiOjE3Nzg4MjczNjV9.xyvdLwr8whr5Gz-O41KreEZ7Ky-HcJrL-v7IQ8gNqFs'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -675,7 +675,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20wake%20up.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHdha2UgdXAud2VibSIsImlhdCI6MTc0NjY2NTk4MiwiZXhwIjoxNzc4MjAxOTgyfQ.vK19MGsVYUqORKxvPqEA2BtQZDJAG3cBqkoxz37HXtg'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20wake%20up.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHdha2UgdXAud2VibSIsImlhdCI6MTc0NzI5MTM3OSwiZXhwIjoxNzc4ODI3Mzc5fQ.Fr5qWN5n1PHgtmW3m2YewxR7M3MpuWVc7jHWZhVmysY'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -719,7 +719,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 30),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20change%20(clothes).webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGNoYW5nZSAoY2xvdGhlcykud2VibSIsImlhdCI6MTc0NjY2NjAyOSwiZXhwIjoxNzc4MjAyMDI5fQ.k0vZooEEO2IwYV3s4ME_TJ9TdSzE8-jOVP5K8chGsTU'),
+                                          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20brush%20one's%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGJydXNoIG9uZSdzIGhhaXIud2VibSIsImlhdCI6MTc0NzI5MTEzMiwiZXhwIjoxNzc4ODI3MTMyfQ.2x8UeX1oPgu1LO0kRcmzztSLpi6au5SmrxcWqUZGEhk"),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -738,7 +738,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20do%20chores.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGRvIGNob3Jlcy53ZWJtIiwiaWF0IjoxNzQ2NjY2MDU2LCJleHAiOjE3NzgyMDIwNTZ9.c5KjbDOZxanyYzE74twOznJBNCOEgoqNM93ZbgtR8KE'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20do%20chores.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGRvIGNob3Jlcy53ZWJtIiwiaWF0IjoxNzQ3MjkxMTY2LCJleHAiOjE3Nzg4MjcxNjZ9.mIKNzl3mBu25DOIVv32phC_DsiwCLXN7RL8gtaY7Fbs'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -757,7 +757,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20dinner.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBkaW5uZXIud2VibSIsImlhdCI6MTc0NjY2NjA4MiwiZXhwIjoxNzc4MjAyMDgyfQ.aUUpD7vdHounK5cIOPehGHEH8w7luVT9ylmd5FfUlFU'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20dinner.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBkaW5uZXIud2VibSIsImlhdCI6MTc0NzI5MTIwOSwiZXhwIjoxNzc4ODI3MjA5fQ.aiAMuhiL_VIDyZyl27xHY5i92b1NGD-SKZXk3PVO5eY'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -776,7 +776,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/early.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2Vhcmx5LndlYm0iLCJpYXQiOjE3NDY2NjQ2NzQsImV4cCI6MTc3ODIwMDY3NH0.tl9L2qzRFetfCHvs9teKj4xJPVDr5f4RyBZGHF9HGHQ'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/early.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2Vhcmx5LndlYm0iLCJpYXQiOjE3NDcyOTA5MjEsImV4cCI6MTc3ODgyNjkyMX0.Xy7CdxuEOX7af_dtYwXbSOmVKKHYppzz3xsQiCiuypY'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -795,7 +795,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20fall%20asleep.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGZhbGwgYXNsZWVwLndlYm0iLCJpYXQiOjE3NDY2NjYxMjcsImV4cCI6MTc3ODIwMjEyN30.NO4g1SK70HSW3ZYn889GUMk__VD1hoVQFMbU3YPfe6k'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20fall%20asleep.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGZhbGwgYXNsZWVwLndlYm0iLCJpYXQiOjE3NDcyOTEyMjgsImV4cCI6MTc3ODgyNzIyOH0.YeL65bBbcZ4WA_bEXPMKfUha7DN9GlqAx7hqH0IF8LE'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -814,7 +814,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20go%20to%20bed.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdvIHRvIGJlZC53ZWJtIiwiaWF0IjoxNzQ2NjY2MTU0LCJleHAiOjE3NzgyMDIxNTR9.jJWQIpX7bFQ52wy7YCrPcmuOhainwYcRMkrTb5srHxU'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20go%20to%20bed.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdvIHRvIGJlZC53ZWJtIiwiaWF0IjoxNzQ3MjkxMjg2LCJleHAiOjE3Nzg4MjcyODZ9.7UoPV31xfK8LKl6ZsDed_shBw4xzUeTTHeilWa5sQu8'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -833,7 +833,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20lunch.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBsdW5jaC53ZWJtIiwiaWF0IjoxNzQ2NjY2NjEzLCJleHAiOjE3NzgyMDI2MTN9.ffiiHdYBMixxZ9D-7trL6kqNq2qS3m0uCq8e8dY1gqc'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20lunch.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBsdW5jaC53ZWJtIiwiaWF0IjoxNzQ3MjkxMjIwLCJleHAiOjE3Nzg4MjcyMjB9.Dg6vhT0RMTyWzZIFHk9uyGe7J15BmXfOFykuItthR_U'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -852,7 +852,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20rest.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHJlc3Qud2VibSIsImlhdCI6MTc0NjY2NjIyNCwiZXhwIjoxNzc4MjAyMjI0fQ.zI31CxsP8iKUORwm8KwjlqQWhjs1c0vOwj35msRMJlw'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20rest.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHJlc3Qud2VibSIsImlhdCI6MTc0NzI5MTMxNywiZXhwIjoxNzc4ODI3MzE3fQ.qLRz9ojrO-9KTFuvr_rYGnOFUXEYFdNcPrlb-Kw4fKY'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -871,7 +871,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20set%20an%20alarm.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHNldCBhbiBhbGFybS53ZWJtIiwiaWF0IjoxNzQ2NjY2MjQ5LCJleHAiOjE3NzgyMDIyNDl9.YgYr_QLwK-UxaU_1eeIk2IVFP2l3Mpx4YaIumAfwD6U'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20rest.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIHJlc3Qud2VibSIsImlhdCI6MTc0NzI5MTMxNywiZXhwIjoxNzc4ODI3MzE3fQ.qLRz9ojrO-9KTFuvr_rYGnOFUXEYFdNcPrlb-Kw4fKY'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -890,7 +890,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/around.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2Fyb3VuZC53ZWJtIiwiaWF0IjoxNzQ2NjY0MTE2LCJleHAiOjE3NzgyMDAxMTZ9.eMwbv_CAv6raa8sLMZSpoJyv3Vc7JLUmS5xf3eVe6AE'),
+                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2017/around.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDE3L2Fyb3VuZC53ZWJtIiwiaWF0IjoxNzQ0MjI5NzgxLCJleHAiOjE3NzU3NjU3ODF9.CK4FS8Pci15WGnTVFNIw5788fbSScH1xb0s1rYCRM_w'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -909,7 +909,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/betwee.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2JldHdlZS53ZWJtIiwiaWF0IjoxNzQ2NjY0NDY2LCJleHAiOjE3NzgyMDA0NjZ9.jDbOfCkxC63CUVENesqODxSoP_rYg8mwc1OL6oBzOTA'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/betwee.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2JldHdlZS53ZWJtIiwiaWF0IjoxNzQ3MjkwODkzLCJleHAiOjE3Nzg4MjY4OTN9.nRFHoq_5RTrOww1IdmKFg8HiI2hSbLH_VNoJqu5G0eg'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -975,7 +975,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 30),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/group%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2dyb3VwIDEud2VibSIsImlhdCI6MTc0NjY2NjMyMCwiZXhwIjoxNzc4MjAyMzIwfQ.XZPHcXZGMs0KwLbn-OCllF-SM4kpHEzu5PP6M42Apqg'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/group%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2dyb3VwIDEud2VibSIsImlhdCI6MTc0NzI5MTA3MiwiZXhwIjoxNzc4ODI3MDcyfQ.8VkBBSLXw1OnVUybU-vEDFtfBtcGdZXNiWASNmLDHTE'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -994,7 +994,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/group%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2dyb3VwIDIud2VibSIsImlhdCI6MTc0NjY2NjM0MiwiZXhwIjoxNzc4MjAyMzQyfQ.M082cpaqRH7NWcw6JcgSR0_SzOIkiR7ricJWKKnvUiM'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/group%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2dyb3VwIDIud2VibSIsImlhdCI6MTc0NzI5MTA4MCwiZXhwIjoxNzc4ODI3MDgwfQ.T6MjQstlPI7O3CVHwtj-JEyv_l6aMzDSRe2U1BrQQ08'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -1013,7 +1013,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/group%203.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2dyb3VwIDMud2VibSIsImlhdCI6MTc0NjY2NjM2MSwiZXhwIjoxNzc4MjAyMzYxfQ.o8lezIHlPqSVOuvBPIS0_fXlTlJQtdeiXKdNJi2Sfck'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/group%203.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2dyb3VwIDMud2VibSIsImlhdCI6MTc0NzI5MTA4NywiZXhwIjoxNzc4ODI3MDg3fQ.r7o98Sl2Wlegw5IQkogV5eyNOOj8ng4STl9Nd_dPEHk'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -1046,7 +1046,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 30),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20morning%20i%20get%20up%20and%20brush%20my%20teeth.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IG1vcm5pbmcgaSBnZXQgdXAgYW5kIGJydXNoIG15IHRlZXRoLndlYm0iLCJpYXQiOjE3NDY2NjY0MDQsImV4cCI6MTc3ODIwMjQwNH0.ub_xY1SJwXql9shDDScMESwOwu8vOuM1lNtfuLhZCx0'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20morning%20i%20get%20up%20and%20brush%20my%20teeth.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IG1vcm5pbmcgaSBnZXQgdXAgYW5kIGJydXNoIG15IHRlZXRoLndlYm0iLCJpYXQiOjE3NDcyOTA5NTAsImV4cCI6MTc3ODgyNjk1MH0.J0AlLskMQYM7v2NSQGJRxPkXXi2drZyCFOgpaTj9D7A'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -1066,7 +1066,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/then%20in%20the%20afternoons,%20i%20have%20class%20and%20work.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RoZW4gaW4gdGhlIGFmdGVybm9vbnMsIGkgaGF2ZSBjbGFzcyBhbmQgd29yay53ZWJtIiwiaWF0IjoxNzQ2NjY2NDU5LCJleHAiOjE3NzgyMDI0NTl9.UcF_NAKcMZu2RjQDloQiTnmYoagjc3LPjdlwZUJdf-g'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/then%20in%20the%20afternoons,%20i%20have%20class%20and%20work.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RoZW4gaW4gdGhlIGFmdGVybm9vbnMsIGkgaGF2ZSBjbGFzcyBhbmQgd29yay53ZWJtIiwiaWF0IjoxNzQ3MjkxMTI1LCJleHAiOjE3Nzg4MjcxMjV9.oG3fONhv60l9G30r1hJ4hSjYrR2gTI_T_YuDWDo_Mvs'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -1086,7 +1086,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/at%20night,%20i%20hangout%20with%20friends.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2F0IG5pZ2h0LCBpIGhhbmdvdXQgd2l0aCBmcmllbmRzLndlYm0iLCJpYXQiOjE3NDY2NjY1MTIsImV4cCI6MTc3ODIwMjUxMn0.vDJcnHEmUmXdp68j_mmxUQ-oEVONWVzxfILcbOMhbgE'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/at%20night,%20i%20hangout%20with%20friends.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2F0IG5pZ2h0LCBpIGhhbmdvdXQgd2l0aCBmcmllbmRzLndlYm0iLCJpYXQiOjE3NDcyOTA4ODUsImV4cCI6MTc3ODgyNjg4NX0.BV1Bh6gppuD7VXZ5LK-SkJEzpC7R0wJPWxFnVOgmmQo'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.center,
@@ -1303,7 +1303,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                       SizedBox(height: 10),
                                       CustomVideoPlayer(
                                         videoUrl:
-                                            "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/i%20wake%20up%20at%207_30.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2kgd2FrZSB1cCBhdCA3XzMwLndlYm0iLCJpYXQiOjE3NDY2NjY1NzAsImV4cCI6MTc3ODIwMjU3MH0.gzJ4MJmViUfdi8AX0CHrhazkI5R6pcSPUl2wJ3rnZV8",
+                                            "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/i%20wake%20up%20at%207_30.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2kgd2FrZSB1cCBhdCA3XzMwLndlYm0iLCJpYXQiOjE3NDcyOTExMDAsImV4cCI6MTc3ODgyNzEwMH0.Eew-r7x7DayM8r-xOM0b9ov1fjQ5ZZI9bQr9XMCi2Yk",
                                       ),
                                       SizedBox(height: 10),
                                       Column(
@@ -1434,7 +1434,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                       SizedBox(height: 10),
                                       CustomVideoPlayer(
                                         videoUrl:
-                                            "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20lunch.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBsdW5jaC53ZWJtIiwiaWF0IjoxNzQ2NjY2NjEzLCJleHAiOjE3NzgyMDI2MTN9.ffiiHdYBMixxZ9D-7trL6kqNq2qS3m0uCq8e8dY1gqc",
+                                            "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20eat%20lunch.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGVhdCBsdW5jaC53ZWJtIiwiaWF0IjoxNzQ3MjkxMjIwLCJleHAiOjE3Nzg4MjcyMjB9.Dg6vhT0RMTyWzZIFHk9uyGe7J15BmXfOFykuItthR_U",
                                       ),
                                       SizedBox(height: 10),
                                       // Answer Input
@@ -1531,7 +1531,7 @@ class _Lesson30ScreenState extends State<Lesson30Screen> {
                                       SizedBox(height: 10),
                                       CustomVideoPlayer(
                                         videoUrl:
-                                            "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20go%20to%20bed.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdvIHRvIGJlZC53ZWJtIiwiaWF0IjoxNzQ2NjY2MTU0LCJleHAiOjE3NzgyMDIxNTR9.jJWQIpX7bFQ52wy7YCrPcmuOhainwYcRMkrTb5srHxU",
+                                            "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/to%20go%20to%20bed.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzg2MzZhOWI0LTU2ZDgtNGM1Zi04MzM4LWEzZmI4ZjkzN2I2MSJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL3RvIGdvIHRvIGJlZC53ZWJtIiwiaWF0IjoxNzQ3MjkxMjg2LCJleHAiOjE3Nzg4MjcyODZ9.7UoPV31xfK8LKl6ZsDed_shBw4xzUeTTHeilWa5sQu8",
                                       ),
                                       SizedBox(height: 10),
                                       // Answer Input

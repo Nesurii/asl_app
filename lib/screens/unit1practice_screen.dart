@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-
+import '../webview.dart';
 import 'video_player_widget.dart';
 
 class Unit1PracticeScreen extends StatefulWidget {
@@ -61,6 +61,18 @@ class _Unit1PracticeScreenState extends State<Unit1PracticeScreen> {
   void _shufflePractices() {
     shuffledPractices = List.from(practices)..shuffle(Random());
   }
+
+  // void _openCamera(BuildContext context) {
+  //   Navigator.of(context).push(
+  //     MaterialPageRoute(
+  //       builder: (_) => Scaffold(
+  //         body: CameraWidget(
+  //           onClose: () => Navigator.of(context).pop(),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -128,7 +140,10 @@ class _Unit1PracticeScreenState extends State<Unit1PracticeScreen> {
             SizedBox(height: 30),
             GestureDetector(
               onTap: () {
-                // TODO: Implement camera opening functionality
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const WebViewScreen()),
+                );
               },
               child: Container(
                 decoration: BoxDecoration(

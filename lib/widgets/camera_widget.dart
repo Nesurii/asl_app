@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'dart:io';
+import 'dart:math' as math; // Added for flipping the preview
 import 'package:path_provider/path_provider.dart';
 
 class CameraWidget extends StatefulWidget {
   final VoidCallback onClose;
-  
+
   const CameraWidget({super.key, required this.onClose});
 
   @override
@@ -90,9 +91,19 @@ class _CameraWidgetState extends State<CameraWidget> {
       return const Center(child: CircularProgressIndicator());
     }
 
+    bool isFrontCamera = _cameraController!.description.lensDirection == CameraLensDirection.front;
+
     return Stack(
       children: [
-        Positioned.fill(child: CameraPreview(_cameraController!)),
+        Positioned.fill(
+          child: isFrontCamera
+              ? Transform(
+                  alignment: Alignment.center,
+                  transform: Matrix4.rotationY(math.pi),
+                  child: CameraPreview(_cameraController!),
+                )
+              : CameraPreview(_cameraController!),
+        ),
         Positioned(
           bottom: 120,
           left: 0,
