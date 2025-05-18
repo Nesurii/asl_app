@@ -13,38 +13,38 @@ class _Unit7PracticeScreenState extends State<Unit7PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: You were asked if you had a class today. Try responding like this!',
+          'Practice 1: You have a class in room 7 today. Try practicing the sign for “room”.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/I%20have%20a%20class%20on%20room%207.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L0kgaGF2ZSBhIGNsYXNzIG9uIHJvb20gNy53ZWJtIiwiaWF0IjoxNzQ0NjQzNTI5LCJleHAiOjE3NzYxNzk1Mjl9.fSRt7Ct_DpH-otSukl7fYlIxgIXXWN3kiHYRTPmTt3Y",
-      'videoLabel': 'I have a class on room 7',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2025/room.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI1L3Jvb20ud2VibSIsImlhdCI6MTc0NDY0MzQzOSwiZXhwIjoxNzc2MTc5NDM5fQ.e-Rm_SFS7gCK5vPHGL308od_aImEQSUBtGnJeTNe6zw",
+      'videoLabel': 'Room',
     },
     {
       'practiceText':
-          'Practice 2: You were asked who was teaching you ASL. Try responding like this!',
+          'Practice 2: Andy was the one teaching you ASL. Try signing the word “teacher”.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2026/my%20asl%20teacher%20is%20andy.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI2L215IGFzbCB0ZWFjaGVyIGlzIGFuZHkud2VibSIsImlhdCI6MTc0NDY0ODQ5NCwiZXhwIjoxNzc2MTg0NDk0fQ.dcKfyl2QNS4NChiEw80-4rL8KnQMB4xrhkGfPPB08vc",
-      'videoLabel': 'My ASL teacher is Andy',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2026/teacher.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI2L3RlYWNoZXIud2VibSIsImlhdCI6MTc0NDY0ODQxNCwiZXhwIjoxNzc2MTg0NDE0fQ.aoSmmsUBkYQ4YNbLSXYUF09FzYAofWW8_Y1q6dMmWsI",
+      'videoLabel': 'Teacher',
     },
     {
       'practiceText':
-          'Practice 3: Your friend asked you if you have a class later. Try answering like this example.',
+          'Practice 3: Your friend asked you if you have a physics class later. Try signing the word “physics”.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2027/yes,%20i%20have%20a%20chemistry%20class%20later.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI3L3llcywgaSBoYXZlIGEgY2hlbWlzdHJ5IGNsYXNzIGxhdGVyLndlYm0iLCJpYXQiOjE3NDQ2NTMzNTIsImV4cCI6MTc3NjE4OTM1Mn0.kkWkHRCQdjB5lQ4LctQLFV_R3qOH4_tIYQABcuUS0Qs',
-      'videoLabel': 'Yes, I have a chemistry class later',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2027/physics.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI3L3BoeXNpY3Mud2VibSIsImlhdCI6MTc0NDY1Mzc4MiwiZXhwIjoxNzc2MTg5NzgyfQ.xLreUr3OMtLHROi-U0x-fD-jRZ7LLlbfA72e4HKgXD0',
+      'videoLabel': 'Physics',
     },
     {
       'practiceText':
-          'Practice 4: You were asked about how many people are attending the party. Try this example as a response.',
+          'Practice 4: The cafeteria was so crowded today because the menu for lunch was chicken sothe menu became popular and were regularized during Fridays. Try practicing the sign for “popular”.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2028/35%20people%20are%20going%20to%20the%20party.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI4LzM1IHBlb3BsZSBhcmUgZ29pbmcgdG8gdGhlIHBhcnR5LndlYm0iLCJpYXQiOjE3NDQ2NTQ1ODYsImV4cCI6MTc3NjE5MDU4Nn0.w9l02L_PCBgkdgau1USSblbCTp4PaThm3XFAi5sKKhs",
-      'videoLabel': 'Thirty-five people are going to the party',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2028/popular.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI4L3BvcHVsYXIud2VibSIsImlhdCI6MTc0NDY1NTExOSwiZXhwIjoxNzc2MTkxMTE5fQ.4yrZ-PecfHV462vhG6R3KjYoCnq1Czyr2kEz29bmaC4",
+      'videoLabel': 'Popular',
     },
     {
       'practiceText':
-          'Practice 5: You were at the park with your dog when you bumped into your friend and your dog being friendly pounced on your friend which was a bit startled by it. Try this to explain the situation.',
+          'Practice 5: You hate bugs that’s why you don’t like camping. Try signing the word “bug”.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%207/Lesson%2028/my%20dog%20tends%20to%20jump%20on%20people.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDcvTGVzc29uIDI4L215IGRvZyB0ZW5kcyB0byBqdW1wIG9uIHBlb3BsZS53ZWJtIiwiaWF0IjoxNzQ0NjU1MDk1LCJleHAiOjE3NzYxOTEwOTV9.8dvQiNhORRn4J5wO2Um66l-mMVv2HFe8p9cexynAFlE',
-      'videoLabel': 'My dog tends to jump on people',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/bug.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYnVnLndlYm0iLCJpYXQiOjE3NDY2MTk1NjIsImV4cCI6MTc3ODE1NTU2Mn0.syAoJu08CvqcsWgByYEB20-0Qc-7w7RhTycypx4tsC8',
+      'videoLabel': 'Bug',
     },
   ];
 

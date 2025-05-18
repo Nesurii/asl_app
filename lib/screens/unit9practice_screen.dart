@@ -13,38 +13,38 @@ class _Unit9PracticeScreenState extends State<Unit9PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: You were asked to describe your friend. Try this!',
+          'Practice 1: You have always hated the freckles on your face but some of your friends said it looked good on you, so you just accepted it and didn’t bother having it removed. Try signing the word “freckles”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2033/max%20is%20asian%20and%20he%20is%20muscular.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDMzL21heCBpcyBhc2lhbiBhbmQgaGUgaXMgbXVzY3VsYXIud2VibSIsImlhdCI6MTc0NDgxNjk2OSwiZXhwIjoxNzc2MzUyOTY5fQ.BeRuLa4HbPSFg8Dhy0vBuk5ttThBmWv9S8sI4OLf3iQ",
-      'videoLabel': 'Max is Asian and he is muscular',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2033/freckles.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDMzL2ZyZWNrbGVzLndlYm0iLCJpYXQiOjE3NDY2Mzg1NzEsImV4cCI6MTc3ODE3NDU3MX0.bBSbeQtC5Zq1JnRCC_rjDJBucxeT7DpapYlAadgMFVA",
+      'videoLabel': 'Freckles',
     },
     {
       'practiceText':
-          'Practice 2: You were asked what hairstyle you prefer. Try using this as an example.',
+          'Practice 2: You were asked what hairstyle you wanted to try, and out of them, you want the curly hairstyle. Try practicing the sign for “curly hair”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2034/i%20like%20having%20long%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM0L2kgbGlrZSBoYXZpbmcgbG9uZyBoYWlyLndlYm0iLCJpYXQiOjE3NDQ4MTcyMjAsImV4cCI6MTc3NjM1MzIyMH0.u3aZmXEC10OMginHjPd7BHLNnMfsD2c8Fh0jfZOq41M",
-      'videoLabel': 'I like having long hair',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2034/curly%20hair.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM0L2N1cmx5IGhhaXIud2VibSIsImlhdCI6MTc0NjYzODYzOCwiZXhwIjoxNzc4MTc0NjM4fQ.6HBmh8865L_0Ha3NS_yi8j5e8_oIkdgO_NRwifT8YOY",
+      'videoLabel': 'Curly hair',
     },
     {
       'practiceText':
-          'Practice 3: You were asked what style of clothes you usually wear. Try using this example as a response.',
+          'Practice 3: Dresses are nice but jeans are more comfortable. Try signing “dress”.',
       'videoUrl':
-          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2035/i%20like%20to%20wear%20sweatshirts%20and%20jeans.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM1L2kgbGlrZSB0byB3ZWFyIHN3ZWF0c2hpcnRzIGFuZCBqZWFucy53ZWJtIiwiaWF0IjoxNzQ0ODIyNzU2LCJleHAiOjE3NzYzNTg3NTZ9.9JBILRzhnhyHNJcZ-9hYxx9I32yDfUNi4Onn8qEF8G4',
-      'videoLabel': 'I like to wear sweatshirts and jeans',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2035/dress.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM1L2RyZXNzLndlYm0iLCJpYXQiOjE3NDY2Mzg3MTAsImV4cCI6MTc3ODE3NDcxMH0.UDLpyHor85heF2ldrFA3Qsbh5u5aIkGapMZZOeX0fxs',
+      'videoLabel': 'Dress',
     },
     {
       'practiceText':
-          'Practice 4: Someone asked what happened to you because you were red all over. Try practicing this as a response.',
+          'Practice 4: Someone asked what happened to you because you were red all over. You replied that it was because your allergies were acting up and you had already visited a doctor. Try practicing the sign for “doctor”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/my%20allergies%20started%20acting%20up%20yesterday.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L215IGFsbGVyZ2llcyBzdGFydGVkIGFjdGluZyB1cCB5ZXN0ZXJkYXkud2VibSIsImlhdCI6MTc0NDgyMzMyMSwiZXhwIjoxNzc2MzU5MzIxfQ.Zs0OAz_GPyNoHWSjUBIsFkCYbF_y4jvQEpneOtjGpW4",
-      'videoLabel': 'My allergies started acting up yesterday',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/doctor.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L2RvY3Rvci53ZWJtIiwiaWF0IjoxNzQ2NjM4NzczLCJleHAiOjE3NzgxNzQ3NzN9.8K0CZRLsKIgdHj21Xl6ZLZysumUTvgm3p7b5pulApWM",
+      'videoLabel': 'Doctor',
     },
     {
       'practiceText':
-          'Practice 5: You were asked why you didn’t attend the class yesterday. Try this as a response.',
+          'Practice 5: You explained that the reason why you didn’t attend the class yesterday was because you got hurt in a traffic accident. Try practicing the sign for “hurt”.',
       'videoUrl':
-          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/i%20got%20sick%20yesterday.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L2kgZ290IHNpY2sgeWVzdGVyZGF5LndlYm0iLCJpYXQiOjE3NDQ4MjMyOTMsImV4cCI6MTc3NjM1OTI5M30.re-pxGz-Jo6sjB4bmJUuHo8XOpRblqe9lnnHh_AS_vo',
-      'videoLabel': 'I got sick yesterday',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/hurt.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaHVydC53ZWJtIiwiaWF0IjoxNzQ2NjE5NTk0LCJleHAiOjE3NzgxNTU1OTR9.S11RdTc1oNMFXUZ5YxQ1Irt5Wc3ndNYvwqoS8iUmBrw',
+      'videoLabel': 'Hurt',
     },
   ];
 

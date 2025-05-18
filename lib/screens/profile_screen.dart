@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/current_user.dart';
@@ -124,7 +125,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Text(
                       '${userData.account?['username'] ?? ''}',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
@@ -211,58 +213,62 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget _buildMyAchievements() {
+ Widget _buildMyAchievements() {
   final progressData = Provider.of<CurrentUserData>(context).progress;
   final List<dynamic>? earnedStickers = progressData?['stickers_earned'];
 
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Text(
-          "Earned Stickers:",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-        ),
-      ),
-      if (earnedStickers != null && earnedStickers.isNotEmpty)
-        Center( 
-          child: Wrap( 
-            spacing: 12,
-            runSpacing: 12,
-            children: earnedStickers.map((sticker) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.black, width: 2),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 6,
-                      offset: Offset(2, 4),
-                    ),
-                  ],
-                  color: Colors.white,
-                ),
-                padding: EdgeInsets.all(16),
-                child: Image.asset(
-                  '$sticker',
-                  width: 70,
-                  height: 70,
-                  fit: BoxFit.cover,
-                ),
-              );
-            }).toList(),
+  return SingleChildScrollView(
+    padding: EdgeInsets.only(bottom: 16), // extra space for scrolling
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Text(
+            "Earned Stickers:",
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-        )
-      else
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Text("No stickers earned yet."),
         ),
-    ],
+        if (earnedStickers != null && earnedStickers.isNotEmpty)
+          Center(
+            child: Wrap(
+              spacing: 12,
+              runSpacing: 12,
+              children: earnedStickers.map((sticker) {
+                return Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.black, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 6,
+                        offset: Offset(2, 4),
+                      ),
+                    ],
+                    color: Colors.white,
+                  ),
+                  padding: EdgeInsets.all(16),
+                  child: Image.asset(
+                    '$sticker',
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              }).toList(),
+            ),
+          )
+        else
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Text("No stickers earned yet."),
+          ),
+      ],
+    ),
   );
 }
+
 
   Widget _buildSettings() {
     return Column(
@@ -304,16 +310,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
           leading: Icon(Icons.logout, color: Colors.red),
           title: Text('Logout', style: TextStyle(color: Colors.red)),
           onTap: () async {
-            // Log the user out from Supabase
+            final googleSignIn = GoogleSignIn();
+
+            // Sign out from Google if signed in
+            try {
+              if (await googleSignIn.isSignedIn()) {
+                await googleSignIn.signOut();
+              }
+            } catch (e) {
+              debugPrint('Google SignOut failed: $e');
+            }
+
+            // Sign out from Supabase
             await Supabase.instance.client.auth.signOut();
 
-            if (!mounted) return; 
-            // Clear any locally stored user data using your provider
-            context.read<CurrentUserData>().logout(); // This clears the user data in your provider
+            if (!mounted) return;
 
-            // Optionally, navigate to the login screen after logout
+            // Clear stored user data
+            context.read<CurrentUserData>().logout();
+
+            // Navigate to the login screen after logout
             Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (context) => LoginScreen()), // Replace with your Login screen
+              MaterialPageRoute(
+                  builder: (context) =>
+                      LoginScreen()), // Replace with your Login screen
             );
           },
         ),

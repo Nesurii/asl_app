@@ -23,20 +23,20 @@ class _Quiz3ScreenState extends State<Quiz3Screen> {
   final Map<String, String> correctMatches = {
     "Which":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/which.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvd2hpY2gud2VibSIsImlhdCI6MTc0NDAyNzQwOSwiZXhwIjoxNzc1NTYzNDA5fQ.zUbBmzLCjHZ_IR2Z-O4ksSWsUw_uh1-BbGlGj1yOz2w",
-    "Email address":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2011/email%20address.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDExL2VtYWlsIGFkZHJlc3Mud2VibSIsImlhdCI6MTc0NDAzMjY5NSwiZXhwIjoxNzc1NTY4Njk1fQ.uHbcvlYH-MeXboGFC4c11up9zfWEGsadfPg_MM-Ce6U",
+    "Email":
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/email.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvZW1haWwud2VibSIsImlhdCI6MTc0NjYxMDc3MSwiZXhwIjoxNzc4MTQ2NzcxfQ.SuiJgH09gm0SU1nz9Bjoz7zj7FnSs07iB2S_JGpRrEc",
     "Weather":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/weather%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3dlYXRoZXIgdmVyLiAxLndlYm0iLCJpYXQiOjE3NDQwMzM1MjEsImV4cCI6MTc3NTU2OTUyMX0.rAeFfYeAYnV8VYTmmm2n8Y66i3Ymos_loTOe1gmEO5Q",
     "Sunny":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2012/sunny.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEyL3N1bm55LndlYm0iLCJpYXQiOjE3NDQwMzMzOTUsImV4cCI6MTc3NTU2OTM5NX0.8x405qrHKNgNB_Y75uXD2_KjUdnPaclLEG7tW6XbBVI",
     "Address":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2010/address.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEwL2FkZHJlc3Mud2VibSIsImlhdCI6MTc0NDAzMTQ0MSwiZXhwIjoxNzc1NTY3NDQxfQ.SD7CydGRKrT3k_WsLazx5AfNz0hMcz4S7Li97QHlU-k",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/address.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYWRkcmVzcy53ZWJtIiwiaWF0IjoxNzQ2NjA5NDExLCJleHAiOjE3NzgxNDU0MTF9.sltPx8tQDzmO7W78bM1j0UgXFuf4_mxsuCvG0w6-Y3I",
     "Blue":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2011/blue.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDExL2JsdWUud2VibSIsImlhdCI6MTc0NDAzMjM4MCwiZXhwIjoxNzc1NTY4MzgwfQ.J9Qa82m17Fvb9KNwnijQG7ZhXps9cZ0mh0xAQAAHfiE",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/blue.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvYmx1ZS53ZWJtIiwiaWF0IjoxNzQ2NjEwMzgxLCJleHAiOjE3NzgxNDYzODF9.V6UYZy9zRuMbetAh_QllyPaga9MzwcYd_qsdf3EjwWk",
     "Philippines":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2010/philippines%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDEwL3BoaWxpcHBpbmVzIHZlci4gMS53ZWJtIiwiaWF0IjoxNzQ0MDMxOTE0LCJleHAiOjE3NzU1Njc5MTR9.PNtKFkomsaMb1cfppOLMo7q6xC-REDwSRYrgZXQdids",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/philippines.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvcGhpbGlwcGluZXMud2VibSIsImlhdCI6MTc0NjYxODE1MywiZXhwIjoxNzc4MTU0MTUzfQ.f50sXWQKMmcwOuXUDoSIT7_dRGwqx6oC02E4Lb4mvxA",
     "Orange":
-        "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2011/orange.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDExL29yYW5nZS53ZWJtIiwiaWF0IjoxNzQ0MDMyNzYyLCJleHAiOjE3NzU1Njg3NjJ9.3jn3FWKJRMkqmpms8POf8fzuKT9-7LPuQLOEf0Htw3g",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/orange.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvb3JhbmdlLndlYm0iLCJpYXQiOjE3NDY2MTA1NzIsImV4cCI6MTc3ODE0NjU3Mn0.6EkDItlS7iMeDzh94-cnnahalRJXo-Gv1jqtAOkribw",
     "At (@ symbol)":
         "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%2011/@.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDExL0Aud2VibSIsImlhdCI6MTc0NDAzMjkxOCwiZXhwIjoxNzc1NTY4OTE4fQ.rFqXFF9LOvwsgjUJAW-fkZv8947p5U28UvYX6-FHdRM"
   };
@@ -50,7 +50,7 @@ class _Quiz3ScreenState extends State<Quiz3Screen> {
 
   int currentPage = 0;
   final List<List<String>> pages = [
-    ["Which", "Email address", "Weather"],
+    ["Which", "Email", "Weather"],
     ["Sunny", "Address", "Blue"],
     ["Philippines", "Orange", "At (@ symbol)"],
   ];
@@ -365,7 +365,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
   }
 
   Future<void> checkAnswer() async {
-    String correctAnswer = "i live in manila";
+    String correctAnswer = "i live near the beach";
     String userAnswer = answerController.text.trim().toLowerCase();
 
     setState(() {
@@ -460,7 +460,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               SizedBox(height: 30),
               CustomVideoPlayer(
                 videoUrl:
-                    "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/I%20live%20in%20manila.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvSSBsaXZlIGluIG1hbmlsYS53ZWJtIiwiaWF0IjoxNzQ0MDE3NjkzLCJleHAiOjE3NzU1NTM2OTN9.eUlx8yvXRw52549cEnZvIV552OCRPd8COluiqIWElnY",
+                    "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/i%20live%20near%20the%20beach.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaSBsaXZlIG5lYXIgdGhlIGJlYWNoLndlYm0iLCJpYXQiOjE3NDY2MzQzNDIsImV4cCI6MTc3ODE3MDM0Mn0.gOQES6dp_-PXx0vClO8fW_ctIgooYmZdT8PuR0Jq13w",
               ),
               SizedBox(height: 20),
               SizedBox(

@@ -13,38 +13,38 @@ class _Unit6PracticeScreenState extends State<Unit6PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: Try describing your family, you can use this as a basis. Try it!',
+          'Practice 1: Try describing your family. Start by practicing the sign for “family”. Try it!',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2021/my%20family%20is%20big,%20i%20have%204%20brothers.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDIxL215IGZhbWlseSBpcyBiaWcsIGkgaGF2ZSA0IGJyb3RoZXJzLndlYm0iLCJpYXQiOjE3NDQyNjMzNzksImV4cCI6MTc3NTc5OTM3OX0.ygulP2cz8xMOPbqe_oTrJJrxHo-dwl3_I7PwK-_o4cY",
-      'videoLabel': 'My family is big, I have four brothers',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2021/family.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDIxL2ZhbWlseS53ZWJtIiwiaWF0IjoxNzQ0MjYzNTI0LCJleHAiOjE3NzU3OTk1MjR9.EWrOlp0OZ2fjrR7mthGj4j6W6DYe8QW5jdv64jASypQ",
+      'videoLabel': 'Family',
     },
     {
       'practiceText':
-          'Practice 2: Try practicing shoulder shifting, use this example as a reference.',
+          'Practice 2: People always say that you resemble your mother a lot. Try practicing the sign for “mother” by using this example as a reference.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2022/i%20have%202%20brothers,%20neil%20and%20marc.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDIyL2kgaGF2ZSAyIGJyb3RoZXJzLCBuZWlsIGFuZCBtYXJjLndlYm0iLCJpYXQiOjE3NDQyNjM4NTYsImV4cCI6MTc3NTc5OTg1Nn0.mXeSVj84CQofHee49My94ybc8TZA_41udLZhIiMyq2M",
-      'videoLabel': 'I have two brothers, Niel and Marc',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2021/mother.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDIxL21vdGhlci53ZWJtIiwiaWF0IjoxNzQ0MjYzMzkwLCJleHAiOjE3NzU3OTkzOTB9.12fCIlynFEKINRLRAYwIDIoj2ZtOKbPL3Ub9s1MHLik",
+      'videoLabel': 'Mother',
     },
     {
       'practiceText':
-          'Practice 3: You were asked to describe your friend. Try using this!',
+          'Practice 3: You have always thought that you looked pretty in pink. Try practicing the sign for “pretty”.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2023/may%20is%20my%20best%20friend%20she%20is%20a%20good%20friend.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDIzL21heSBpcyBteSBiZXN0IGZyaWVuZCBzaGUgaXMgYSBnb29kIGZyaWVuZC53ZWJtIiwiaWF0IjoxNzQ0MjY2MzcyLCJleHAiOjE3NzU4MDIzNzJ9.oVZDJXl9SZDdqUWf9vUQUYzjQ9cemJR839hIc7vpxK4',
-      'videoLabel': 'May is my best friend, she is a good friend.',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2024/to%20be%20pretty.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDI0L3RvIGJlIHByZXR0eS53ZWJtIiwiaWF0IjoxNzQ0NjgwMDA2LCJleHAiOjE3NzYyMTYwMDZ9.-oio04cs8nL741dv7kNh7z-ZznAStK5ez5gKKOwNR5M',
+      'videoLabel': 'Pretty',
     },
     {
       'practiceText':
-          'Practice 4: You were asked what your relationship with each other was. Try responding like this!',
+          'Practice 4: You have been single all of your life and now you want to have a boyfriend. Try signing the word “boyfriend”.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2024/the%20two%20of%20us%20are%20dating.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDI0L3RoZSB0d28gb2YgdXMgYXJlIGRhdGluZy53ZWJtIiwiaWF0IjoxNzQ0Njc5NTQxLCJleHAiOjE3NzYyMTU1NDF9.Z28UkfkudRVzFb2RUn1bx7_8b99TS-YxvgFS1NXGWuU",
-      'videoLabel': 'The two of us are dating',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2023/boyfriend.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDIzL2JveWZyaWVuZC53ZWJtIiwiaWF0IjoxNzQ0MjY2NTEwLCJleHAiOjE3NzU4MDI1MTB9.ujkOt56rv90YIz2o9AxYkilIysAxhJgAkTbHwLVDu_c",
+      'videoLabel': 'Boyfriend',
     },
     {
       'practiceText':
-          'Practice 5: You were asked to describe why Mila is your friend. Try using this!',
+          'Practice 5: You were asked to describe why Mila is your friend. Try practicing the sign for “smart” as one of her descriptions!',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2024/mila%20is%20pretty%20and%20smart.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDI0L21pbGEgaXMgcHJldHR5IGFuZCBzbWFydC53ZWJtIiwiaWF0IjoxNzQ0Njc5NDAyLCJleHAiOjE3NzYyMTU0MDJ9.gvLl1cFXqemTLG0Fte5rPTMh-9K0cbMB-i-G4Qtz3_I',
-      'videoLabel': 'Mila is pretty and smart',
+          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%206/Lesson%2024/to%20be%20smart.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDYvTGVzc29uIDI0L3RvIGJlIHNtYXJ0LndlYm0iLCJpYXQiOjE3NDQ2ODAwMzYsImV4cCI6MTc3NjIxNjAzNn0.zAVTLFFzxz2rQfs7BVWlzV9AOvLqg_nS3yKe4vpjwys',
+      'videoLabel': 'Smart',
     },
   ];
 

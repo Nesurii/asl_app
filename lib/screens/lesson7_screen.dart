@@ -261,7 +261,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To give to",
+                                          text: "Give to",
                                         ),
                                       ],
                                     ),
@@ -269,7 +269,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                   SizedBox(height: 15),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/help.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvaGVscC53ZWJtIiwiaWF0IjoxNzQzODU5Mzc5LCJleHAiOjE3NzUzOTUzNzl9.yXQnmR31VhLVVCG2Qol2DjvvAuUtNS5gS9kNXuzZeII'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/help.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaGVscC53ZWJtIiwiaWF0IjoxNzQ2NjI1MjM1LCJleHAiOjE3NzgxNjEyMzV9.XBjdzEMzp13OAb04gdmJFz3O5fvLJV3d1rK-HlTaIag'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -280,7 +280,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To help",
+                                          text: "Help",
                                         ),
                                       ],
                                     ),
@@ -337,7 +337,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To move",
+                                          text: "Move",
                                         ),
                                       ],
                                     ),
@@ -345,7 +345,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                   SizedBox(height: 15),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/need.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvbmVlZC53ZWJtIiwiaWF0IjoxNzQzODU5Mzk5LCJleHAiOjE3NzUzOTUzOTl9.6W93HsAqhibqdlNbWwirbB21HvC2b14WfpcfaYof9kc'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/need.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbmVlZC53ZWJtIiwiaWF0IjoxNzQ2NjE3NTk1LCJleHAiOjE3NzgxNTM1OTV9.wXOxXaFnCLNQB9bphk5htI9iwrWh4-5xqVFro7ZGjpk'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -356,7 +356,26 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To need",
+                                          text: "Need",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
+                                  CustomVideoPlayer(
+                                      videoUrl:
+                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/should.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvc2hvdWxkLndlYm0iLCJpYXQiOjE3NDY2MTc2NDcsImV4cCI6MTc3ODE1MzY0N30._cKvhmQyPjK9dXJQENlP4StLwp9B0EX8-OowDklFpq0'),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Should",
                                         ),
                                       ],
                                     ),
@@ -413,7 +432,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To grab",
+                                          text: "Grab",
                                         ),
                                       ],
                                     ),
@@ -594,7 +613,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be clear",
+                                          text: "Clear",
                                         ),
                                       ],
                                     ),
@@ -632,7 +651,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To explain",
+                                          text: "Explain",
                                         ),
                                       ],
                                     ),
@@ -651,7 +670,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To mean",
+                                          text: "Mean",
                                         ),
                                       ],
                                     ),
@@ -689,7 +708,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be unclear",
+                                          text: "Unclear",
                                         ),
                                       ],
                                     ),
@@ -754,7 +773,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                       videoUrl:
-                                          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%202/Lesson%207/help.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDIvTGVzc29uIDcvaGVscC53ZWJtIiwiaWF0IjoxNzQzODU5Mzc5LCJleHAiOjE3NzUzOTUzNzl9.yXQnmR31VhLVVCG2Qol2DjvvAuUtNS5gS9kNXuzZeII'),
+                                          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/help.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaGVscC53ZWJtIiwiaWF0IjoxNzQ2NjI1MjM1LCJleHAiOjE3NzgxNjEyMzV9.XBjdzEMzp13OAb04gdmJFz3O5fvLJV3d1rK-HlTaIag'),
                                   SizedBox(height: 10),
                                   RichText(
                                     textAlign: TextAlign.justify,
@@ -915,7 +934,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To read",
+                                          text: "Read",
                                         ),
                                       ],
                                     ),
@@ -934,7 +953,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To sleep",
+                                          text: "Sleep",
                                         ),
                                       ],
                                     ),
@@ -953,7 +972,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To walk to",
+                                          text: "Walk",
                                         ),
                                       ],
                                     ),
@@ -972,7 +991,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To close (door)",
+                                          text: "Close (door)",
                                         ),
                                       ],
                                     ),
@@ -991,7 +1010,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To sit down",
+                                          text: "Sit down",
                                         ),
                                       ],
                                     ),
@@ -1010,7 +1029,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To open (door)",
+                                          text: "Open (door)",
                                         ),
                                       ],
                                     ),
@@ -1029,7 +1048,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To turn on (lights)",
+                                          text: "Turn on (lights)",
                                         ),
                                       ],
                                     ),
@@ -1048,7 +1067,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To turn off (lights)",
+                                          text: "Turn off (lights)",
                                         ),
                                       ],
                                     ),
@@ -1086,7 +1105,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To get up/Stand up",
+                                          text: "Get up/Stand up",
                                         ),
                                       ],
                                     ),
@@ -1105,7 +1124,7 @@ class _Lesson7ScreenState extends State<Lesson7Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To jump",
+                                          text: "Jump",
                                         ),
                                       ],
                                     ),

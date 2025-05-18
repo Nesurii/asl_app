@@ -22,30 +22,30 @@ class _Quiz10ScreenState extends State<Quiz10Screen> {
 
   final Map<String, String> correctMatches = {
     "Flower":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/flower.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9mbG93ZXIud2VibSIsImlhdCI6MTc0NDgyNTI2MSwiZXhwIjoxNzc2MzYxMjYxfQ.mnEJ9LftiEbv9rS6GDv5Cc_zL-H5rplTUDsIDGc6uxM",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/flower.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9mbG93ZXIud2VibSIsImlhdCI6MTc0NjY3MTY2OCwiZXhwIjoxNzc4MjA3NjY4fQ.rIQyBK80M6HBatToxD5cLHtAIpl4Ecx7Uo0EllGP_Yk",
     "Police Officer":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/police%20officer.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL3BvbGljZSBvZmZpY2VyLndlYm0iLCJpYXQiOjE3NDQ4ODg1MDgsImV4cCI6MTc3NjQyNDUwOH0.-0nqWc6hh2z0MhaUn4Zt33-qq_-oECZ8d0lctKoJf2o",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/police%20officer.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL3BvbGljZSBvZmZpY2VyLndlYm0iLCJpYXQiOjE3NDY2NzQ0MjksImV4cCI6MTc3ODIxMDQyOX0.IyvOrC3WwUKnV_azX_botcxBGRGvtzH9hMrhXUEoOkU",
     "Monkey":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/monkey.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC9tb25rZXkud2VibSIsImlhdCI6MTc0NDgyODI3MywiZXhwIjoxNzc2MzY0MjczfQ.v-XfnM9evOn1iNCoPrt1khNNbnOT8MY39IvEHWjQVSg",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/monkey.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC9tb25rZXkud2VibSIsImlhdCI6MTc0NjY3NDM5MywiZXhwIjoxNzc4MjEwMzkzfQ.z7zSJ0XgDyJmDd0d-OUgFqPanNgowxSzgPhRLUtyiLI",
     "Tree":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/tree.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy90cmVlLndlYm0iLCJpYXQiOjE3NDQ4MjU0NTAsImV4cCI6MTc3NjM2MTQ1MH0.pedUGgwL4RQmm87D22HJzrwSGhPd0uQDeoV2uu5KgGs",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/tree.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy90cmVlLndlYm0iLCJpYXQiOjE3NDY2NzI2NzgsImV4cCI6MTc3ODIwODY3OH0.1wW7orJrrMK2qpRadfJWAUzKx7Xd4Q7w57J6fGhaXb8",
     "Entrepreneur":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/entrepreneur.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL2VudHJlcHJlbmV1ci53ZWJtIiwiaWF0IjoxNzQ0ODg4NTIxLCJleHAiOjE3NzY0MjQ1MjF9.0QknakUyuYi0MKtidg9j5erqgzDfZ4nkmkKpNDcyPR4",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/entrepreneur.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL2VudHJlcHJlbmV1ci53ZWJtIiwiaWF0IjoxNzQ2Njc0NTY3LCJleHAiOjE3NzgyMTA1Njd9.A4K1L9aFZE7hd-EXgnbROXOaTqEaVpOSflk59nY1JkI",
     "Pizza":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/pizza.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9waXp6YS53ZWJtIiwiaWF0IjoxNzQ0ODI3OTI1LCJleHAiOjE3NzYzNjM5MjV9.jEVzCb8-txrA0oOXgSxMls9LeolJAQ7vQkkpyeyQeAc",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/pizza.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9waXp6YS53ZWJtIiwiaWF0IjoxNzQ2NjczODY2LCJleHAiOjE3NzgyMDk4NjZ9.C9lBGAB6M9L44lmdoUSxlKI7SYEZ9kHR5F23r_0T2nE",
     "River":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/river.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9yaXZlci53ZWJtIiwiaWF0IjoxNzQ0ODI1Mzk0LCJleHAiOjE3NzYzNjEzOTR9.uTS-hRaZA_vWNofi0ZQY3VOhYQAwhlg4L6rORQe57-Q",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/river.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvcml2ZXIud2VibSIsImlhdCI6MTc0NjYzMTMyOCwiZXhwIjoxNzc4MTY3MzI4fQ.PpshvVaM1bbOyaAZgoMDcB_huNAbal2vqe6utOlJouI",
     "Bacon":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/bacon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9iYWNvbi53ZWJtIiwiaWF0IjoxNzQ0ODI3NjUwLCJleHAiOjE3NzYzNjM2NTB9.EXI_ejTD6Uy3_Sp2o6CJ-9zG6G49NZUf1Peb53s0lnE",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/bacon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9iYWNvbi53ZWJtIiwiaWF0IjoxNzQ2NjczNDA0LCJleHAiOjE3NzgyMDk0MDR9.ah3yXh2ZtfuM3zOPL93vdj7nJIMTTUpTBPabusnec38",
     "Turtle":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/turtle.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC90dXJ0bGUud2VibSIsImlhdCI6MTc0NDgyODM0NiwiZXhwIjoxNzc2MzY0MzQ2fQ.dx7BsjZeYG8LrBTuzKHDC9WrgMECWEXS1CNkWeEYPQ0",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/turtle.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC90dXJ0bGUud2VibSIsImlhdCI6MTc0NjY3NDY3MiwiZXhwIjoxNzc4MjEwNjcyfQ.wizRSgSWOzA1PWBdFZkVI8-JOQQ5Df1Z3lQhI1PBO-I",
   };
 
   Map<String, String> userMatches = {};
   Map<String, Color> dropAreaColors = {};
   List<String> shuffledTexts = [];
   List<String> shuffledMediaUrls = [];
-  Set<String>usedTexts = {};
+  Set<String> usedTexts = {};
 
   int currentPage = 0;
   final List<List<String>> pages = [
@@ -258,7 +258,8 @@ class _Quiz10ScreenState extends State<Quiz10Screen> {
                   onWillAcceptWithDetails: (DragTargetDetails<String> details) {
                     return correctMatches.containsKey(details.data);
                   },
-                  onAcceptWithDetails: (DragTargetDetails<String> details) async {
+                  onAcceptWithDetails:
+                      (DragTargetDetails<String> details) async {
                     final receivedText = details.data;
                     setState(() {
                       usedTexts.add(receivedText); // prevent future drags
@@ -388,13 +389,14 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
       appBar: AppBar(
         title: Text('Quiz 10',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
-            leading: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => MainScreen(category: 'Unit 10: Making Plans'),
+                builder: (context) =>
+                    MainScreen(category: 'Unit 10: Making Plans'),
               ),
               (Route<dynamic> route) => false,
             );
@@ -453,7 +455,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               SizedBox(height: 30),
               CustomVideoPlayer(
                 videoUrl:
-                    "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/i'm%20going%20to%20the%20grocery%20store%20to%20buy%20food.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9pJ20gZ29pbmcgdG8gdGhlIGdyb2Nlcnkgc3RvcmUgdG8gYnV5IGZvb2Qud2VibSIsImlhdCI6MTc0NDgyOTY5MiwiZXhwIjoxNzc2MzY1NjkyfQ.lGwJrdhjIzLUOTJJr31SZ5rmuGBt1gsDdJ_V0HLo8QA",
+                    "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/i'm%20going%20to%20the%20grocery%20store%20to%20buy%20food.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9pJ20gZ29pbmcgdG8gdGhlIGdyb2Nlcnkgc3RvcmUgdG8gYnV5IGZvb2Qud2VibSIsImlhdCI6MTc0NjY3NDc2NywiZXhwIjoxNzc4MjEwNzY3fQ.AUzBTPQkSi9aXnzoWAUWOq57jRcOI8wfV9xWxAAJtQk",
               ),
               SizedBox(height: 20),
               SizedBox(
@@ -499,7 +501,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
                     totalScore: totalScore,
                   );
 
-                  if(context.mounted){
+                  if (context.mounted) {
                     Navigator.pushReplacement(
                       currentContext,
                       MaterialPageRoute(
@@ -508,7 +510,6 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
                       ),
                     );
                   }
-                  
                 },
               ),
             ),

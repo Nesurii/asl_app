@@ -178,7 +178,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                   SizedBox(height: 15),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%203/Lesson%209/what%20is%20your%20name.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDMvTGVzc29uIDkvd2hhdCBpcyB5b3VyIG5hbWUud2VibSIsImlhdCI6MTc0NDAyNzM3NywiZXhwIjoxNzc1NTYzMzc3fQ.8RUuar-q_Cl0OjtUjcmwJvEhAM8iaYDYS1v-LLQH6F4',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/what%20is%20your%20name.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvd2hhdCBpcyB5b3VyIG5hbWUud2VibSIsImlhdCI6MTc0NjYwODAxNSwiZXhwIjoxNzc4MTQ0MDE1fQ.KkU5oyXUNyyJPkzjBlgDYiDHDzVO1omqZ8G00KCPcpQ',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -199,7 +199,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                   SizedBox(height: 15),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/My%20name%20is%20judith.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvTXkgbmFtZSBpcyBqdWRpdGgud2VibSIsImlhdCI6MTc0MzQzMjc3NSwiZXhwIjoxNzc0OTY4Nzc1fQ.75teHY1m80QNPzj2yM7dLnvEmTvAWRfMwseOh0sN7xE',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/my%20name%20is%20judith.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbXkgbmFtZSBpcyBqdWRpdGgud2VibSIsImlhdCI6MTc0NjYwODEzOCwiZXhwIjoxNzc4MTQ0MTM4fQ.MTwo6JVUBpFzOXIacJNGyyfuz4UDrPtYaLzRsTFqfoI',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -478,7 +478,27 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Hearing",
+                                          text: "Hearing (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/hearing%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvaGVhcmluZyB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjA4MTk3LCJleHAiOjE3NzgxNDQxOTd9.alWdk3EiC55gd5aPUqs30kRGjUSdMQx5Vc8wmvgXVe8',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Hearing (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -498,7 +518,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To introduce",
+                                          text: "Introduce",
                                         ),
                                       ],
                                     ),
@@ -518,7 +538,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To meet",
+                                          text: "Meet",
                                         ),
                                       ],
                                     ),
@@ -598,7 +618,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To want",
+                                          text: "Want",
                                         ),
                                       ],
                                     ),
@@ -948,7 +968,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%204/to%20go%20to.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDQvdG8gZ28gdG8ud2VibSIsImlhdCI6MTc0MzQ4MjI3NSwiZXhwIjoxNzc1MDE4Mjc1fQ.DxU1LvBPes-vbT2UBCN92JwAuTLa9ZTSmu3QuKEj4ag',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/go%20to.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvZ28gdG8ud2VibSIsImlhdCI6MTc0NjYwODIzNywiZXhwIjoxNzc4MTQ0MjM3fQ.HqBSa4uR83XAKiN2PaAr1n-AzsiBAUfDD9K0GGPpvAg',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -960,7 +980,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To go to",
+                                          text: "Go to",
                                         ),
                                       ],
                                     ),
@@ -980,7 +1000,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To learn",
+                                          text: "Learn",
                                         ),
                                       ],
                                     ),
@@ -1020,7 +1040,27 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Yes",
+                                          text: "Yes (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/yes.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcveWVzLndlYm0iLCJpYXQiOjE3NDY2MDg0MjQsImV4cCI6MTc3ODE0NDQyNH0.soaKaNDEwNWmGUFG6ISGwlEq0Dydnf9q2WkPh3kK3WI',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "Yes (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -1080,7 +1120,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "Slow/To slow down",
+                                          text: "Slow/Slow down",
                                         ),
                                       ],
                                     ),
@@ -1345,7 +1385,7 @@ class _Lesson4ScreenState extends State<Lesson4Screen> {
 
                                       // Question 3
                                       Text(
-                                        '3. The visual below means “To learn”.',
+                                        '3. The visual below means “Learn”.',
                                         textAlign: TextAlign.justify,
                                         style: TextStyle(
                                             fontSize: 18,

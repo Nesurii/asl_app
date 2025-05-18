@@ -22,30 +22,30 @@ class _Quiz9ScreenState extends State<Quiz9Screen> {
 
   final Map<String, String> correctMatches = {
     "Ethnicity":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2033/ethnicity.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDMzL2V0aG5pY2l0eS53ZWJtIiwiaWF0IjoxNzQ0ODE2ODg5LCJleHAiOjE3NzYzNTI4ODl9.sfts--xlcfSUid9KpOZWhFH911Gorso1WNhg9vO5tCg",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2033/ethnicity.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDMzL2V0aG5pY2l0eS53ZWJtIiwiaWF0IjoxNzQ2NjcwMjY4LCJleHAiOjE3NzgyMDYyNjh9.CV--QED6o-r03SIrypO481nllRPuebrJpDjNRjzhK_0",
     "Ponytail":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2034/ponytail.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM0L3Bvbnl0YWlsLndlYm0iLCJpYXQiOjE3NDQ4MTcyOTAsImV4cCI6MTc3NjM1MzI5MH0.OwV0Zc08xV-lvDOXm8t83Kilv6tqVAumfRxc7fYoZrg",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2034/ponytail.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM0L3Bvbnl0YWlsLndlYm0iLCJpYXQiOjE3NDY2ODgxMTksImV4cCI6MTc3ODIyNDExOX0.3KdOkK9PB_Xd07WilvRE3s3zwYcydqBtr6gUxjA6E-0",
     "Doctor":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/doctor.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L2RvY3Rvci53ZWJtIiwiaWF0IjoxNzQ0ODIzMjQ3LCJleHAiOjE3NzYzNTkyNDd9.5TI7ClTg8tRmOhwhCFMz5jNRDe4kA0jPFIr-jiszcJQ",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/doctor.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L2RvY3Rvci53ZWJtIiwiaWF0IjoxNzQ2NjM4NzczLCJleHAiOjE3NzgxNzQ3NzN9.8K0CZRLsKIgdHj21Xl6ZLZysumUTvgm3p7b5pulApWM",
     "Pregnant":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2033/to%20be%20pregnant.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDMzL3RvIGJlIHByZWduYW50LndlYm0iLCJpYXQiOjE3NDQ4MTcwNTgsImV4cCI6MTc3NjM1MzA1OH0.o-H0gT2BsHqSHSEWBzcvQtF7nNZBbdkI0lUH2cu660Y",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2033/to%20be%20pregnant.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDMzL3RvIGJlIHByZWduYW50LndlYm0iLCJpYXQiOjE3NDY2Njk4NjEsImV4cCI6MTc3ODIwNTg2MX0.qvWbBCEfVaLzw7BbTWWx6ZBb7RAnkT-Q50352iXF8EM",
     "Cap":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2035/cap.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM1L2NhcC53ZWJtIiwiaWF0IjoxNzQ0ODIyNjk1LCJleHAiOjE3NzYzNTg2OTV9.3VzPxSB_28BlFWKxPUNGfglnDFnnpAlDaEY5sVd3qKk",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2035/cap.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM1L2NhcC53ZWJtIiwiaWF0IjoxNzQ2Njc0MzQ1LCJleHAiOjE3NzgyMTAzNDV9.1oswLjCoyKii9rmNiHOXRWAb2aIVPd2sxF1YNl_6W6s",
     "Medicine":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/medicine.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L21lZGljaW5lLndlYm0iLCJpYXQiOjE3NDQ4MjMzMTIsImV4cCI6MTc3NjM1OTMxMn0.L0Oq7fj5t8ODiBJvxZG2dxDYz0TgD77EtTICIOomevM",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/medicine.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L21lZGljaW5lLndlYm0iLCJpYXQiOjE3NDY2NzE3OTEsImV4cCI6MTc3ODIwNzc5MX0.C4moJR7lqCFqfmRgBgE5hpBd4t6L0K7s4kwboemDUow",
     "Beard":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2034/beard.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM0L2JlYXJkLndlYm0iLCJpYXQiOjE3NDQ4MTcxNDIsImV4cCI6MTc3NjM1MzE0Mn0.HoXsjqXLea50rArj6wnNWSat4UqTOJHO4YWt23gojac",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2034/beard.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM0L2JlYXJkLndlYm0iLCJpYXQiOjE3NDY2Njg0NTksImV4cCI6MTc3ODIwNDQ1OX0.8vIUO-nblrCZRaod0_JMHX59ohzp2RQ6T4ShpaB7Hn0",
     "Shoes":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2035/shoes.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM1L3Nob2VzLndlYm0iLCJpYXQiOjE3NDQ4MjI5NjYsImV4cCI6MTc3NjM1ODk2Nn0.kNM8GdFm_YRMHeyYnu4tYgo2jngFrgYIoxekh2n6cy0",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2035/shoes.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM1L3Nob2VzLndlYm0iLCJpYXQiOjE3NDY2NzEzMzUsImV4cCI6MTc3ODIwNzMzNX0.jw6qPs9DafB_2cyNCgcDnSTQr3FfArlNzxb6OvW1jKU",
     "Cold":
-        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/cold.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L2NvbGQud2VibSIsImlhdCI6MTc0NDgyMzIyNSwiZXhwIjoxNzc2MzU5MjI1fQ.vdBYs66nNsdEhM8OkTq6FXS88KcBY6x_Hv_S9n2Iym0",
+        "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/cold.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L2NvbGQud2VibSIsImlhdCI6MTc0NjY3MTU0NywiZXhwIjoxNzc4MjA3NTQ3fQ.BV6yqp_WmnZt8Rc4pPOnJx1VSzFeJFY8OG2LMzQI1-E",
   };
 
   Map<String, String> userMatches = {};
   Map<String, Color> dropAreaColors = {};
   List<String> shuffledTexts = [];
   List<String> shuffledMediaUrls = [];
-  Set<String>usedTexts =  {};
+  Set<String> usedTexts = {};
   Set<String> answeredItems = Set<String>();
 
   int currentPage = 0;
@@ -146,7 +146,7 @@ class _Quiz9ScreenState extends State<Quiz9Screen> {
               ],
             ),
           ),
-           Positioned(
+          Positioned(
             bottom: 30,
             right: 30,
             child: CircleAvatar(
@@ -273,8 +273,9 @@ class _Quiz9ScreenState extends State<Quiz9Screen> {
                   onWillAcceptWithDetails: (DragTargetDetails<String> details) {
                     return correctMatches.containsKey(details.data);
                   },
-                 onAcceptWithDetails: (DragTargetDetails<String> details) async {
-                     final receivedText = details.data;
+                  onAcceptWithDetails:
+                      (DragTargetDetails<String> details) async {
+                    final receivedText = details.data;
                     setState(() {
                       usedTexts.add(receivedText); // Prevent future drags
                       answeredItems
@@ -395,13 +396,14 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
       appBar: AppBar(
         title: Text('Quiz 9',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
-            leading: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (context) => MainScreen(category: 'Unit 9: Describing people'),
+                builder: (context) =>
+                    MainScreen(category: 'Unit 9: Describing people'),
               ),
               (Route<dynamic> route) => false,
             );
@@ -460,7 +462,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               SizedBox(height: 30),
               CustomVideoPlayer(
                 videoUrl:
-                    "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/my%20sister%20is%20pregnant%20so%20she%20gained%20weight.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L215IHNpc3RlciBpcyBwcmVnbmFudCBzbyBzaGUgZ2FpbmVkIHdlaWdodC53ZWJtIiwiaWF0IjoxNzQ0ODIzMzM0LCJleHAiOjE3NzYzNTkzMzR9.DTYOlYQEG7ds1De3N37uOYSqhBqlKbaX7RBcq3u21dw",
+                    "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%209/Lesson%2036/my%20sister%20is%20pregnant%20so%20she%20gained%20weight.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDkvTGVzc29uIDM2L215IHNpc3RlciBpcyBwcmVnbmFudCBzbyBzaGUgZ2FpbmVkIHdlaWdodC53ZWJtIiwiaWF0IjoxNzQ2Njc0NTQ4LCJleHAiOjE3NzgyMTA1NDh9.iQ-ejgPAcdXKcSfjpCfkp0gtWJG_vHaA53vgPQK2bSQ",
               ),
               SizedBox(height: 20),
               SizedBox(
@@ -485,7 +487,7 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
               ),
             ],
           ),
-            Positioned(
+          Positioned(
             bottom: 30,
             right: 30,
             child: Container(
@@ -499,14 +501,13 @@ class _FillInTheBlankScreenState extends State<FillInTheBlankScreen> {
                 icon: Icon(Icons.arrow_forward, color: Colors.white),
                 onPressed: () async {
                   if (answered) {
-                    
                     // update quiz score
                     await updateQuiz(
                       quizId: 'Unit 9',
                       totalScore: totalScore,
-                    ); 
-                  
-                    if(context.mounted){
+                    );
+
+                    if (context.mounted) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

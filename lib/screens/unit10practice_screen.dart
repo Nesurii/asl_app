@@ -13,38 +13,38 @@ class _Unit10PracticeScreenState extends State<Unit10PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: You were asked if there is an activity you want to try. Use this as a reference and practice it!',
+          'Practice 1: You were asked if there is an activity you want to try. You wanted to try visiting an island. Practice the sign for “island”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/i%20want%20to%20hike%20in%20the%20mountains.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9pIHdhbnQgdG8gaGlrZSBpbiB0aGUgbW91bnRhaW5zLndlYm0iLCJpYXQiOjE3NDQ4MjUyODIsImV4cCI6MTc3NjM2MTI4Mn0.2j5lTB0FfBp_6lMxs9C7uXKDJqIJ8YrvCp8IDm7p5Y8",
-      'videoLabel': 'I want to hike in the mountains',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2037/island.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzNy9pc2xhbmQud2VibSIsImlhdCI6MTc0NjYzODkxOCwiZXhwIjoxNzc4MTc0OTE4fQ.-UbLuqGZT7c3qsHFHRAhJaBj_FbKZlxgVVl5XqITDRQ",
+      'videoLabel': 'Island',
     },
     {
       'practiceText':
-          'Practice 2: You were asked what you want to do in the future. Try using this as an example and practice it.',
+          'Practice 2: You were asked what you want to do in the future. You wanted to be a lawyer. Try practicing the sign for “lawyer”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2038/i%20want%20to%20be%20a%20photographer.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOC9pIHdhbnQgdG8gYmUgYSBwaG90b2dyYXBoZXIud2VibSIsImlhdCI6MTc0NTIzNzc2OCwiZXhwIjoxNzc2NzczNzY4fQ.xy0F2zhmdvl2mNAAcJ_IECXhh76gRivpAtpICvXQt3E",
-      'videoLabel': 'I want to be a photographer',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/lawyer.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL2xhd3llci53ZWJtIiwiaWF0IjoxNzQ2NjM4OTkzLCJleHAiOjE3NzgxNzQ5OTN9.oE-JcRqq0LL-1eFWPyg7MSaQGeUp4v8mx2W3bX6C6HM",
+      'videoLabel': 'Lawyer',
     },
     {
       'practiceText':
-          'Practice 3: You were asked if you eat fastfood. Try using this as a response.',
+          'Practice 3: You were enumerating the fast foods that you usually eat. Among them were french fries, spaghetti, and hamburgers. Try signing “hamburger”.',
       'videoUrl':
-          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/yes,%20i%20like%20french%20fries,%20spaghetti%20and%20burger.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL3llcywgaSBsaWtlIGZyZW5jaCBmcmllcywgc3BhZ2hldHRpIGFuZCBidXJnZXIud2VibSIsImlhdCI6MTc0NDg4ODI2MSwiZXhwIjoxNzc2NDI0MjYxfQ.q9F5Fgwa1qELfFXjBEvilsV9eaxiB4XuD9-4vg_CKgA',
-      'videoLabel': 'Yes, I like french fries, spaghetti, and hamburgers',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2039/hamburger.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiAzOS9oYW1idXJnZXIud2VibSIsImlhdCI6MTc0NjYzOTA3NCwiZXhwIjoxNzc4MTc1MDc0fQ.azTBJZQ2iINorX9Z6qXuLHhR0HHCMPXH98Q2T-G_ByQ',
+      'videoLabel': 'Hamburgers',
     },
     {
       'practiceText':
-          'Practice 4: Your niece was asking to go to the zoo. Try this response and practice it.',
+          'Practice 4: Your niece was asking to go to the zoo to see the alligator. Try practicing the sign for “alligator”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/sure,%20let's%20go%20to%20the%20zoo.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC9zdXJlLCBsZXQncyBnbyB0byB0aGUgem9vLndlYm0iLCJpYXQiOjE3NDQ4MjgzMzEsImV4cCI6MTc3NjM2NDMzMX0.SvatnQP_R8lV3rUQVTKMHFvCP76842plqlccj29_iJQ",
-      'videoLabel': 'Sure, let’s go to the zoo',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/alligator.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC9hbGxpZ2F0b3Iud2VibSIsImlhdCI6MTc0NjYzOTEzOCwiZXhwIjoxNzc4MTc1MTM4fQ.bPmsAg7lhf5qy0-WaBpIph4Tdl1NKMVY8PeXeczhZmQ",
+      'videoLabel': 'Alligator',
     },
     {
       'practiceText':
-          'Practice 5: You were asked what animals you want to see in the zoo. Try using this example as a practice.',
+          'Practice 5: You wanted to see the giraffe in the zoo. Try signing “giraffe”.',
       'videoUrl':
-          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/i%20want%20to%20see%20the%20dolphins%20and%20the%20penguins.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC9pIHdhbnQgdG8gc2VlIHRoZSBkb2xwaGlucyBhbmQgdGhlIHBlbmd1aW5zLndlYm0iLCJpYXQiOjE3NDQ4MjgyNTQsImV4cCI6MTc3NjM2NDI1NH0.0rLLX_IAoC-oVIt22c_LOIOEjPtU3XG5XHoYWEUfmCM',
-      'videoLabel': 'I want to see the dolphins and the penguins',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%2010/Lesson%2040/giraffe.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDEwL0xlc3NvbiA0MC9naXJhZmZlLndlYm0iLCJpYXQiOjE3NDY2MzkyMTIsImV4cCI6MTc3ODE3NTIxMn0.KC-Z8s6Mn1b_CeUgEm4q4aXjWspPWTWwugpF6Ga0ubg',
+      'videoLabel': 'Giraffe',
     },
   ];
 

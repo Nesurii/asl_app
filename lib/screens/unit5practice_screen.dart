@@ -12,35 +12,35 @@ class Unit5PracticeScreen extends StatefulWidget {
 class _Unit5PracticeScreenState extends State<Unit5PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
-      'practiceText': 'Practice 1: Try practicing this!',
+      'practiceText': "Practice 1: Your classes on Mondays and Wednesdays always start at 9 o'clock.Try practicing the sign for this!",
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2017/10_15.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDE3LzEwXzE1LndlYm0iLCJpYXQiOjE3NDQyODI3MDYsImV4cCI6MTc3NTgxODcwNn0.R4C4XrblTR9ynHWVxDfJyJ9FLaoUEAJoDCleOQSA9Sg",
-      'videoLabel': '10:15',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/9%20o'clock.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvOSBvJ2Nsb2NrLndlYm0iLCJpYXQiOjE3NDY2MTkzNTMsImV4cCI6MTc3ODE1NTM1M30.gmT7zZuGVAujIMRLq8TnosuCWgpzVrSDF_AFDWVvy6U",
+      'videoLabel': '9 o’clock',
     },
     {
-      'practiceText': 'Practice 2: Try signing this!',
+      'practiceText': 'Practice 2: The price of all the fruits that you bought from the market costs 5 dollars. Try signing “5 dollars”!',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2018/17.50%20dollars.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDE4LzE3LjUwIGRvbGxhcnMud2VibSIsImlhdCI6MTc0NDIzNjA1OCwiZXhwIjoxNzc1NzcyMDU4fQ.jNoJgq9BpSp_DiJBdrzEt9kN43qMtcTIKGJs8DwXbFU",
-      'videoLabel': '17.50 dollars',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/5%20dollars.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvNSBkb2xsYXJzLndlYm0iLCJpYXQiOjE3NDY2MzU1OTgsImV4cCI6MTc3ODE3MTU5OH0.J41Y2xvyBCbzlKXywtXnqrfmYJGcECzlK-Xcf28903A",
+      'videoLabel': '5 dollars',
     },
     {
       'practiceText':
-          'Practice 3: Try practicing what you’ve learned about the rule of 9. The base would be months.',
+          'Practice 3: TIt took me 8 hours to travel from Bicol to Manila. Try practicing what you’ve learned about the rule of 9. The base would be hours.',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2019/13%20months.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDE5LzEzIG1vbnRocy53ZWJtIiwiaWF0IjoxNzQ0MjM2MzYwLCJleHAiOjE3NzU3NzIzNjB9.vForlpUcyCnbqdGwyAo2PcIqkw0ChNgO4zv4DZDw83U',
-      'videoLabel': '13 months',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/8%20hours.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvOCBob3Vycy53ZWJtIiwiaWF0IjoxNzQ2NjE5MzkyLCJleHAiOjE3NzgxNTUzOTJ9.X_rk8YKyRXdQ-aeO5J5EWMFGmj0QRkm_ss9elp5XI9A',
+      'videoLabel': '8 hours',
     },
     {
-      'practiceText': 'Practice 4: Try practicing this future tense sentence.',
+      'practiceText': 'Practice 4: Soon, you will be turning 23 years old. Try signing “soon”.',
       'videoUrl':
-          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2020/soon%20i'll%20be%2023%20years%20old.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDIwL3Nvb24gaSdsbCBiZSAyMyB5ZWFycyBvbGQud2VibSIsImlhdCI6MTc0NDI0OTM1MSwiZXhwIjoxNzc1Nzg1MzUxfQ.QPq6iyNPJ5Cs5wWG42HO0c-63xMZ3BRyj4b0SGBfY1o",
-      'videoLabel': 'Soon I’ll be 23 years old',
+          "https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2020/soon.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDIwL3Nvb24ud2VibSIsImlhdCI6MTc0NDI0OTM0MCwiZXhwIjoxNzc1Nzg1MzQwfQ.3laIm97jV3NJtruvLK4lV8v5tOe6UMrY9fH8bEdFz80",
+      'videoLabel': 'Soon',
     },
     {
-      'practiceText': 'Practice 5: Try practicing this past tense sentence.',
+      'practiceText': 'Practice 5: You were sick last week, try practicing the sign for “last week”',
       'videoUrl':
-          'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%205/Lesson%2020/i%20was%20sick%20last%20month.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDUvTGVzc29uIDIwL2kgd2FzIHNpY2sgbGFzdCBtb250aC53ZWJtIiwiaWF0IjoxNzQ0MjQ5NDczLCJleHAiOjE3NzU3ODU0NzN9.sikG3rpUvjDy3m6KNLwQeiONx_ScAWq8dd5jwLjCUzw',
-      'videoLabel': 'I was sick last month',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/last%20week.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbGFzdCB3ZWVrLndlYm0iLCJpYXQiOjE3NDY2MTk0OTYsImV4cCI6MTc3ODE1NTQ5Nn0.bOZbaA84l6xFIzeqLEQnQ2bn1pfbT0Ar5lCUwno_wJ0',
+      'videoLabel': 'Last week',
     },
   ];
 

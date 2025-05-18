@@ -13,38 +13,38 @@ class _Unit8PracticeScreenState extends State<Unit8PracticeScreen> {
   final List<Map<String, String>> practices = [
     {
       'practiceText':
-          'Practice 1: Someone asked if you had already tried bungee jumping. Try using this as your response.',
+          'Practice 1: Even though you are not sporty you have always liked watching sports, especially softball. Try signing “softball”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2029/no,%20i%20haven't%20gone%20bungee%20jumping.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDI5L25vLCBpIGhhdmVuJ3QgZ29uZSBidW5nZWUganVtcGluZy53ZWJtIiwiaWF0IjoxNzQ0NzgzNTI2LCJleHAiOjE3NzYzMTk1MjZ9.EH5zA5qaX7xQwNry1aq1l52s0Q9_rYwZ4A-lf_sQ-aU",
-      'videoLabel': 'No, I haven’t gone bungee jumping',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2029/softball.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDI5L3NvZnRiYWxsLndlYm0iLCJpYXQiOjE3NDY2Mzc3NTIsImV4cCI6MTc3ODE3Mzc1Mn0.eD80rQOlGv_che2RNghlzTnNlJusHNEhxKSdXuJZdS4",
+      'videoLabel': 'Softball',
     },
     {
       'practiceText':
-          'Practice 2: Someone asked on what time you get up during weekends. Try using this.',
+          'Practice 2: You always exercise every night as part of your daily routine. Try practicing the sign for “every night”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/on%20saturdays,%20i%20wake%20up%20around%2010_00.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL29uIHNhdHVyZGF5cywgaSB3YWtlIHVwIGFyb3VuZCAxMF8wMC53ZWJtIiwiaWF0IjoxNzQ0NzkxOTU3LCJleHAiOjE3NzYzMjc5NTd9.4x1t4vN9ziXoJ2zrcG4TAV914ouz5fB9qiOh706q8lE",
-      'videoLabel': 'On Saturday I wake up around 10:00',
+          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2030/every%20night.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMwL2V2ZXJ5IG5pZ2h0LndlYm0iLCJpYXQiOjE3NDY2Mzc4NDcsImV4cCI6MTc3ODE3Mzg0N30.Gmp0bUwj-pjsPU9Im4pl2ZLMMnCkk7ALhaGrWhwwqHc",
+      'videoLabel': 'Every night',
     },
     {
       'practiceText':
-          'Practice 3: You were asked if you have a tip for having a bright and glowing skin. Try using this as a response.',
+          'Practice 3: You noticed that your stocks of shampoo were running out so you stepped out to buy some. Try practicing the sign for “shampoo”.',
       'videoUrl':
-          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2031/i%20always%20use%20sunscreen.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMxL2kgYWx3YXlzIHVzZSBzdW5zY3JlZW4ud2VibSIsImlhdCI6MTc0NDc5Mjc3NCwiZXhwIjoxNzc2MzI4Nzc0fQ.I7cbbM1oQsCyb0fow-R_v6Bmxolb_svKzasCH2I4p4Y',
-      'videoLabel': 'I always use sunscreen',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2031/shampoo.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMxL3NoYW1wb28ud2VibSIsImlhdCI6MTc0NjYzNzkyNiwiZXhwIjoxNzc4MTczOTI2fQ.hXzQ_0RsnXEII-iUXMW_wnHhplYD6w5lmqXmt1Ajtm0',
+      'videoLabel': 'Shampoo',
+    },
+     {
+      'practiceText':
+          'Practice 4: You were always tasked with washing the dishes in your house. Try signing “wash the dishes”.',
+      'videoUrl':
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2032/to%20do%20the%20dishes.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMyL3RvIGRvIHRoZSBkaXNoZXMud2VibSIsImlhdCI6MTc0NjYzODM3OSwiZXhwIjoxNzc4MTc0Mzc5fQ.envXXz9tAujVVjaopeV8Iyhlmoj0lFlb72VTrKSSBnw',
+      'videoLabel': 'Wash the dishes',
     },
     {
       'practiceText':
-          'Practice 4: You were asked when do you take out your trash. Try using this as a response.',
+          'Practice 5: You were asked to clean your room today. Try practicing the sign for “clean”.',
       'videoUrl':
-          "https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2032/i%20take%20out%20my%20trash%20every%20friday.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMyL2kgdGFrZSBvdXQgbXkgdHJhc2ggZXZlcnkgZnJpZGF5LndlYm0iLCJpYXQiOjE3NDQ3OTMzMzAsImV4cCI6MTc3NjMyOTMzMH0.P_WrgvqjvApN0fYsUAxWFs6JE3NXzcFS4N9UAuIzRmc",
-      'videoLabel': 'I take out the trash every Friday',
-    },
-    {
-      'practiceText':
-          'Practice 5: You were asked when do you feed your dog. Try practicing this as a response.',
-      'videoUrl':
-          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2032/i%20feed%20my%20cat%20every%20night.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5X2Y1MmJmNDU5LWQzZDMtNDI0NS1iOWRlLTZkNTQxOGFhY2FiMyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMyL2kgZmVlZCBteSBjYXQgZXZlcnkgbmlnaHQud2VibSIsImlhdCI6MTc0NDc5MzMxMywiZXhwIjoxNzc2MzI5MzEzfQ.2Yt3rZEMmZEAZuiPUCH3lzhC0HQBrfcSY5Qs_17h1gw',
-      'videoLabel': 'I feed my cat every night',
+          'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/Unit%208/Lesson%2032/to%20clean.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9Vbml0IDgvTGVzc29uIDMyL3RvIGNsZWFuLndlYm0iLCJpYXQiOjE3NDY2Mzg0MzksImV4cCI6MTc3ODE3NDQzOX0.E-OeEg9295vBFgrmWjgpyBBC9P0Q8DWkiKF5XCN7GBY',
+      'videoLabel': 'Clean”',
     },
   ];
 

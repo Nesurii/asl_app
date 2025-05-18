@@ -118,7 +118,8 @@ class _MainScreenState extends State<MainScreen> {
         _currentUnitNumber = sectionIndex + 1; // Add 1 to make it 1-indexed
       });
     }
-    await lessonManager.updateCurrentUnit('$_currentUnitNumber : $_currentSectionTitle');
+    await lessonManager
+        .updateCurrentUnit('$_currentUnitNumber : $_currentSectionTitle');
   }
 
   void _onTabTapped(int index) {
@@ -211,7 +212,8 @@ class _MainScreenState extends State<MainScreen> {
   Widget _buildCircles(int sectionIndex) {
     int startNumber =
         sectionIndex * 4 + 1; // Start number for blue circles (1, 5, 9, 13,...)
-    int orangeCircleNumber = sectionIndex + 1; // Unique number for orange circles
+    int orangeCircleNumber =
+        sectionIndex + 1; // Unique number for orange circles
     int quizNumber = sectionIndex + 1; // Unique quiz number
 
     return Column(
@@ -275,7 +277,6 @@ class _MainScreenState extends State<MainScreen> {
     return prevLessonCompleted;
   }
 
-
   bool isChestUnlocked(int chestNumber) {
     final quizScores = currentUserData.progress?['quiz_scores'];
     if (quizScores == null || quizScores is! Map<String, dynamic>) return false;
@@ -287,7 +288,6 @@ class _MainScreenState extends State<MainScreen> {
 
     return score == 100;
   }
-
 
   bool isUnitCompleted(int quizNumber) {
     final completedLessons = currentUserData.progress?['lessons_completed'];
@@ -304,67 +304,78 @@ class _MainScreenState extends State<MainScreen> {
     return true;
   }
 
-  Widget _buildCircle(Color color, {bool isQuiz = false, bool isChest = false, int? circleNumber}) {
-  // Determine if the lesson, quiz, or chest is locked
-    final isLocked = circleNumber != null && (
-      (!isQuiz && !isChest && !isLessonUnlocked(circleNumber)) || // lock lessons
-      (isQuiz && !isUnitCompleted(circleNumber)) ||               // lock quizzes
-      (isChest && !isChestUnlocked(circleNumber))                 // lock chests unless quiz = 100
-    );
+  Widget _buildCircle(Color color,
+      {bool isQuiz = false, bool isChest = false, int? circleNumber}) {
+    // Determine if the lesson, quiz, or chest is locked
+    final isLocked = circleNumber != null &&
+        ((!isQuiz &&
+                !isChest &&
+                !isLessonUnlocked(circleNumber)) || // lock lessons
+            (isQuiz && !isUnitCompleted(circleNumber)) || // lock quizzes
+            (isChest &&
+                !isChestUnlocked(circleNumber)) // lock chests unless quiz = 100
+        );
 
     return GestureDetector(
       onTap: isLocked
-    ? () {
-        // Show locked message
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              isChest
-                  ? 'Score a perfect 100 on Quiz $circleNumber to unlock the reward!'
-                  : isQuiz
-                      ? 'Complete all 4 lessons in this unit to unlock the quiz!'
-                      : 'Complete previous lessons to unlock.',
-            ),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
-    : isQuiz
-        ? () async {
-            // Navigate to quiz screen when unlocked
-            if (circleNumber != null) {
-              // You can show a loading indicator here if necessary
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => _getQuizScreen(circleNumber)),
+          ? () {
+              // Show locked message
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    isChest
+                        ? 'Score a perfect 100 on Quiz $circleNumber to unlock the reward!'
+                        : isQuiz
+                            ? 'Complete all 4 lessons in this unit to unlock the quiz!'
+                            : 'Complete previous lessons to unlock.',
+                  ),
+                  backgroundColor: Colors.red,
+                ),
               );
             }
-          }
-        : isChest
-            ? () async {
-                // Navigate to reward screen when chest is unlocked
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RewardScreen(rewardIndex: circleNumber ?? 0)),
-                );
-              }
-            : () async {
-                // Navigate to lesson screen when unlocked
-                if (circleNumber != null) {
-                  await lessonManager.updateCurrentLesson('Lesson $circleNumber');
-
-                  if (!mounted) return;
-
-                  final result = await Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => _getLessonScreen(circleNumber)),
-                  );
-
-                  if (result == true) {
-                    setState(() {}); // refresh the main screen after a lesson is completed
+          : isQuiz
+              ? () async {
+                  // Navigate to quiz screen when unlocked
+                  if (circleNumber != null) {
+                    // You can show a loading indicator here if necessary
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => _getQuizScreen(circleNumber)),
+                    );
                   }
                 }
-              },
+              : isChest
+                  ? () async {
+                      // Navigate to reward screen when chest is unlocked
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                RewardScreen(rewardIndex: circleNumber ?? 0)),
+                      );
+                    }
+                  : () async {
+                      // Navigate to lesson screen when unlocked
+                      if (circleNumber != null) {
+                        await lessonManager
+                            .updateCurrentLesson('Lesson $circleNumber');
+
+                        if (!mounted) return;
+
+                        final result = await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  _getLessonScreen(circleNumber)),
+                        );
+
+                        if (result == true) {
+                          setState(
+                              () {}); // refresh the main screen after a lesson is completed
+                        }
+                      }
+                    },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 8),
         width: 80,
@@ -377,9 +388,11 @@ class _MainScreenState extends State<MainScreen> {
           child: isLocked
               ? const Icon(Icons.lock, color: Colors.white, size: 36)
               : isQuiz
-                  ? const Icon(Icons.assignment, color: Colors.white, size: 36) // Quiz icon
+                  ? const Icon(Icons.assignment,
+                      color: Colors.white, size: 36) // Quiz icon
                   : isChest
-                      ? const Icon(Icons.emoji_events, color: Colors.white, size: 36) // Chest icon
+                      ? const Icon(Icons.emoji_events,
+                          color: Colors.white, size: 36) // Chest icon
                       : Text(
                           '${circleNumber ?? ''}',
                           style: const TextStyle(

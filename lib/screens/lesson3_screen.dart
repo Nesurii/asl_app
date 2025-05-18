@@ -51,14 +51,15 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
   @override
   void initState() {
     super.initState();
-    _loadSavedPage(); 
+    _loadSavedPage();
   }
 
   Future<void> _loadSavedPage() async {
     final currentState = await lessonManager.getCurrentState();
 
     if (currentState != null) {
-      final lessonPages = Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
+      final lessonPages =
+          Map<String, dynamic>.from(currentState['lesson_pages'] ?? {});
       final savedPageTitle = lessonPages[widget.lessonId]; // Your lessonId
 
       if (savedPageTitle != null) {
@@ -66,7 +67,8 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
         final match = RegExp(r'Page (\d+):').firstMatch(savedPageTitle);
         if (match != null) {
           final savedPageIndex = int.tryParse(match.group(1)!);
-          if (savedPageIndex != null && savedPageIndex < lessonSections.length) {
+          if (savedPageIndex != null &&
+              savedPageIndex < lessonSections.length) {
             setState(() {
               currentIndex = savedPageIndex; // Jump to saved page
             });
@@ -97,7 +99,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
   @override
   void dispose() {
     if (!lessonCompleted) {
-      _saveCurrentPage(); 
+      _saveCurrentPage();
     }
     super.dispose();
   }
@@ -186,7 +188,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                   SizedBox(height: 15),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/take%20care.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvdGFrZSBjYXJlLndlYm0iLCJpYXQiOjE3NDM0MjYwNzgsImV4cCI6MTc3NDk2MjA3OH0.9aNkAZOwhphEd_0Px6TxKxBhBZXZUpA-wTKPftMiR8E',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/take%20care.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdGFrZSBjYXJlLndlYm0iLCJpYXQiOjE3NDY2MDcyNzksImV4cCI6MTc3ODE0MzI3OX0.cLOdrLwZ0uMS_4K6of8gKZhOA9m5NbNst2AMatQGTtE',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -199,7 +201,28 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: "Take care",
+                                          text: "Take care (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 15),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/take%20care%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdGFrZSBjYXJlIHZlciAyLndlYm0iLCJpYXQiOjE3NDY2MDcyNTksImV4cCI6MTc3ODE0MzI1OX0.fPbxMviIjDHJDTHUyEDCFfYD9MJK7Nujt2IDhv5jebc',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "Take care (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -260,8 +283,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                   ),
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
-                                    videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%203/See%20you%20tomorrow%20ver.%201.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDMvU2VlIHlvdSB0b21vcnJvdyB2ZXIuIDEud2VibSIsImlhdCI6MTc0MzQzMjEzMCwiZXhwIjoxNzc0OTY4MTMwfQ.hfWlqOIqLvGid9rAJ9BZP0NdP0GwSW_CbWOEjj_ZMU4',
+                                    videoUrl: 'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/see%20you%20tomorrow.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvc2VlIHlvdSB0b21vcnJvdy53ZWJtIiwiaWF0IjoxNzQ2NjA3Njc1LCJleHAiOjE3NzgxNDM2NzV9.puDx-2xQkFKHGeuO20lAWMIHPcHy7IpzdZyGbfrZu-A',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -273,7 +295,26 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "See you tomorrow",
+                                          text: "See you tomorrow (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl: 'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/see%20you%20tomorrow%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvc2VlIHlvdSB0b21vcnJvdyB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjA3NjU1LCJleHAiOjE3NzgxNDM2NTV9.RFIpTOgph2bj1AOeqFHHOeJXytW_YVTVR9Ll8NteHgE',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                      children: [
+                                        TextSpan(
+                                          text: "See you tomorrow (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -322,7 +363,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/later.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvbGF0ZXIud2VibSIsImlhdCI6MTc0MzQyNTQ4MywiZXhwIjoxNzc0OTYxNDgzfQ.qy-unJDGjWJpE0k9BJqq4FU0O4TMob1PmqwRKqW1uxM',
+                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%203/Later.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDMvTGF0ZXIud2VibSIsImlhdCI6MTc0NjYxNjU4OSwiZXhwIjoxNzc4MTUyNTg5fQ.mt_Yu5RqL7XnpxR0OeswqMZWDBDYDVBGEOiJT-79RI8',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -335,7 +376,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: "Later",
+                                          text: "Later (Version 1)",
                                         ),
                                       ],
                                     ),
@@ -343,7 +384,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/me%20too.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvbWUgdG9vLndlYm0iLCJpYXQiOjE3NDM0MjU0OTUsImV4cCI6MTc3NDk2MTQ5NX0.AjNxSJ7Uzgl-LQ5qmKsgBKqvawBK_vZGU3JzrXXcgCk',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/later.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbGF0ZXIud2VibSIsImlhdCI6MTc0NjYwNjQ0OSwiZXhwIjoxNzc4MTQyNDQ5fQ.qHvNg1VbpHp_ZRTi9B-Eq2qz-yzMXx8gewWzuSnuvZQ',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -356,7 +397,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: "Me too/Same here",
+                                          text: "Later (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -364,7 +405,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/see%20you.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvc2VlIHlvdS53ZWJtIiwiaWF0IjoxNzQzNDI1NTc0LCJleHAiOjE3NzQ5NjE1NzR9.lwRiuS4U3YaM1wviKTAsNBcE8zjXO1-tEOL2loFTMV4',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/see%20you.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvc2VlIHlvdS53ZWJtIiwiaWF0IjoxNzQ2NjA3NzY1LCJleHAiOjE3NzgxNDM3NjV9.oRbnuIW8GTx-eLE0tyRr-9aLM3s4yUMMsGwDvRCxhSM',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -377,7 +418,28 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: "To see/To see you",
+                                          text: "See/See you (Version 1)",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/see%20you%20ver%202.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvc2VlIHlvdSB2ZXIgMi53ZWJtIiwiaWF0IjoxNzQ2NjA3NzU0LCJleHAiOjE3NzgxNDM3NTR9.8ATPWfk1Wc4VZWQ6FWDPxLhFBvvnuwrSeHemvnLPFAA',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.center,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "See/See you (Version 2)",
                                         ),
                                       ],
                                     ),
@@ -406,7 +468,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                   SizedBox(height: 20),
                                   CustomVideoPlayer(
                                     videoUrl:
-                                        'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%204/Lesson%2014/tomorrow.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDQvTGVzc29uIDE0L3RvbW9ycm93LndlYm0iLCJpYXQiOjE3NDQxMTcwNTEsImV4cCI6MTc3NTY1MzA1MX0.0r2BKXW4ACPLs4A8MzM1YM8Xtjx3FWslYvhMJiO5B9o',
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/tomorrow.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdG9tb3Jyb3cud2VibSIsImlhdCI6MTc0NjYwNzgxNiwiZXhwIjoxNzc4MTQzODE2fQ.IhTp5r53xdBm5Ptrc5zRhbESsjaAogDkfeq3P1X38lQ',
                                   ),
                                   SizedBox(height: 10),
                                   RichText(
@@ -420,6 +482,46 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                       children: [
                                         TextSpan(
                                           text: "Tomorrow",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  CustomVideoPlayer(
+                                    videoUrl:
+                                        'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/me%20too,%20same%20here.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvbWUgdG9vLCBzYW1lIGhlcmUud2VibSIsImlhdCI6MTc0NjYwNzg3NiwiZXhwIjoxNzc4MTQzODc2fQ.yELlfHl1PR_R2BjkDimkpBakBvM5VST0GoifVFoU3b0',
+                                  ),
+                                  SizedBox(height: 10),
+                                  RichText(
+                                    textAlign: TextAlign.center,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: "Me too/Same here",
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 40),
+                                  RichText(
+                                    textAlign: TextAlign.justify,
+                                    text: TextSpan(
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 18),
+                                      children: [
+                                        TextSpan(
+                                          text: "Note: ",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        TextSpan(
+                                          text:
+                                              "Me too or same here uses directionality, so it should be pointing to whom you are talking to.",
                                         ),
                                       ],
                                     ),
@@ -729,7 +831,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
 
                                       // Question 1
                                       Text(
-                                        '1. Which is the correct way to sign “See you later.”?',
+                                        '1. Which is the correct way to sign “See you tomorrow.”?',
                                         textAlign: TextAlign.justify,
                                         style: TextStyle(
                                             fontSize: 18,
@@ -741,7 +843,8 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 14,
-                                            fontWeight: FontWeight.bold, color: Colors.grey),
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.grey),
                                       ),
                                       SizedBox(height: 10),
                                       Column(
@@ -775,7 +878,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
-                                                      'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%203/see%20you%20later.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDMvc2VlIHlvdSBsYXRlci53ZWJtIiwiaWF0IjoxNzQzNDMyMTA3LCJleHAiOjE3NzQ5NjgxMDd9.drr9r1r0sB3UbABUZKArrQHBAORvmtYVSe-uMP6hITg',
+                                                      'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/see%20you%20tomorrow.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvc2VlIHlvdSB0b21vcnJvdy53ZWJtIiwiaWF0IjoxNzQ2NjA3Njc1LCJleHAiOjE3NzgxNDM2NzV9.puDx-2xQkFKHGeuO20lAWMIHPcHy7IpzdZyGbfrZu-A',
                                                 ),
                                               ),
                                             ),
@@ -810,7 +913,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                                                 padding: EdgeInsets.all(20),
                                                 child: CustomVideoPlayer(
                                                   videoUrl:
-                                                      'https://batvjfcaxelxagufynxk.supabase.co/storage/v1/object/sign/itro/videos/Unit%201/Lesson%202/take%20care.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpdHJvL3ZpZGVvcy9Vbml0IDEvTGVzc29uIDIvdGFrZSBjYXJlLndlYm0iLCJpYXQiOjE3NDM0MjYwNzgsImV4cCI6MTc3NDk2MjA3OH0.9aNkAZOwhphEd_0Px6TxKxBhBZXZUpA-wTKPftMiR8E',
+                                                      'https://jrywkphkycxntswqyfyq.supabase.co/storage/v1/object/sign/asl-lessons/new/take%20care.webm?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzNiOTE4MzBhLTZiYzMtNDdhZC04OTRjLTZlYmQ5N2U1YzMyYyJ9.eyJ1cmwiOiJhc2wtbGVzc29ucy9uZXcvdGFrZSBjYXJlLndlYm0iLCJpYXQiOjE3NDY2MDcyNzksImV4cCI6MTc3ODE0MzI3OX0.cLOdrLwZ0uMS_4K6of8gKZhOA9m5NbNst2AMatQGTtE',
                                                 ),
                                               ),
                                             ),
@@ -1081,7 +1184,7 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                               answeredQuestion3 &&
                               answeredQuestion4 &&
                               answeredQuestion5;
-                          
+
                           if (!allQuestionsAnsweredQuiz) {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
@@ -1094,17 +1197,19 @@ class _Lesson3ScreenState extends State<Lesson3Screen> {
                           }
 
                           // mark completed lessons
-                          final lessonCompletionManager = LessonCompletionManager();
+                          final lessonCompletionManager =
+                              LessonCompletionManager();
                           await lessonCompletionManager.completeLesson(
                             lessonId: widget.lessonId,
                             score: totalScore,
                           );
 
-                          lessonCompleted = true; 
+                          lessonCompleted = true;
                           if (context.mounted) {
                             Navigator.pop(context, true);
                           }
-                          await lessonManager.resetLessonProgress(widget.lessonId);
+                          await lessonManager
+                              .resetLessonProgress(widget.lessonId);
                         }
                       : nextSection,
                   style: ElevatedButton.styleFrom(

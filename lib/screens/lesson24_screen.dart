@@ -469,7 +469,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be cute",
+                                          text: "Cute",
                                         ),
                                       ],
                                     ),
@@ -488,7 +488,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be pretty/Beautiful",
+                                          text: "Pretty/Beautiful",
                                         ),
                                       ],
                                     ),
@@ -507,7 +507,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To smile",
+                                          text: "Smile",
                                         ),
                                       ],
                                     ),
@@ -526,7 +526,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be ugly",
+                                          text: "Ugly",
                                         ),
                                       ],
                                     ),
@@ -571,7 +571,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To annoy/Bother",
+                                          text: "Annoy/Bother",
                                         ),
                                       ],
                                     ),
@@ -590,7 +590,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be annoyed",
+                                          text: "Annoyed",
                                         ),
                                       ],
                                     ),
@@ -609,7 +609,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be arrogant",
+                                          text: "Arrogant",
                                         ),
                                       ],
                                     ),
@@ -628,7 +628,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be friendly",
+                                          text: "Friendly",
                                         ),
                                       ],
                                     ),
@@ -647,7 +647,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be funny",
+                                          text: "Funny",
                                         ),
                                       ],
                                     ),
@@ -666,7 +666,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To laugh",
+                                          text: "Laugh",
                                         ),
                                       ],
                                     ),
@@ -685,7 +685,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be mean",
+                                          text: "Mean",
                                         ),
                                       ],
                                     ),
@@ -704,7 +704,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be mischievous",
+                                          text: "Mischievous",
                                         ),
                                       ],
                                     ),
@@ -723,7 +723,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be shy",
+                                          text: "Shy",
                                         ),
                                       ],
                                     ),
@@ -742,7 +742,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be sweet",
+                                          text: "Sweet",
                                         ),
                                       ],
                                     ),
@@ -786,7 +786,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be boring",
+                                          text: "Boring",
                                         ),
                                       ],
                                     ),
@@ -805,7 +805,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be interesting",
+                                          text: "Interesting",
                                         ),
                                       ],
                                     ),
@@ -824,7 +824,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be outgoing",
+                                          text: "Outgoing",
                                         ),
                                       ],
                                     ),
@@ -843,7 +843,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be positive",
+                                          text: "Positive",
                                         ),
                                       ],
                                     ),
@@ -862,7 +862,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be lazy",
+                                          text: "Lazy",
                                         ),
                                       ],
                                     ),
@@ -881,7 +881,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be smart",
+                                          text: "Smart",
                                         ),
                                       ],
                                     ),
@@ -900,7 +900,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be motivated",
+                                          text: "Motivated",
                                         ),
                                       ],
                                     ),
@@ -919,7 +919,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be stupid",
+                                          text: "Stupid",
                                         ),
                                       ],
                                     ),
@@ -938,7 +938,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To be negative",
+                                          text: "Negative",
                                         ),
                                       ],
                                     ),
@@ -957,7 +957,7 @@ class _Lesson24ScreenState extends State<Lesson24Screen> {
                                           fontWeight: FontWeight.bold),
                                       children: [
                                         TextSpan(
-                                          text: "To work hard",
+                                          text: "Work hard",
                                         ),
                                       ],
                                     ),
